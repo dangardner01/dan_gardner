@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coria Training — an AI-powered educational copilot for psychotherapy training, created by Dan Gardner, MD. Practice techniques privately, receive real-time feedback, and accelerate clinical growth.">
+  <title>Psychotherapy AI Copilot | Dan Gardner, MD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0f2544', 800: '#1e3a5f', 700: '#2d5080', 600: '#3d6699' },
+            cream: { 50: '#faf9f7', 100: '#f5f3ef', 200: '#ede9e1' },
+            teal: { 300: '#7db8be', 400: '#5b9fa6', 500: '#4a8b92' },
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf9f7; }
+    h1, h2, h3, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    #navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background-color: rgba(15,37,68,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .hero-bg { background: linear-gradient(135deg, #0a1e3d 0%, #1e3a5f 35%, #2d5080 65%, #3a6b8a 100%); }
+    .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
+    .card-hover { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
+        <a href="index.html" class="flex flex-col group" aria-label="Dan Gardner MD — Home">
+          <span class="font-heading text-white text-lg lg:text-xl font-semibold leading-tight group-hover:text-teal-300 transition-colors duration-200">Dan Gardner, MD</span>
+          <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-5">
+          <a href="index.html#about"                    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy.html"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html"         class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html"                      class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="faq.html"                            class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="index.html#contact"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="index.html#about"            class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy.html"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy</a>
+        <a href="psychoanalysis.html"         class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html"              class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="faq.html"                    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-white/30">›</span>
+        <a href="resources.html" class="hover:text-white transition-colors">Resources</a>
+        <span class="mx-2 text-white/30">›</span>
+        Psychotherapy AI Copilot
+      </p>
+      <h1 id="page-heading" class="font-heading text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+        Psychotherapy AI Copilot
+      </h1>
+      <div class="accent-bar"></div>
+      <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">
+        Practice Perfectly, Privately — an AI-powered educational tool to accelerate psychotherapy training and sharpen clinical skills.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Coria Training</p>
+        <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Your AI-Powered Educational Copilot</h2>
+        <div class="accent-bar"></div>
+        <p class="text-gray-600 leading-relaxed mb-5">
+          Created by Dan Gardner, MD and produced by ExpertFocus LLC, <strong>Coria Training</strong> is a specialized AI platform designed to help mental health professionals and trainees build clinical confidence through realistic, private practice. Available 24/7, it bridges the gap between theoretical knowledge and real-world therapeutic skill.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          This isn't a replacement for clinical supervision — it's a powerful supplement. Coria Training gives you a private space to experiment, refine your approach, and deepen your clinical instincts between sessions and supervision meetings.
+        </p>
+        <a href="https://psychotherapy.coria.training" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow hover:shadow-lg">
+          Launch Coria Training
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="py-16 lg:py-20 bg-cream-50">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="mb-12 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">What It Does</p>
+        <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Core Features</h2>
+        <div class="accent-bar"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3">Simulated Client Interactions</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Practice therapeutic interventions with realistic AI-generated client responses based on specific clinical presentations. Test new approaches before a live session with immediate, model-adherent feedback.
+          </p>
+        </div>
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm" style="transition-delay:0.06s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3">Complete Confidentiality</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Practice in a fully private environment with no patient data involved. Explore new techniques, work through uncertainty, and build clinical confidence without any professional risk.
+          </p>
+        </div>
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm" style="transition-delay:0.12s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3">Personalized, Data-Driven Training</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Receive tailored feedback aligned with therapeutic models. The platform adapts to your learning needs, helping you identify patterns, strengthen areas of uncertainty, and track professional growth over time.
+          </p>
+        </div>
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm" style="transition-delay:0.06s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3">Available 24/7</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Practice on your schedule — before a session, after supervision, or late at night. Coria Training is available whenever inspiration strikes or a clinical challenge arises.
+          </p>
+        </div>
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm" style="transition-delay:0.12s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3">Bridge Theory &amp; Practice</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Move beyond textbook knowledge into applied clinical skill. Coria Training helps you translate what you learn in coursework and supervision into fluent, confident therapeutic action.
+          </p>
+        </div>
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm" style="transition-delay:0.18s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3">Build Confidence</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Sharpen clinical instincts and enter every session with greater certainty. Repeated, safe practice accelerates the natural development of therapeutic expertise and professional identity.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="fade-in mb-10">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Who It's For</p>
+        <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Designed for Mental Health Professionals</h2>
+        <div class="accent-bar"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4 fade-in">
+        <div class="flex gap-3 items-start p-5 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <div>
+            <p class="font-semibold text-navy-800 text-sm mb-1">Trainees &amp; Graduate Students</p>
+            <p class="text-gray-500 text-sm">Accelerate skill acquisition during clinical training programs.</p>
+          </div>
+        </div>
+        <div class="flex gap-3 items-start p-5 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <div>
+            <p class="font-semibold text-navy-800 text-sm mb-1">Early-Career Clinicians</p>
+            <p class="text-gray-500 text-sm">Build confidence in newly acquired techniques before applying them with clients.</p>
+          </div>
+        </div>
+        <div class="flex gap-3 items-start p-5 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <div>
+            <p class="font-semibold text-navy-800 text-sm mb-1">Experienced Therapists</p>
+            <p class="text-gray-500 text-sm">Explore new modalities or refresh skills in a risk-free environment.</p>
+          </div>
+        </div>
+        <div class="flex gap-3 items-start p-5 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <div>
+            <p class="font-semibold text-navy-800 text-sm mb-1">Supervisors &amp; Educators</p>
+            <p class="text-gray-500 text-sm">Recommend as a structured between-supervision learning resource for trainees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-navy-900 text-white">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center fade-in">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">Get Started</p>
+      <h2 class="font-heading text-3xl lg:text-4xl font-bold mb-4">Fast Track Your Psychotherapy Skills</h2>
+      <div class="accent-bar mx-auto"></div>
+      <p class="text-blue-200 leading-relaxed mb-8 max-w-xl mx-auto">
+        Join mental health professionals who are using Coria Training to practice privately, grow faster, and enter every clinical encounter with greater confidence.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://psychotherapy.coria.training" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-teal-400 hover:bg-teal-300 text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl">
+          Start Now
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+        <a href="resources.html"
+           class="inline-flex items-center justify-center gap-2 border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-all duration-200">
+          Back to Resources
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white border-t border-white/10" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="inline-flex flex-col mb-5">
+            <span class="font-heading text-white text-xl font-semibold">Dan Gardner, MD</span>
+            <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase mt-1">Psychotherapy &nbsp;·&nbsp; Psychoanalysis &nbsp;·&nbsp; San Diego</span>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed max-w-xs mb-5">
+            A compassionate, collaborative approach to mental health — helping individuals build insight, confidence, and fulfillment.
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="text-blue-300 text-sm">Not currently accepting new patients</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html#about"                   class="text-blue-300 hover:text-white text-sm transition-colors">About</a></li>
+            <li><a href="psychotherapy.html"                 class="text-blue-300 hover:text-white text-sm transition-colors">Psychotherapy</a></li>
+            <li><a href="psychoanalysis.html"                class="text-blue-300 hover:text-white text-sm transition-colors">Psychoanalysis</a></li>
+            <li><a href="traumatic-brain-injury.html"        class="text-blue-300 hover:text-white text-sm transition-colors">Brain Injury</a></li>
+            <li><a href="resources.html"                     class="text-blue-300 hover:text-white text-sm transition-colors">Resources</a></li>
+            <li><a href="faq.html"                           class="text-blue-300 hover:text-white text-sm transition-colors">FAQ</a></li>
+            <li><a href="disclaimer.html"                    class="text-blue-300 hover:text-white text-sm transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-3">
+            <li class="text-blue-300 text-sm">858-560-5609</li>
+            <li><a href="mailto:dgardner01@protonmail.com" class="text-blue-300 hover:text-white text-sm transition-colors break-all">dgardner01@protonmail.com</a></li>
+            <li class="text-blue-300 text-sm">PO Box 2275<br>Del Mar, CA 92014</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-blue-300/70 text-xs">&copy; 2026 Dan Gardner, MD. All Rights Reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="disclaimer.html" class="text-blue-300/70 hover:text-white text-xs transition-colors">Disclaimer</a>
+          <a href="https://openpaymentsdata.cms.gov" target="_blank" rel="noopener noreferrer" class="text-blue-300/70 hover:text-white text-xs transition-colors">Open Payments</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 24); }, { passive: true });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      iconBars.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconBars.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

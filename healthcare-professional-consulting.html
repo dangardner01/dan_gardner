@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Healthcare Professional Consulting with Dan Gardner, MD — consultation for mental health professionals and physicians on patient communication, treatment challenges, and professional development in San Diego.">
+  <title>Healthcare Professional Consulting | Dan Gardner, MD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0f2544', 800: '#1e3a5f', 700: '#2d5080', 600: '#3d6699' },
+            cream: { 50: '#faf9f7', 100: '#f5f3ef', 200: '#ede9e1' },
+            teal: { 300: '#7db8be', 400: '#5b9fa6', 500: '#4a8b92' },
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf9f7; }
+    h1, h2, h3, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    #navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background-color: rgba(15,37,68,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .hero-bg { background: linear-gradient(135deg, #0a1e3d 0%, #1e3a5f 35%, #2d5080 65%, #3a6b8a 100%); }
+    .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
+    .card-hover { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
+        <a href="index.html" class="flex flex-col group" aria-label="Dan Gardner MD — Home">
+          <span class="font-heading text-white text-lg lg:text-xl font-semibold leading-tight group-hover:text-teal-300 transition-colors duration-200">Dan Gardner, MD</span>
+          <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-5">
+          <a href="index.html#about"                       class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy.html"                          class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="psychoanalysis.html"                         class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychoanalysis</a>
+          <a href="traumatic-brain-injury.html"                 class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html"                              class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
+          <a href="faq.html"                                    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="index.html#contact"                     class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="index.html#about"                      class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy.html"                         class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy</a>
+        <a href="psychoanalysis.html"                        class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html"                class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="healthcare-professional-consulting.html"    class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Healthcare Consulting</a>
+        <a href="communication-effectiveness.html"           class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Communication Effectiveness</a>
+        <a href="personal-strengths-growth.html"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Personal Strengths &amp; Growth</a>
+        <a href="resources.html"                             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="faq.html"                                   class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html"                            class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact"                    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-white/30">›</span>
+        Healthcare Professional Consulting
+      </p>
+      <h1 id="page-heading" class="font-heading text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+        Healthcare Professional<br class="hidden sm:block"> Consulting
+      </h1>
+      <div class="accent-bar"></div>
+      <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">
+        Consultation for mental health professionals and physicians on patient communication,
+        treatment challenges, and professional development.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="fade-in max-w-3xl">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Expert Guidance for Professionals</p>
+        <h2 class="font-heading text-3xl font-bold text-navy-800 mb-1">A Trusted Resource for Colleagues</h2>
+        <div class="accent-bar"></div>
+        <p class="text-gray-600 text-base leading-relaxed mb-5">
+          With decades of clinical and academic experience, Dr. Gardner offers consultation to
+          mental health therapists, psychiatrists, and physicians who are navigating complex
+          patient situations, looking to strengthen their clinical approach, or seeking guidance
+          on professional challenges.
+        </p>
+        <p class="text-gray-600 text-base leading-relaxed mb-5">
+          Drawing on his background in psychiatry, psychoanalysis, and traumatic brain injury,
+          Dr. Gardner provides thoughtful, nuanced consultation that goes beyond surface-level
+          advice — helping colleagues think more deeply about their patients and their practice.
+        </p>
+        <p class="text-gray-600 text-base leading-relaxed">
+          All consultations are conducted via secure video conference or phone, offering
+          flexible, accessible support for healthcare professionals throughout the San Diego
+          region and beyond.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="py-16 lg:py-20 bg-cream-50" aria-labelledby="services-heading">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Areas of Consultation</p>
+        <h2 id="services-heading" class="font-heading text-3xl font-bold text-navy-800 mb-1">How Dr. Gardner Can Help</h2>
+        <div class="accent-bar mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-4">Clinical Case Consultation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">
+            Thoughtful discussion of complex or challenging patient cases, including treatment
+            planning, diagnostic considerations, and therapeutic approach.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Difficult-to-treat patients and stuck therapeutic relationships</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Psychiatric and psychodynamic formulation</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">TBI-related behavioral and emotional presentations</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Medication-behavior intersection and psychopharmacology guidance</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm" style="transition-delay:0.1s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-4">Patient Communication</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">
+            Practical guidance on improving doctor-patient and therapist-patient communication —
+            building stronger therapeutic alliances and achieving better clinical outcomes.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Engaging difficult or resistant patients</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Delivering difficult news and sensitive diagnoses</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Improving treatment adherence and shared decision-making</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Managing countertransference and professional boundaries</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm" style="transition-delay:0.18s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-4">Professional Development</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">
+            Guidance for healthcare professionals seeking to grow their practice, navigate
+            career transitions, or strengthen their leadership and clinical skills.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Practice development and growth strategies</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Career transitions and professional identity</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Preventing and recovering from professional burnout</p>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm">Leadership effectiveness and team communication</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="fade-in">
+          <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Why Dr. Gardner</p>
+          <h2 class="font-heading text-3xl font-bold text-navy-800 mb-1">Depth of Experience</h2>
+          <div class="accent-bar"></div>
+          <p class="text-gray-600 text-base leading-relaxed mb-5">
+            Dr. Gardner brings a rare combination of board-certified psychiatry, psychoanalytic
+            training, and extensive experience in traumatic brain injury — making him uniquely
+            equipped to advise colleagues across a wide range of complex clinical and
+            professional situations.
+          </p>
+          <p class="text-gray-600 text-base leading-relaxed">
+            He has served as a voluntary associate clinical professor at UCSD, Medical Director
+            of brain injury rehabilitation programs, and has been recognized repeatedly as one
+            of San Diego's Physicians of Exceptional Excellence.
+          </p>
+        </div>
+        <div class="fade-in" style="transition-delay:0.12s">
+          <div class="bg-cream-50 rounded-2xl p-7 border border-cream-200">
+            <h3 class="font-heading text-base font-bold text-navy-800 mb-5">Selected Credentials</h3>
+            <ul class="space-y-3">
+              <li class="flex gap-3 items-start">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm">Diplomate, American Board of Psychiatry &amp; Neurology</p>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm">Distinguished Life Fellow, American Psychiatric Association</p>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm">Graduate, Adult Psychoanalysis — San Diego Psychoanalytic Society and Institute</p>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm">Former Voluntary Associate Clinical Professor, UCSD School of Medicine</p>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm">Medical Director, Brain Injury Rehabilitation Programs</p>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm">Top Doctor, San Diego Physicians of Exceptional Excellence (multiple years)</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELEHEALTH NOTE -->
+  <section class="py-10 bg-cream-100">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="fade-in flex gap-4 items-start bg-white rounded-2xl p-6 border border-cream-200 shadow-sm">
+        <div class="w-10 h-10 rounded-xl bg-navy-800 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-800 text-sm">Remote Consultations Available</p>
+          <p class="text-gray-500 text-sm mt-1 leading-relaxed">
+            All professional consultations are conducted via secure video conference or phone —
+            making expert guidance accessible to healthcare providers wherever they are located.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="bg-navy-800 py-16">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center fade-in">
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-3">Schedule a Consultation</h2>
+      <p class="text-blue-200 text-base mb-8 max-w-lg mx-auto leading-relaxed">
+        Reach out to discuss your consultation needs. All sessions conducted via video
+        conference or phone.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:dgardner01@protonmail.com" class="border border-white/40 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-white/10 transition-all duration-200 text-sm">
+          dgardner01@protonmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="inline-flex flex-col mb-5">
+            <span class="font-heading text-white text-xl font-semibold">Dan Gardner, MD</span>
+            <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase mt-1">Psychotherapy &nbsp;·&nbsp; Psychoanalysis &nbsp;·&nbsp; San Diego</span>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed max-w-xs mb-5">A compassionate, collaborative approach to mental health — helping individuals build insight, confidence, and fulfillment.</p>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="text-blue-300 text-sm">Not currently accepting new patients</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="psychotherapy.html"                     class="text-blue-300 hover:text-white text-sm transition-colors">Psychotherapy</a></li>
+            <li><a href="psychoanalysis.html"                    class="text-blue-300 hover:text-white text-sm transition-colors">Psychoanalysis</a></li>
+            <li><a href="traumatic-brain-injury.html"            class="text-blue-300 hover:text-white text-sm transition-colors">Traumatic Brain Injury</a></li>
+            <li><a href="healthcare-professional-consulting.html" class="text-blue-300 hover:text-white text-sm transition-colors">Healthcare Consulting</a></li>
+            <li><a href="communication-effectiveness.html"       class="text-blue-300 hover:text-white text-sm transition-colors">Communication</a></li>
+            <li><a href="personal-strengths-growth.html"         class="text-blue-300 hover:text-white text-sm transition-colors">Strengths &amp; Growth</a></li>
+            <li><a href="resources.html"                         class="text-blue-300 hover:text-white text-sm transition-colors">Resources</a></li>
+            <li><a href="faq.html"                               class="text-blue-300 hover:text-white text-sm transition-colors">FAQ</a></li>
+            <li><a href="disclaimer.html"                        class="text-blue-300 hover:text-white text-sm transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-3">
+            <li class="text-blue-300 text-sm">858-560-5609</li>
+            <li><a href="mailto:dgardner01@protonmail.com" class="text-blue-300 hover:text-white text-sm transition-colors break-all">dgardner01@protonmail.com</a></li>
+            <li class="text-blue-300 text-sm">PO Box 2275<br>Del Mar, CA 92014</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-blue-300/70 text-xs">&copy; 2026 Dan Gardner, MD. All Rights Reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="disclaimer.html" class="text-blue-300/70 hover:text-white text-xs transition-colors">Disclaimer</a>
+          <a href="https://openpaymentsdata.cms.gov" target="_blank" rel="noopener noreferrer" class="text-blue-300/70 hover:text-white text-xs transition-colors">Open Payments</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 24); }, { passive: true });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBars  = document.getElementById('icon-bars');
+    const iconClose = document.getElementById('icon-close');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      iconBars.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    faders.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

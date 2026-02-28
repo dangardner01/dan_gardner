@@ -1,2031 +1,1312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dan Gardner, MD — Psychotherapy and Psychoanalysis in San Diego. Board-certified psychiatrist offering compassionate, collaborative mental health care in Del Mar, CA.">
+  <title>Dan Gardner, MD | Psychotherapy &amp; Psychoanalysis in San Diego</title>
 
-  <!-- SEO Meta Tags -->
-  <title>Robert Conn, PhD | Engineering Leader, Science Strategist & Independent Consultant</title>
-  <meta name="description" content="Robert Conn, PhD — Distinguished engineer, former Dean of the Jacobs School of Engineering at UCSD, former Kavli Foundation President &amp; CEO, and independent consultant specializing in strategic advisory, research leadership, and science policy." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Robert Conn, PhD | Independent Consultant" />
-  <meta property="og:description" content="Distinguished engineer and academic leader offering strategic advisory, research leadership, and science policy consulting." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630/0A2342/C9A84C?text=Robert+Conn%2C+PhD" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              900: '#0f2544',
+              800: '#1e3a5f',
+              700: '#2d5080',
+              600: '#3d6699',
+            },
+            cream: {
+              50:  '#faf9f7',
+              100: '#f5f3ef',
+              200: '#ede9e1',
+            },
+            teal: {
+              300: '#7db8be',
+              400: '#5b9fa6',
+              500: '#4a8b92',
+            },
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
-    /* ============================================================
-       RESET & ROOT VARIABLES
-    ============================================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* ── Global ─────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf9f7; }
+    h1, h2, h3, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
 
-    :root {
-      --navy:      #0A2342;
-      --navy-mid:  #0D2E54;
-      --navy-light:#1A3A5C;
-      --gold:      #C9A84C;
-      --gold-light:#E2C47A;
-      --gold-dark: #A8843A;
-      --bg:        #F8F9FA;
-      --bg-alt:    #EEF0F3;
-      --text:      #2D2D2D;
-      --text-muted:#6B7280;
-      --white:     #FFFFFF;
-      --shadow-sm: 0 2px 8px rgba(10,35,66,0.08);
-      --shadow-md: 0 6px 24px rgba(10,35,66,0.12);
-      --shadow-lg: 0 16px 48px rgba(10,35,66,0.16);
-      --radius:    10px;
-      --radius-lg: 16px;
-      --max-w:     1200px;
-      --font-head: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', system-ui, sans-serif;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ============================================================
-       UTILITY CLASSES
-    ============================================================ */
-    .container {
-      width: 100%;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section {
-      padding: 96px 0;
-    }
-
-    .section-alt {
-      background: var(--bg-alt);
-    }
-
-    .section-dark {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .section-label {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(1.9rem, 4vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-
-    .section-dark .section-title {
-      color: var(--white);
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin-bottom: 56px;
-    }
-
-    .section-dark .section-subtitle {
-      color: rgba(255,255,255,0.65);
-    }
-
-    .divider {
-      width: 56px;
-      height: 3px;
-      background: var(--gold);
-      margin: 20px 0 40px;
-      border-radius: 2px;
-    }
-
-    /* Fade-in animation (Intersection Observer) */
+    /* ── Scroll-triggered fade-in ──────────────── */
     .fade-in {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(22px);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
-
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .fade-in-delay-1 { transition-delay: 0.1s; }
-    .fade-in-delay-2 { transition-delay: 0.2s; }
-    .fade-in-delay-3 { transition-delay: 0.3s; }
-    .fade-in-delay-4 { transition-delay: 0.4s; }
-
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
-    #nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(10, 35, 66, 0.97);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
-      transition: var(--transition);
+    /* ── Sticky nav ────────────────────────────── */
+    #navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    #navbar.scrolled {
+      background-color: rgba(15, 37, 68, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.18);
     }
 
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    /* ── Mobile menu ───────────────────────────── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
 
-    .nav-logo {
-      font-family: var(--font-head);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.01em;
-    }
-
-    .nav-logo span {
-      color: var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.75);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width 0.25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold-light);
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
-
-    /* Hamburger */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      aria-label: "Open navigation";
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 26px;
-      height: 2px;
-      background: var(--white);
-      transition: var(--transition);
-      border-radius: 2px;
-    }
-
-    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* Mobile nav */
-    .nav-mobile {
-      display: none;
-      flex-direction: column;
-      background: var(--navy);
-      padding: 16px 24px 24px;
-      border-top: 1px solid rgba(201,168,76,0.15);
-    }
-
-    .nav-mobile a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.8);
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .nav-mobile a:last-child { border-bottom: none; }
-
-    /* ============================================================
-       SECTION 1 — HERO
-    ============================================================ */
-    #hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: var(--navy);
-      overflow: hidden;
-    }
-
-    /* Animated gradient orbs */
+    /* ── Hero gradient ─────────────────────────── */
     .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+      background: linear-gradient(135deg, #0a1e3d 0%, #1e3a5f 35%, #2d5080 65%, #3a6b8a 100%);
     }
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.18;
-      animation: drift 12s ease-in-out infinite alternate;
-    }
-
-    .orb-1 {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, #1A5276, transparent);
-      top: -10%;
-      right: -5%;
-      animation-duration: 14s;
-    }
-
-    .orb-2 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #C9A84C, transparent);
-      bottom: -5%;
-      left: 10%;
-      animation-duration: 10s;
-      animation-delay: -4s;
-      opacity: 0.12;
-    }
-
-    .orb-3 {
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, #2980B9, transparent);
-      top: 40%;
-      left: 35%;
-      animation-duration: 16s;
-      animation-delay: -7s;
-      opacity: 0.10;
-    }
-
-    @keyframes drift {
-      0%   { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, 30px) scale(1.08); }
-    }
-
-    /* Subtle dot-grid texture */
-    .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(201,168,76,0.08) 1px, transparent 1px);
-      background-size: 36px 36px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 64px;
-      align-items: center;
-      width: 100%;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 120px 24px 80px;
-    }
-
-    .hero-text {
-      max-width: 680px;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-    }
-
-    .hero-kicker::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero-name {
-      font-family: var(--font-head);
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .hero-name em {
-      display: block;
-      font-style: normal;
-      color: var(--gold);
-      font-size: 0.55em;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      margin-top: 6px;
-    }
-
-    .hero-tagline {
-      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-      color: rgba(255,255,255,0.78);
-      font-style: italic;
-      font-family: var(--font-head);
-      margin-bottom: 32px;
-      line-height: 1.5;
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.60);
-      max-width: 520px;
-      margin-bottom: 44px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold);
-      color: var(--navy);
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 14px 28px;
-      border-radius: 50px;
-      transition: var(--transition);
-      border: 2px solid var(--gold);
-      letter-spacing: 0.02em;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--white);
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 14px 28px;
-      border-radius: 50px;
-      border: 2px solid rgba(255,255,255,0.3);
-      transition: var(--transition);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    /* Avatar */
-    .hero-avatar-wrap {
-      flex-shrink: 0;
-    }
-
-    .hero-avatar {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
-      border: 4px solid var(--gold);
-      box-shadow: 0 0 0 8px rgba(201,168,76,0.12), var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-head);
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--gold);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Pulsing ring around avatar */
-    .hero-avatar::before {
-      content: '';
-      position: absolute;
-      inset: -12px;
-      border-radius: 50%;
-      border: 1px solid rgba(201,168,76,0.25);
-      animation: pulse-ring 3s ease-out infinite;
-    }
-
-    @keyframes pulse-ring {
-      0%   { opacity: 0.6; transform: scale(1); }
-      100% { opacity: 0;   transform: scale(1.15); }
-    }
-
-    .hero-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    /* Credential pills below avatar */
-    .hero-pills {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 20px;
-      align-items: center;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 50px;
-      padding: 5px 14px;
-      white-space: nowrap;
-    }
-
-    .hero-pill i {
-      color: var(--gold);
-      font-size: 0.7rem;
-    }
-
-    /* Hero scroll cue */
-    .hero-scroll {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: rgba(255,255,255,0.35);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      animation: bounce-down 2s ease-in-out infinite;
-    }
-
-    @keyframes bounce-down {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50%       { transform: translateX(-50%) translateY(6px); }
-    }
-
-    /* ============================================================
-       SECTION 2 — ABOUT / BIO
-    ============================================================ */
-    #about .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: start;
-    }
-
-    #about .about-text p {
-      font-size: 1.02rem;
-      color: var(--text);
-      margin-bottom: 20px;
-      line-height: 1.85;
-    }
-
-    #about .about-text p:last-child { margin-bottom: 0; }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 4px;
-    }
-
-    .stat-card {
-      background: var(--white);
-      border: 1px solid rgba(10,35,66,0.08);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-
-    .stat-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-      border-color: var(--gold);
-    }
-
-    .stat-number {
-      font-family: var(--font-head);
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .stat-number span {
-      color: var(--gold);
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .stat-full {
-      grid-column: 1 / -1;
-    }
-
-    /* Pull quote */
-    .pull-quote {
-      margin-top: 32px;
-      border-left: 3px solid var(--gold);
-      padding: 16px 24px;
-      background: rgba(201,168,76,0.05);
-      border-radius: 0 var(--radius) var(--radius) 0;
-    }
-
-    .pull-quote p {
-      font-family: var(--font-head);
-      font-style: italic;
-      font-size: 1.1rem !important;
-      color: var(--navy) !important;
-      margin: 0 !important;
-    }
-
-    /* ============================================================
-       SECTION 3 — POSITIONS & ROLES
-    ============================================================ */
-    #positions .timeline {
-      position: relative;
-      padding-left: 36px;
-    }
-
-    #positions .timeline::before {
-      content: '';
-      position: absolute;
-      left: 8px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.15));
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 40px;
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 28px 32px;
-      border: 1px solid rgba(10,35,66,0.07);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-
-    .timeline-item:last-child { margin-bottom: 0; }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -43px;
-      top: 36px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--gold);
-      border: 3px solid var(--white);
-      box-shadow: 0 0 0 2px var(--gold);
-    }
-
-    .timeline-item.current::before {
-      background: var(--navy);
-      box-shadow: 0 0 0 2px var(--navy);
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { box-shadow: 0 0 0 2px var(--navy), 0 0 0 5px rgba(10,35,66,0.12); }
-      50%       { box-shadow: 0 0 0 2px var(--navy), 0 0 0 9px rgba(10,35,66,0); }
-    }
-
-    .timeline-item:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateX(4px);
-      border-color: var(--gold);
-    }
-
-    .timeline-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-    }
-
-    .timeline-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 50px;
-      background: rgba(201,168,76,0.12);
-      color: var(--gold-dark);
-    }
-
-    .timeline-badge.current {
-      background: rgba(10,35,66,0.08);
-      color: var(--navy);
-    }
-
-    .timeline-title {
-      font-family: var(--font-head);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .timeline-org {
-      font-size: 0.93rem;
-      font-weight: 600;
-      color: var(--gold-dark);
-      margin-bottom: 10px;
-    }
-
-    .timeline-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ============================================================
-       SECTION 4 — ACHIEVEMENTS
-    ============================================================ */
-    #achievements .achieve-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .achieve-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .achieve-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.35s ease;
-    }
-
-    .achieve-card:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(201,168,76,0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-    }
-
-    .achieve-card:hover::after {
-      transform: scaleX(1);
-    }
-
-    .achieve-icon {
+    /* ── Accent divider ────────────────────────── */
+    .accent-bar {
       width: 52px;
-      height: 52px;
-      background: rgba(201,168,76,0.12);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: var(--gold);
-      margin-bottom: 20px;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #5b9fa6, #7db8be);
+      margin: 0.85rem 0 1.5rem;
     }
 
-    .achieve-title {
-      font-family: var(--font-head);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 10px;
+    /* ── Service card hover ────────────────────── */
+    .service-card {
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 44px rgba(30, 58, 95, 0.11);
     }
 
-    .achieve-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.58);
-      line-height: 1.7;
-    }
-
-    /* ============================================================
-       SECTION 5 — AWARDS & RECOGNITION
-    ============================================================ */
-    #awards .awards-note {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      background: rgba(201,168,76,0.08);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 50px;
-      padding: 6px 16px;
-      margin-bottom: 48px;
-    }
-
-    #awards .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .award-card {
-      background: var(--white);
-      border: 1px solid rgba(10,35,66,0.08);
-      border-radius: var(--radius-lg);
-      padding: 28px 24px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .award-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-      border-color: var(--gold);
-    }
-
-    .award-ribbon {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 28px;
-      height: 28px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      color: var(--navy);
-    }
-
-    .award-icon {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: var(--gold);
-      margin: 0 auto 18px;
-      box-shadow: 0 4px 16px rgba(10,35,66,0.18);
-    }
-
-    .award-org {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-bottom: 8px;
-    }
-
-    .award-title {
-      font-family: var(--font-head);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .award-desc {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* ============================================================
-       SECTION 6 — RESEARCH INTERESTS
-    ============================================================ */
-    #expertise .expertise-areas {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .expertise-card {
-      background: var(--white);
-      border: 1px solid rgba(10,35,66,0.07);
-      border-radius: var(--radius-lg);
-      padding: 28px 24px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .expertise-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-      border-color: var(--gold);
-    }
-
-    .expertise-icon-wrap {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      color: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .expertise-name {
-      font-family: var(--font-head);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .expertise-blurb {
-      font-size: 0.87rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    .expertise-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: auto;
-      padding-top: 4px;
-    }
-
-    .tag {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--navy);
-      background: rgba(10,35,66,0.06);
-      border-radius: 50px;
-      padding: 3px 10px;
-      border: 1px solid rgba(10,35,66,0.1);
-    }
-
-    /* ============================================================
-       SECTION 7 — ELEVENLABS CONVAI WIDGET
-    ============================================================ */
-    /* ElevenLabs widget renders its own shadow-DOM UI — no custom styles needed */
-
-    /* ============================================================
-       SECTION 8 — CONTACT
-    ============================================================ */
-    #contact .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .contact-info-title {
-      font-family: var(--font-head);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-
-    .contact-info-text {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      margin-bottom: 32px;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.7);
-      transition: color 0.2s;
-    }
-
-    .contact-link:hover {
-      color: var(--gold-light);
-    }
-
-    .contact-link-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.95rem;
-      color: var(--gold);
-      flex-shrink: 0;
-      transition: var(--transition);
-    }
-
-    .contact-link:hover .contact-link-icon {
-      background: rgba(201,168,76,0.12);
-      border-color: var(--gold);
-    }
-
-    /* Contact form */
-    .contact-form {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.65);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .form-control {
-      width: 100%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 0.93rem;
-      font-family: var(--font-body);
-      color: var(--white);
-      transition: var(--transition);
+    /* ── Form focus ring ───────────────────────── */
+    input:focus, textarea:focus, select:focus {
       outline: none;
-    }
-
-    .form-control::placeholder {
-      color: rgba(255,255,255,0.3);
-    }
-
-    .form-control:focus {
-      border-color: var(--gold);
-      background: rgba(255,255,255,0.09);
-      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
-    }
-
-    .form-control option {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    textarea.form-control {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .btn-submit {
-      width: 100%;
-      background: var(--gold);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 15px 32px;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      font-family: var(--font-body);
-      letter-spacing: 0.04em;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-submit::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.5s ease;
-    }
-
-    .btn-submit:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(201,168,76,0.4);
-    }
-
-    .btn-submit:hover::after {
-      transform: translateX(100%);
-    }
-
-    .btn-submit:active {
-      transform: translateY(0);
-    }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    footer {
-      background: #06172B;
-      color: rgba(255,255,255,0.45);
-      text-align: center;
-      padding: 28px 24px;
-      font-size: 0.82rem;
-      border-top: 1px solid rgba(201,168,76,0.1);
-    }
-
-    footer a {
-      color: var(--gold);
-    }
-
-    /* ============================================================
-       RESPONSIVE — TABLET (768px)
-    ============================================================ */
-    @media (max-width: 900px) {
-      .section { padding: 72px 0; }
-
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 140px;
-      }
-
-      .hero-text { max-width: 100%; }
-
-      .hero-kicker { justify-content: center; }
-      .hero-ctas { justify-content: center; }
-
-      .hero-avatar-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        order: -1;
-      }
-
-      .hero-avatar { width: 160px; height: 160px; font-size: 2.6rem; }
-
-      #about .about-grid { grid-template-columns: 1fr; gap: 48px; }
-
-      #contact .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .form-row { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-toggle { display: flex; }
-
-      .nav-mobile.show { display: flex; }
-
-      #positions .timeline { padding-left: 24px; }
-      #positions .timeline-item { padding: 20px; }
-      #positions .timeline-item::before { left: -31px; }
-
-      .contact-form { padding: 28px 20px; }
-    }
-
-    /* ============================================================
-       RESPONSIVE — MOBILE (320px)
-    ============================================================ */
-    @media (max-width: 480px) {
-      .section { padding: 56px 0; }
-
-      .hero-avatar { width: 130px; height: 130px; font-size: 2rem; }
-
-      .about-stats { grid-template-columns: 1fr 1fr; }
-
-      #awards .awards-grid { grid-template-columns: 1fr; }
-
+      box-shadow: 0 0 0 3px rgba(91, 159, 166, 0.25);
+      border-color: #5b9fa6;
     }
   </style>
 </head>
-<body>
 
-  <!-- ============================================================
+<body class="text-gray-800 antialiased">
+
+  <!-- ================================================================
        NAVIGATION
-  ============================================================ -->
-  <nav id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">Robert Conn<span>, PhD</span></a>
+  ================================================================ -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md"
+       role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
 
-      <ul class="nav-links" role="list">
-        <li><a href="#about"       aria-label="Navigate to About section">About</a></li>
-        <li><a href="#positions"   aria-label="Navigate to Career section">Career</a></li>
-        <li><a href="#achievements" aria-label="Navigate to Achievements section">Achievements</a></li>
-        <li><a href="#awards"      aria-label="Navigate to Awards section">Awards</a></li>
-        <li><a href="#expertise"   aria-label="Navigate to Expertise section">Expertise</a></li>
-        <li><a href="#contact"     aria-label="Navigate to Contact section">Contact</a></li>
-      </ul>
+        <!-- Brand -->
+        <a href="#home" class="flex flex-col group" aria-label="Dan Gardner MD — Home">
+          <span class="font-heading text-white text-lg lg:text-xl font-semibold leading-tight
+                       group-hover:text-teal-300 transition-colors duration-200">
+            Dan Gardner, MD
+          </span>
+          <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">
+            Psychotherapy &nbsp;·&nbsp; Psychoanalysis
+          </span>
+        </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+        <!-- Desktop links -->
+        <div class="hidden lg:flex items-center gap-5">
+          <a href="#about"                            class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html"       class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html"                    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
+          <a href="faq.html"                          class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="disclaimer.html"                   class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Disclaimer</a>
+          <a href="#contact"                          class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+                  </div>
+
+        <!-- Mobile hamburger -->
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md
+               hover:bg-white/10 transition-colors" aria-expanded="false"
+               aria-controls="mobile-menu" aria-label="Open navigation menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+
+      </div>
     </div>
 
-    <div class="nav-mobile" id="navMobile" aria-hidden="true">
-      <a href="#about"        onclick="closeMobileNav()">About</a>
-      <a href="#positions"    onclick="closeMobileNav()">Career</a>
-      <a href="#achievements" onclick="closeMobileNav()">Achievements</a>
-      <a href="#awards"       onclick="closeMobileNav()">Awards</a>
-      <a href="#expertise"    onclick="closeMobileNav()">Expertise</a>
-      <a href="#contact"      onclick="closeMobileNav()">Contact</a>
+    <!-- Mobile dropdown -->
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="#about"                            class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html"       class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html"                    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="faq.html"                          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html"                   class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="#contact"                          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+              </div>
     </div>
   </nav>
 
-  <!-- ============================================================
-       SECTION 1 — HERO
-  ============================================================ -->
-  <section id="hero" aria-label="Hero introduction">
-    <div class="hero-bg">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
+
+  <!-- ================================================================
+       HERO
+  ================================================================ -->
+  <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden pt-16"
+           aria-labelledby="hero-heading">
+
+    <!-- Background orbs (decorative) -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full
+                  bg-white/[0.025]"></div>
+      <div class="absolute bottom-0 -left-24 w-80 h-80 rounded-full bg-white/[0.03]"></div>
+      <div class="absolute top-1/2 right-1/4 w-72 h-72 rounded-full
+                  bg-teal-400/[0.08]"></div>
     </div>
 
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-kicker" aria-hidden="true">Independent Consultant</div>
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 py-20 lg:py-32 relative z-10 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <h1 class="hero-name">
-          Robert Conn
-          <em>PhD — Engineering &amp; Applied Science</em>
-        </h1>
-
-        <p class="hero-tagline">
-          "Engineering Solutions. Leading Change. Advancing Science."
-        </p>
-
-        <p class="hero-desc">
-          Bridging the worlds of rigorous research, academic leadership, and philanthropic vision —
-          delivering strategic insight to universities, national laboratories, government agencies,
-          and science-driven organizations.
-        </p>
-
-        <div class="hero-ctas">
-          <a href="#contact" class="btn-primary" aria-label="Engage Robert Conn as a consultant">
-            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-            Engage as Consultant
-          </a>
-          <a href="#about" class="btn-outline" aria-label="Learn more about Robert Conn">
-            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-            Learn More
-          </a>
-        </div>
-      </div>
-
-      <!-- Avatar column -->
-      <div class="hero-avatar-wrap">
-        <div class="hero-avatar" role="img" aria-label="Professional portrait of Robert Conn PhD">
-          <img src="https://cms.kavlifoundation.org/uploads/_700x700_fit_center-center_none/2017-RWConn-1.jpg"
-               alt="Robert Conn, PhD — portrait"
-               onerror="this.style.display='none'; this.parentElement.innerHTML += 'RC';" />
-        </div>
-
-        <div class="hero-pills" aria-label="Key credentials">
-          <div class="hero-pill">
-            <i class="fa-solid fa-university" aria-hidden="true"></i>
-            UC San Diego — Professor &amp; Dean
+        <!-- Text -->
+        <div class="fade-in">
+          <!-- Location chip -->
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm
+                      rounded-full px-4 py-1.5 mb-7 border border-white/20">
+            <span class="w-1.5 h-1.5 bg-teal-300 rounded-full animate-pulse"></span>
+            <span class="text-blue-100 text-[11px] font-medium tracking-widest uppercase">
+              DEL MAR, CALIFORNIA
+            </span>
           </div>
-          <div class="hero-pill">
-            <i class="fa-solid fa-flask" aria-hidden="true"></i>
-            Kavli Foundation — Director
-          </div>
-          <div class="hero-pill">
-            <i class="fa-solid fa-atom" aria-hidden="true"></i>
-            Plasma Physics &amp; Fusion Energy
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="hero-scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <i class="fa-solid fa-chevron-down"></i>
-    </div>
-  </section>
+          <h1 id="hero-heading"
+              class="font-heading text-[2.6rem] sm:text-5xl lg:text-6xl font-bold
+                     text-white leading-tight mb-3">
+            Dan Gardner,<br>
+            <span class="text-teal-300">MD</span>
+          </h1>
 
-
-  <!-- ============================================================
-       SECTION 2 — ABOUT / BIO
-  ============================================================ -->
-  <section id="about" class="section" aria-labelledby="about-heading">
-    <div class="container">
-      <div class="fade-in">
-        <p class="section-label">About</p>
-        <h2 class="section-title" id="about-heading">A Career Defined by Discovery &amp; Leadership</h2>
-        <div class="divider" aria-hidden="true"></div>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-text fade-in fade-in-delay-1">
-          <p>
-            Robert Conn, PhD is a distinguished engineer and academic statesman whose career spans
-            decades of transformative work at the intersection of frontier science, higher education,
-            and public policy. As a Professor of Engineering and longtime faculty member at the
-            University of California, San Diego, he built a reputation for combining intellectual
-            rigor with institutional vision — culminating in his tenure as Dean of the Irwin and
-            Joan Jacobs School of Engineering at UCSD, where he led the school through a period
-            of sustained growth, curricular innovation, and elevated research output.
-          </p>
-          <p>
-            Dr. Conn subsequently brought his leadership capabilities to bear at a national scale as
-            Director of the Kavli Foundation, one of the world's most influential philanthropies
-            dedicated to advancing basic science research. In that role, he steered major investments
-            across cosmology, nanoscience, neuroscience, and theoretical physics — shaping the
-            trajectories of research institutions and scientists worldwide. His tenure exemplified
-            the rare capacity to translate scientific depth into strategic philanthropy.
-          </p>
-          <p>
-            Today, Dr. Conn applies four decades of expertise as an independent consultant, advising
-            universities, national laboratories, government agencies, and research-driven foundations
-            on strategic planning, research leadership, science policy, and the cultivation of
-            high-impact scientific programs. His counsel is grounded in lived experience and
-            distinguished by a commitment to advancing science as a public good.
+          <p class="text-blue-200 text-lg lg:text-xl font-light tracking-wide mb-5">
+            Psychotherapy &amp; Psychoanalysis in San Diego
           </p>
 
-          <div class="pull-quote" role="blockquote">
-            <p>"The measure of a scientific career is not only in the discoveries made, but in the institutions strengthened and the scientists inspired along the way."</p>
-          </div>
-        </div>
-
-        <div class="fade-in fade-in-delay-2">
-          <div class="about-stats" role="list" aria-label="Career highlights at a glance">
-            <div class="stat-card" role="listitem">
-              <div class="stat-number">40<span>+</span></div>
-              <div class="stat-label">Years in Research &amp; Leadership</div>
-            </div>
-            <div class="stat-card" role="listitem">
-              <div class="stat-number" aria-label="UC San Diego">UCSD</div>
-              <div class="stat-label">Dean &amp; Professor of Engineering</div>
-            </div>
-            <div class="stat-card" role="listitem">
-              <div class="stat-number">Kavli</div>
-              <div class="stat-label">Foundation Director</div>
-            </div>
-            <div class="stat-card" role="listitem">
-              <div class="stat-number">3</div>
-              <div class="stat-label">Distinct Spheres of Impact</div>
-            </div>
-            <div class="stat-card stat-full" role="listitem">
-              <div class="stat-number">National<span> Reach</span></div>
-              <div class="stat-label">Advisor to Labs, Agencies &amp; Research Institutions</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 3 — POSITIONS & ROLES
-  ============================================================ -->
-  <section id="positions" class="section section-alt" aria-labelledby="positions-heading">
-    <div class="container">
-      <div class="fade-in">
-        <p class="section-label">Career</p>
-        <h2 class="section-title" id="positions-heading">Positions &amp; Roles</h2>
-        <div class="divider" aria-hidden="true"></div>
-        <p class="section-subtitle">A trajectory of expanding impact — from scientific discovery to institutional leadership to philanthropic vision.</p>
-      </div>
-
-      <div class="timeline" role="list" aria-label="Career timeline">
-
-        <!-- Current Role -->
-        <div class="timeline-item current fade-in fade-in-delay-1" role="listitem">
-          <div class="timeline-header">
-            <div>
-              <div class="timeline-badge current">
-                <i class="fa-solid fa-circle fa-xs" aria-hidden="true"></i>
-                Present
-              </div>
-            </div>
-          </div>
-          <div class="timeline-title">Independent Consultant</div>
-          <div class="timeline-org">Strategic Advisory &amp; Science Leadership</div>
-          <p class="timeline-desc">
-            Providing high-level strategic advisory services to universities, research institutions,
-            national laboratories, government agencies, and science-focused foundations. Areas of
-            engagement include research leadership, science policy, technology strategy,
-            and philanthropic grant strategy.
-          </p>
-        </div>
-
-        <!-- Kavli Foundation -->
-        <div class="timeline-item fade-in fade-in-delay-2" role="listitem">
-          <div class="timeline-header">
-            <div class="timeline-badge">
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
-              Former
-            </div>
-          </div>
-          <div class="timeline-title">Director</div>
-          <div class="timeline-org">The Kavli Foundation</div>
-          <p class="timeline-desc">
-            Led strategic direction at one of the world's foremost science philanthropies, dedicated
-            to advancing basic research in cosmology, nanoscience, neuroscience, and theoretical
-            physics. Guided grant-making strategy, fostered international scientific partnerships,
-            and elevated the Foundation's global profile in basic science investment.
-          </p>
-        </div>
-
-        <!-- UCSD Dean -->
-        <div class="timeline-item fade-in fade-in-delay-3" role="listitem">
-          <div class="timeline-header">
-            <div class="timeline-badge">
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
-              Former
-            </div>
-          </div>
-          <div class="timeline-title">Dean, Irwin and Joan Jacobs School of Engineering</div>
-          <div class="timeline-org">University of California, San Diego (UCSD) · 1993–2002</div>
-          <p class="timeline-desc">
-            Led transformational growth of one of the nation's preeminent engineering schools —
-            overseeing faculty recruitment, curricular development, research center expansion, and
-            school-wide strategy. Championed interdisciplinary programs bridging engineering
-            with energy policy and national security. Named Walter J. Zable Professor of
-            Engineering Science during this tenure; now Dean Emeritus.
-          </p>
-        </div>
-
-        <!-- UCSD Professor -->
-        <div class="timeline-item fade-in fade-in-delay-4" role="listitem">
-          <div class="timeline-header">
-            <div class="timeline-badge">
-              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-              Faculty
-            </div>
-          </div>
-          <div class="timeline-title">Professor of Engineering</div>
-          <div class="timeline-org">University of California, San Diego (UCSD)</div>
-          <p class="timeline-desc">
-            Distinguished faculty career spanning research in plasma physics, fusion energy,
-            and energy policy. Mentored generations of engineering students and researchers,
-            authored influential publications, and contributed to shaping national energy research
-            strategy through active engagement with federal agencies and national laboratories.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 4 — ACHIEVEMENTS & CONTRIBUTIONS
-  ============================================================ -->
-  <section id="achievements" class="section section-dark" aria-labelledby="achievements-heading">
-    <div class="container">
-      <div class="fade-in">
-        <p class="section-label">Impact</p>
-        <h2 class="section-title" id="achievements-heading">Achievements &amp; Contributions</h2>
-        <div class="divider" aria-hidden="true"></div>
-        <p class="section-subtitle">A body of work that spans laboratories, classrooms, boardrooms, and the halls of policy.</p>
-      </div>
-
-      <div class="achieve-grid" role="list">
-
-        <div class="achieve-card fade-in fade-in-delay-1" role="listitem">
-          <div class="achieve-icon" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></div>
-          <div class="achieve-title">Departmental Transformation at UCSD</div>
-          <p class="achieve-desc">
-            Spearheaded significant expansion of UCSD's Mechanical and Aerospace Engineering
-            Department — growing research centers, elevating faculty distinction, and cultivating
-            a culture of engineering innovation that continues to influence the institution today.
-          </p>
-        </div>
-
-        <div class="achieve-card fade-in fade-in-delay-2" role="listitem">
-          <div class="achieve-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
-          <div class="achieve-title">Global Science Philanthropy at the Kavli Foundation</div>
-          <p class="achieve-desc">
-            Directed investments shaping research agendas across leading universities and scientific
-            institutes worldwide, with particular impact in cosmology, nanoscience, and
-            neuroscience — advancing the Kavli Foundation's mission of basic science for humanity.
-          </p>
-        </div>
-
-        <div class="achieve-card fade-in fade-in-delay-3" role="listitem">
-          <div class="achieve-icon" aria-hidden="true"><i class="fa-solid fa-atom"></i></div>
-          <div class="achieve-title">Pioneer in Plasma Physics &amp; Fusion Energy</div>
-          <p class="achieve-desc">
-            Foundational research contributions in plasma physics and fusion energy, with lasting
-            implications for the global pursuit of clean, virtually limitless energy. Author of
-            influential publications at the forefront of fusion science and energy policy.
-          </p>
-        </div>
-
-        <div class="achieve-card fade-in fade-in-delay-4" role="listitem">
-          <div class="achieve-icon" aria-hidden="true"><i class="fa-solid fa-landmark-dome"></i></div>
-          <div class="achieve-title">National Science Policy Advisor</div>
-          <p class="achieve-desc">
-            Trusted advisor to national laboratories, federal agencies, and government bodies,
-            lending scientific and strategic expertise to energy policy, research investment
-            priorities, and the long-term direction of America's science enterprise.
-          </p>
-        </div>
-
-        <div class="achieve-card fade-in" role="listitem">
-          <div class="achieve-icon" aria-hidden="true"><i class="fa-solid fa-users-gear"></i></div>
-          <div class="achieve-title">Mentor to Next-Generation Scientists &amp; Leaders</div>
-          <p class="achieve-desc">
-            Dedicated career-long commitment to mentoring engineers, researchers, and academic
-            leaders — many of whom now lead their own departments, national programs, and
-            research enterprises around the world.
-          </p>
-        </div>
-
-        <div class="achieve-card fade-in fade-in-delay-1" role="listitem">
-          <div class="achieve-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
-          <div class="achieve-title">Influential Scholarship &amp; Publications</div>
-          <p class="achieve-desc">
-            Author and contributor to seminal works in engineering, fusion science, and science
-            policy — a body of scholarship that has informed research directions, curriculum
-            development, and policy frameworks at the national level.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 5 — AWARDS & RECOGNITION
-  ============================================================ -->
-  <section id="awards" class="section" aria-labelledby="awards-heading">
-    <div class="container">
-      <div class="fade-in">
-        <p class="section-label">Recognition</p>
-        <h2 class="section-title" id="awards-heading">Awards &amp; Honors</h2>
-        <div class="divider" aria-hidden="true"></div>
-      </div>
-
-      <!-- NOTE: Representative honors — client to confirm specific awards before publishing -->
-      <div class="awards-note fade-in" aria-label="Note about content">
-        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-        Representative Honors — Client to confirm specific awards before publishing
-      </div>
-
-      <div class="awards-grid" role="list">
-
-        <div class="award-card fade-in fade-in-delay-1" role="listitem">
-          <div class="award-ribbon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
-          <div class="award-icon" aria-hidden="true"><i class="fa-solid fa-medal"></i></div>
-          <div class="award-org">National Academies</div>
-          <div class="award-title">Distinguished Service Recognition</div>
-          <p class="award-desc">Honored for exceptional contributions to engineering research and the advancement of science policy at the national level.</p>
-        </div>
-
-        <div class="award-card fade-in fade-in-delay-2" role="listitem">
-          <div class="award-ribbon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
-          <div class="award-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
-          <div class="award-org">IEEE</div>
-          <div class="award-title">Fellow / Distinguished Honor</div>
-          <p class="award-desc">Recognized by the world's largest technical professional organization for sustained contributions to electrical engineering and energy science.</p>
-        </div>
-
-        <div class="award-card fade-in fade-in-delay-3" role="listitem">
-          <div class="award-ribbon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
-          <div class="award-icon" aria-hidden="true"><i class="fa-solid fa-fire-flame-curved"></i></div>
-          <div class="award-org">U.S. Department of Energy</div>
-          <div class="award-title">Outstanding Contribution to Fusion Research</div>
-          <p class="award-desc">Acknowledged for pioneering scientific work and leadership in advancing the nation's fusion energy program and related energy policy initiatives.</p>
-        </div>
-
-        <div class="award-card fade-in fade-in-delay-4" role="listitem">
-          <div class="award-ribbon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
-          <div class="award-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
-          <div class="award-org">UC San Diego</div>
-          <div class="award-title">Distinguished Faculty Award</div>
-          <p class="award-desc">Recognized by UCSD for exemplary scholarship, academic leadership, and a career of lasting contributions to engineering education and research.</p>
-        </div>
-
-        <div class="award-card fade-in" role="listitem">
-          <div class="award-ribbon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
-          <div class="award-icon" aria-hidden="true"><i class="fa-solid fa-earth-americas"></i></div>
-          <div class="award-org">International Science Community</div>
-          <div class="award-title">Leadership in Science Philanthropy</div>
-          <p class="award-desc">Honored for transformative leadership at the Kavli Foundation, expanding the frontiers of basic science investment and global research collaboration.</p>
-        </div>
-
-        <div class="award-card fade-in fade-in-delay-1" role="listitem">
-          <div class="award-ribbon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
-          <div class="award-icon" aria-hidden="true"><i class="fa-solid fa-scroll"></i></div>
-          <div class="award-org">Engineering &amp; Science Policy</div>
-          <div class="award-title">Policy Impact Recognition</div>
-          <p class="award-desc">Acknowledged for sustained influence on national research priorities and science policy through advisory service to federal agencies and research bodies.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 6 — RESEARCH INTERESTS & EXPERTISE
-  ============================================================ -->
-  <section id="expertise" class="section section-alt" aria-labelledby="expertise-heading">
-    <div class="container">
-      <div class="fade-in">
-        <p class="section-label">Expertise</p>
-        <h2 class="section-title" id="expertise-heading">Research Interests &amp; Areas of Expertise</h2>
-        <div class="divider" aria-hidden="true"></div>
-        <p class="section-subtitle">Consulting services informed by decades of direct experience across each domain.</p>
-      </div>
-
-      <div class="expertise-areas" role="list">
-
-        <div class="expertise-card fade-in fade-in-delay-1" role="listitem">
-          <div class="expertise-icon-wrap" aria-hidden="true"><i class="fa-solid fa-atom"></i></div>
-          <div class="expertise-name">Plasma Physics &amp; Fusion Energy</div>
-          <p class="expertise-blurb">
-            Foundational scientific expertise in plasma confinement, fusion reactor design, and
-            the science underlying next-generation clean energy. Advisor to fusion programs and
-            national energy initiatives.
-          </p>
-          <div class="expertise-tags" aria-label="Related topics">
-            <span class="tag">Fusion Reactors</span>
-            <span class="tag">Plasma Confinement</span>
-            <span class="tag">Energy Physics</span>
-          </div>
-        </div>
-
-        <div class="expertise-card fade-in fade-in-delay-2" role="listitem">
-          <div class="expertise-icon-wrap" aria-hidden="true"><i class="fa-solid fa-landmark-dome"></i></div>
-          <div class="expertise-name">Science Policy &amp; Research Strategy</div>
-          <p class="expertise-blurb">
-            Deep experience advising federal agencies, national labs, and government bodies on
-            research investment strategy, energy policy, and the translation of basic science
-            into national priorities.
-          </p>
-          <div class="expertise-tags" aria-label="Related topics">
-            <span class="tag">Federal R&amp;D Policy</span>
-            <span class="tag">Energy Strategy</span>
-            <span class="tag">National Labs</span>
-          </div>
-        </div>
-
-        <div class="expertise-card fade-in fade-in-delay-3" role="listitem">
-          <div class="expertise-icon-wrap" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></div>
-          <div class="expertise-name">Higher Education Leadership</div>
-          <p class="expertise-blurb">
-            Proven expertise in academic administration — from department-level transformation
-            to university-wide strategy. Advises on faculty development, research center design,
-            and institutional growth.
-          </p>
-          <div class="expertise-tags" aria-label="Related topics">
-            <span class="tag">Academic Strategy</span>
-            <span class="tag">Faculty Development</span>
-            <span class="tag">Research Centers</span>
-          </div>
-        </div>
-
-        <div class="expertise-card fade-in fade-in-delay-4" role="listitem">
-          <div class="expertise-icon-wrap" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
-          <div class="expertise-name">Engineering Innovation</div>
-          <p class="expertise-blurb">
-            Decades at the frontier of applied engineering — from foundational research to
-            translational applications. Advises on innovation ecosystems, R&amp;D pipeline
-            strategy, and the engineering-to-impact journey.
-          </p>
-          <div class="expertise-tags" aria-label="Related topics">
-            <span class="tag">Applied R&amp;D</span>
-            <span class="tag">Innovation Strategy</span>
-            <span class="tag">Tech Transfer</span>
-          </div>
-        </div>
-
-        <div class="expertise-card fade-in" role="listitem">
-          <div class="expertise-icon-wrap" aria-hidden="true"><i class="fa-solid fa-hand-holding-heart"></i></div>
-          <div class="expertise-name">Philanthropic Grant Strategy</div>
-          <p class="expertise-blurb">
-            Executive experience leading one of the world's leading science philanthropies.
-            Advises foundations, donors, and institutions on designing grant programs, evaluating
-            scientific impact, and building durable research legacies.
-          </p>
-          <div class="expertise-tags" aria-label="Related topics">
-            <span class="tag">Grant Strategy</span>
-            <span class="tag">Science Philanthropy</span>
-            <span class="tag">Impact Assessment</span>
-          </div>
-        </div>
-
-        <div class="expertise-card fade-in fade-in-delay-1" role="listitem">
-          <div class="expertise-icon-wrap" aria-hidden="true"><i class="fa-solid fa-rocket"></i></div>
-          <div class="expertise-name">Technology Commercialization</div>
-          <p class="expertise-blurb">
-            Guides the translation of academic and laboratory research into commercially viable
-            technologies — from IP strategy and licensing to spin-out formation and
-            industry-partnership frameworks.
-          </p>
-          <div class="expertise-tags" aria-label="Related topics">
-            <span class="tag">IP Strategy</span>
-            <span class="tag">Licensing</span>
-            <span class="tag">Spin-outs</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 8 — CONTACT
-  ============================================================ -->
-  <section id="contact" class="section section-dark" aria-labelledby="contact-heading">
-    <div class="container">
-      <div class="fade-in">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title" id="contact-heading">Engage Dr. Conn</h2>
-        <div class="divider" aria-hidden="true"></div>
-      </div>
-
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div class="fade-in fade-in-delay-1">
-          <h3 class="contact-info-title">Ready to Collaborate?</h3>
-          <p class="contact-info-text">
-            Dr. Conn welcomes inquiries from universities, research institutions, national
-            laboratories, government agencies, and science-focused foundations seeking
-            strategic guidance, advisory board participation, speaking engagements, or
-            consulting partnerships.
+          <p class="font-heading text-white/90 text-xl lg:text-2xl italic leading-relaxed mb-6">
+            "Working together, we listen, understand,<br class="hidden sm:block">
+            and create better solutions."
           </p>
 
-          <div class="contact-links" role="list">
-            <!-- INTEGRATION POINT: Replace href with actual LinkedIn profile URL -->
-            <a href="#"
-               class="contact-link"
-               aria-label="Connect with Robert Conn on LinkedIn"
-               role="listitem">
-              <div class="contact-link-icon" aria-hidden="true">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </div>
-              LinkedIn Profile
-            </a>
+          <p class="text-blue-100 text-base leading-relaxed mb-10 max-w-md">
+            A trusting and respectful therapeutic relationship that leads to greater
+            self-understanding, self-confidence, and fulfillment — in your personal
+            life and career.
+          </p>
 
-            <a href="mailto:rconn@ucsd.edu"
-               class="contact-link"
-               aria-label="Send an email to Robert Conn"
-               role="listitem">
-              <div class="contact-link-icon" aria-hidden="true">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              Email Inquiry
-            </a>
-
+          <div class="flex flex-wrap gap-4">
             <a href="#contact"
-               class="contact-link"
-               aria-label="Submit a consultation request via form"
-               role="listitem">
-              <div class="contact-link-icon" aria-hidden="true">
-                <i class="fa-solid fa-calendar-check"></i>
-              </div>
-              Request a Consultation
+               class="bg-white text-navy-800 font-semibold px-8 py-3.5 rounded-full
+                      hover:bg-cream-100 transition-all duration-200 shadow-lg
+                      hover:shadow-xl text-sm">
+              Get in Touch
             </a>
+            <a href="#about"
+               class="border border-white/50 text-white font-semibold px-8 py-3.5
+                      rounded-full hover:bg-white/10 transition-all duration-200 text-sm">
+              About Dr. Gardner
+            </a>
+          </div>
+
+          <!-- Availability notice -->
+          <div class="mt-8 inline-flex items-center gap-2 text-sm text-blue-200">
+            <svg class="w-4 h-4 text-amber-300 flex-shrink-0" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>
+              Currently not accepting new patients. Existing patients may
+              <a href="#contact" class="underline hover:text-white transition-colors">
+                reach out directly</a>.
+            </span>
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <!-- FORM BACKEND: Connect to Formspree / Netlify Forms / custom endpoint -->
-        <form class="contact-form fade-in fade-in-delay-2"
-              id="contactForm"
-              action="#"
-              method="POST"
-              novalidate
-              aria-label="Contact form">
+        <!-- Profile card (desktop) -->
+        <div class="fade-in hidden lg:flex justify-center items-center"
+             style="transition-delay:0.2s">
+          <div class="relative">
+            <div class="w-[320px] rounded-3xl bg-white/10 backdrop-blur-sm border
+                        border-white/20 p-8 shadow-2xl flex flex-col items-center gap-5">
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="cf-name">Name <span aria-hidden="true">*</span></label>
-              <input type="text"
-                     id="cf-name"
-                     name="name"
-                     class="form-control"
-                     placeholder="Your full name"
-                     required
-                     aria-required="true" />
+              <!-- Avatar -->
+              <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-white/30 bg-black">
+                <img src="Dan headshot dark background.png" alt="Dan Gardner, MD"
+                     class="w-full h-full object-cover object-top">
+              </div>
+
+              <div class="text-center">
+                <p class="font-heading text-white font-semibold text-lg">Dan Gardner, MD</p>
+                <p class="text-blue-200 text-sm mt-0.5">Board-Certified Psychiatrist</p>
+                <p class="text-blue-300 text-xs mt-0.5">Del Mar, California</p>
+              </div>
+
+              <!-- Mini credential list -->
+              <div class="w-full flex flex-col gap-2">
+                <div class="flex items-center gap-2.5 bg-white/10 rounded-xl px-3.5 py-2.5">
+                  <svg class="w-4 h-4 text-teal-300 flex-shrink-0" fill="none"
+                       viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="text-white/80 text-xs">Diplomate, American Board of Psychiatry and Neurology (Psychiatry)</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/10 rounded-xl px-3.5 py-2.5">
+                  <svg class="w-4 h-4 text-teal-300 flex-shrink-0" fill="none"
+                       viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="text-white/80 text-xs">Distinguished Life Fellow, American Psychiatric Association</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/10 rounded-xl px-3.5 py-2.5">
+                  <svg class="w-4 h-4 text-teal-300 flex-shrink-0" fill="none"
+                       viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="text-white/80 text-xs">San Diego Top Doctor</span>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="cf-email">Email <span aria-hidden="true">*</span></label>
-              <input type="email"
-                     id="cf-email"
-                     name="email"
-                     class="form-control"
-                     placeholder="your@email.com"
-                     required
-                     aria-required="true" />
+
+            <!-- Decorative outer ring -->
+            <div class="absolute -inset-5 rounded-[2rem] border border-white/[0.07]
+                        -z-10 pointer-events-none"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center
+                gap-1.5 animate-bounce" aria-hidden="true">
+      <span class="text-white/35 text-[10px] tracking-widest uppercase">Scroll</span>
+      <svg class="w-4 h-4 text-white/35" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       ABOUT
+  ================================================================ -->
+  <section id="about" class="py-20 lg:py-28 bg-white" aria-labelledby="about-heading">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+
+      <!-- Section label + heading -->
+      <div class="text-center mb-14 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">
+          About Dr. Gardner
+        </p>
+        <h2 id="about-heading"
+            class="font-heading text-3xl lg:text-[2.4rem] font-bold text-navy-800
+                   leading-tight mb-1">
+          Background &amp; Professional Profile
+        </h2>
+        <div class="accent-bar mx-auto"></div>
+      </div>
+
+      <!-- Top row: photo + intro bio -->
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start mb-16">
+
+        <!-- Portrait column -->
+        <div class="lg:col-span-2 fade-in">
+          <div class="relative">
+            <!-- Dr. Gardner photo -->
+            <div class="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-black">
+              <img src="Dan headshot dark background.png" alt="Dan Gardner, MD — Psychiatrist and Psychoanalyst"
+                   class="w-full h-full object-cover object-top">
+            </div>
+            <!-- Floating award badge -->
+            <div class="absolute -bottom-5 -right-5 bg-white rounded-2xl px-5 py-4
+                        shadow-xl border border-gray-100 text-center w-[140px]">
+              <p class="font-heading text-3xl font-bold text-navy-800">Top</p>
+              <p class="text-teal-500 font-semibold text-sm">Doctor</p>
+              <p class="text-gray-400 text-[11px] leading-tight mt-1">
+                San Diego Physicians of Exceptional Excellence
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intro bio column -->
+        <div class="lg:col-span-3 fade-in" style="transition-delay:0.15s">
+
+          <p class="text-gray-500 text-base leading-relaxed mb-5">
+            Dr. Dan Gardner is a board-certified psychiatrist and trained psychoanalyst
+            practicing in San Diego with decades of experience. Educated at Northwestern
+            University — earning both his B.S. in Medicine and his M.D. in the Honors
+            Program — he completed his internship in Internal Medicine at Mount Zion Hospital
+            in San Francisco, followed by his psychiatry residency at UCSD School of Medicine,
+            where he also served as Chief Resident in Consultation-Liaison Psychiatry at
+            University Hospital San Diego.
+          </p>
+          <p class="text-gray-500 text-base leading-relaxed mb-5">
+            Following residency, Dr. Gardner pursued graduate training in Adult Psychoanalysis
+            through the San Diego Psychoanalytic Society and Institute, deepening his ability
+            to help patients explore unconscious patterns, unresolved conflicts, and the roots
+            of long-standing personal difficulties.
+          </p>
+          <p class="text-gray-500 text-base leading-relaxed mb-5">
+            Dr. Gardner brings a genuinely collaborative spirit to his practice — building
+            trusting, respectful relationships that lead to greater self-understanding,
+            self-confidence, and fulfillment in personal and professional life. He also
+            provides consultation to mental health therapists and
+            healthcare providers on patient interaction, treatment challenges, and career
+            development.
+          </p>
+          <p class="text-gray-500 text-base leading-relaxed">
+            All appointments are conducted via secure video conference or phone call, ensuring
+            accessible and private care for patients throughout the San Diego region and beyond.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Credentials grid -->
+      <div class="space-y-8">
+
+        <!-- Awards — full-width banner -->
+        <div class="fade-in bg-amber-50 rounded-2xl p-6 border border-amber-100 flex gap-4 items-start">
+          <div class="w-9 h-9 rounded-lg bg-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0
+                       00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1
+                       0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976
+                       -2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538
+                       -1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57
+                       -.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading text-base font-bold text-navy-800 mb-1">Awards</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Selected by physician peers as one of San Diego's Physicians of Exceptional Excellence (Top Doctors),
+              <em>San Diego Magazine</em>, 2004, 2005, 2006, 2010, 2011, 2012, 2013, and 2015.
+            </p>
+          </div>
+        </div>
+
+        <!-- Three-column row: Board Cert · Professional Affiliations · Education -->
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <!-- Board Certification -->
+          <div class="fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0
+                           014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42
+                           3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806
+                           1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42
+                           3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0
+                           01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438
+                           3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-navy-800">Board Certification</h3>
+            </div>
+            <div class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+              <div>
+                <p class="text-navy-800 text-sm font-semibold leading-snug">Diplomate</p>
+                <p class="text-gray-400 text-xs mt-0.5">American Board of Psychiatry &amp; Neurology (Psychiatry)</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="cf-org">Organization</label>
-            <input type="text"
-                   id="cf-org"
-                   name="organization"
-                   class="form-control"
-                   placeholder="University, company, or institution" />
+          <!-- Professional Affiliations -->
+          <div class="fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200"
+               style="transition-delay:0.08s">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283
+                           -.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283
+                           .356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-navy-800">Professional Affiliations</h3>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm leading-snug">Alpha Omega Alpha Medical Honor Society</p>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm leading-snug">Distinguished Life Fellow, American Psychiatric Association</p>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm leading-snug">Professional Advisory Council and Past Board Member, San Diego Brain Injury Foundation</p>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm leading-snug">Medical Director, Hidden Valley Ranch Rehabilitation Services (Brain Injury Residential Care)</p>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm leading-snug">Member, San Diego Psychoanalytic Center</p>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <p class="text-gray-600 text-sm leading-snug">Member, San Diego Psychiatric Society</p>
+              </li>
+            </ul>
           </div>
 
-          <div class="form-group">
-            <label for="cf-inquiry">Area of Inquiry <span aria-hidden="true">*</span></label>
-            <select id="cf-inquiry"
-                    name="inquiry"
-                    class="form-control"
-                    required
-                    aria-required="true">
-              <option value="" disabled selected>Select an area…</option>
-              <option value="strategic-advisory">Strategic Advisory</option>
-              <option value="research-leadership">Research Leadership</option>
-              <option value="science-policy">Science Policy</option>
-              <option value="speaking">Speaking Engagement</option>
-              <option value="other">Other</option>
-            </select>
+          <!-- Education & Training -->
+          <div class="fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200"
+               style="transition-delay:0.16s">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665
+                           6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998
+                           12.078 12.078 0 01.665-6.479L12 14z"/>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-navy-800">Education &amp; Training</h3>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <div>
+                  <p class="text-navy-800 text-sm font-semibold leading-snug">Undergraduate</p>
+                  <p class="text-gray-400 text-xs mt-0.5">Northwestern University, Bachelor of Science in Medicine</p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <div>
+                  <p class="text-navy-800 text-sm font-semibold leading-snug">Medical School</p>
+                  <p class="text-gray-400 text-xs mt-0.5">Northwestern University Medical School, M.D. (Honors Program in Medical Education)</p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <div>
+                  <p class="text-navy-800 text-sm font-semibold leading-snug">Internship</p>
+                  <p class="text-gray-400 text-xs mt-0.5">Mount Zion Hospital and Medical Center, San Francisco, CA, Internal Medicine</p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <div>
+                  <p class="text-navy-800 text-sm font-semibold leading-snug">Residency</p>
+                  <p class="text-gray-400 text-xs mt-0.5">University of California San Diego, School of Medicine, Psychiatry</p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <div>
+                  <p class="text-navy-800 text-sm font-semibold leading-snug">Chief Resident</p>
+                  <p class="text-gray-400 text-xs mt-0.5">Consultation-Liaison Psychiatry Service, University Hospital, San Diego, CA</p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+                <div>
+                  <p class="text-navy-800 text-sm font-semibold leading-snug">Post-Residency</p>
+                  <p class="text-gray-400 text-xs mt-0.5">Graduate, Adult Psychoanalysis, San Diego Psychoanalytic Society and Institute</p>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <div class="form-group">
-            <label for="cf-message">Message <span aria-hidden="true">*</span></label>
-            <textarea id="cf-message"
-                      name="message"
-                      class="form-control"
-                      placeholder="Please describe your inquiry or project…"
-                      required
-                      aria-required="true"></textarea>
-          </div>
+        </div>
 
-          <button type="submit" class="btn-submit" id="submitBtn" aria-label="Send inquiry to Robert Conn">
-            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            Send Inquiry
-          </button>
-        </form>
+        <!-- Past Positions — full-width, two-column list -->
+        <div class="fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-navy-800 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16
+                         6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0
+                         002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading text-base font-bold text-navy-800">Past Positions</h3>
+          </div>
+          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Voluntary Associate Clinical Professor of Psychiatry, UCSD School of Medicine</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Section Head, Psychiatry and Behavioral Medicine, Scripps Clinic San Diego</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Medical Director, NeuroCare San Diego, Brain Injury Rehabilitation Programs</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Consultant, Learning Services Escondido (Brain Injury Rehabilitation)</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Faculty and Member, Executive Committee of the Board of Directors, San Diego Psychoanalytic Center</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, Council, San Diego Psychiatric Society</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, San Diego County Medical Society</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, American Medical Association</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, Professional Advisory Board, The Wellness Community, San Diego</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, Board of Directors, The Center for the Prevention of Medication Side Effects</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, Functional Review Panel, Physicians Foundations Health Information Technology</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, Advisory Board, SanDiegoPsych.com</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, Community Advisory Committee, Operation Family Caregiver</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 mt-2"></span>
+              <p class="text-gray-600 text-sm leading-snug">Member, Medical Advisory Board, Medcorder</p>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
+  <!-- ================================================================
+       SERVICES
+  ================================================================ -->
+  <section id="services" class="py-20 lg:py-28 bg-cream-50"
+           aria-labelledby="services-heading">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-14 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">
+          Areas of Focus
+        </p>
+        <h2 id="services-heading"
+            class="font-heading text-3xl lg:text-[2.4rem] font-bold text-navy-800 mb-4">
+          Services &amp; Specializations
+        </h2>
+        <p class="text-gray-400 text-base max-w-xl mx-auto leading-relaxed">
+          A focused set of services designed to help individuals and healthcare professionals
+          build insight, resilience, and effectiveness.
+        </p>
+      </div>
+
+      <!-- Card grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Psychotherapy -->
+        <a href="psychotherapy.html" class="service-card block bg-white rounded-2xl p-7 shadow-sm border border-gray-100 fade-in group">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0
+                       00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-navy-800 mb-2">Psychotherapy</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Collaborative, insight-oriented therapy to navigate personal and professional
+            challenges, improve relationships, and build lasting emotional resilience.
+          </p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Psychoanalysis -->
+        <a href="psychoanalysis.html" class="service-card block bg-white rounded-2xl p-7 shadow-sm border border-gray-100
+                    fade-in group" style="transition-delay:0.08s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13
+                       C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477
+                       14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18
+                       16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-navy-800 mb-2">Psychoanalysis</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            A deeper, longer-term therapeutic exploration to uncover unconscious patterns,
+            resolve long-standing conflicts, and foster profound personal transformation.
+          </p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- TBI -->
+        <a href="traumatic-brain-injury.html" class="service-card block bg-white rounded-2xl p-7 shadow-sm border border-gray-100
+                    fade-in group" style="transition-delay:0.16s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2
+                       M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-navy-800 mb-2">
+            Traumatic Brain Injury
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Specialized consultation and support for individuals recovering from traumatic
+            brain injury — addressing cognitive, emotional, and interpersonal challenges.
+          </p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Healthcare consulting -->
+        <a href="healthcare-professional-consulting.html" class="service-card block bg-white rounded-2xl p-7 shadow-sm border border-gray-100
+                    fade-in group" style="transition-delay:0.08s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283
+                       -.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283
+                       .356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-navy-800 mb-2">
+            Healthcare Professional Consulting
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Consultation for mental health professionals and physicians on patient
+            communication, treatment challenges, and professional development.
+          </p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Communication -->
+        <a href="communication-effectiveness.html" class="service-card block bg-white rounded-2xl p-7 shadow-sm border border-gray-100
+                    fade-in group" style="transition-delay:0.16s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863
+                       0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418
+                       4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-navy-800 mb-2">
+            Communication Effectiveness
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Targeted coaching to communicate more clearly and persuasively — improving
+            outcomes in personal relationships and professional interactions.
+          </p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <!-- Strengths -->
+        <a href="personal-strengths-growth.html" class="service-card block bg-white rounded-2xl p-7 shadow-sm border border-gray-100
+                    fade-in group" style="transition-delay:0.24s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-navy-800 mb-2">
+            Personal Strengths &amp; Growth
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Identifying and building on your core strengths to overcome obstacles, improve
+            confidence, and achieve greater fulfillment across all areas of life.
+          </p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+
+      <!-- Telehealth callout -->
+      <div class="mt-9 p-5 bg-navy-800/[0.05] border border-navy-800/10 rounded-2xl
+                  flex items-start gap-4 fade-in">
+        <div class="w-10 h-10 rounded-xl bg-navy-800 flex items-center justify-center
+                    flex-shrink-0 mt-0.5">
+          <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.894L15 14
+                     M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-800 text-sm">Telehealth Appointments Only</p>
+          <p class="text-gray-400 text-sm mt-1 leading-relaxed">
+            All appointments are conducted via secure video conference or phone call —
+            offering convenient, private care from wherever you are in the San Diego region
+            and beyond.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       CREDENTIALS & AFFILIATIONS
+  ================================================================ -->
+  <section id="credentials" class="py-16 lg:py-20 bg-navy-800"
+           aria-labelledby="credentials-heading">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+
+      <div class="text-center mb-12 fade-in">
+        <p class="text-teal-400 text-xs font-semibold tracking-widest uppercase mb-2">
+          Professional Standing
+        </p>
+        <h2 id="credentials-heading"
+            class="font-heading text-2xl lg:text-3xl font-bold text-white mb-3">
+          Credentials &amp; Affiliations
+        </h2>
+        <p class="text-blue-200 text-sm max-w-lg mx-auto leading-relaxed">
+          Dr. Gardner holds the highest level of board certification and professional
+          recognition in psychiatry.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="text-center p-6 rounded-2xl bg-white/[0.06] border border-white/10
+                    fade-in">
+          <div class="w-14 h-14 rounded-full bg-teal-400/20 border border-teal-400/30
+                      flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0
+                       014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42
+                       3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806
+                       1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42
+                       3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0
+                       01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438
+                       3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-white font-semibold text-base mb-1">Diplomate, ABPN</h3>
+          <p class="text-blue-300 text-xs leading-relaxed">
+            American Board of Psychiatry and Neurology — Psychiatry
+          </p>
+        </div>
+
+        <div class="text-center p-6 rounded-2xl bg-white/[0.06] border border-white/10
+                    fade-in" style="transition-delay:0.08s">
+          <div class="w-14 h-14 rounded-full bg-teal-400/20 border border-teal-400/30
+                      flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283
+                       -.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283
+                       .356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-white font-semibold text-base mb-1">
+            Distinguished Life Fellow
+          </h3>
+          <p class="text-blue-300 text-xs leading-relaxed">American Psychiatric Association</p>
+        </div>
+
+        <div class="text-center p-6 rounded-2xl bg-white/[0.06] border border-white/10
+                    fade-in" style="transition-delay:0.16s">
+          <div class="w-14 h-14 rounded-full bg-teal-400/20 border border-teal-400/30
+                      flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0
+                       01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0
+                       00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-white font-semibold text-base mb-1">Former Clinical Faculty</h3>
+          <p class="text-blue-300 text-xs leading-relaxed">
+            Dept. of Psychiatry, UCSD School of Medicine
+          </p>
+        </div>
+
+        <div class="text-center p-6 rounded-2xl bg-white/[0.06] border border-white/10
+                    fade-in" style="transition-delay:0.24s">
+          <div class="w-14 h-14 rounded-full bg-teal-400/20 border border-teal-400/30
+                      flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-teal-300" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0
+                       00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1
+                       0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976
+                       -2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538
+                       -1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57
+                       -.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-white font-semibold text-base mb-1">Top Doctor Award</h3>
+          <p class="text-blue-300 text-xs leading-relaxed">
+            San Diego Physicians of Exceptional Excellence
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Sunshine Act notice -->
+      <div class="mt-10 px-5 py-4 bg-white/[0.05] rounded-xl border border-white/10 fade-in">
+        <p class="text-blue-300 text-xs text-center leading-relaxed">
+          <span class="text-white font-medium">Transparency Notice:</span>
+          In compliance with the federal Physician Payments Sunshine Act, information about
+          payments or other transfers of value from medical manufacturers may be found at the
+          <a href="https://openpaymentsdata.cms.gov" target="_blank" rel="noopener noreferrer"
+             class="text-teal-400 underline hover:text-teal-300 transition-colors">
+            CMS Open Payments Database</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       PHILOSOPHY QUOTE
+  ================================================================ -->
+  <section class="py-16 lg:py-24 bg-cream-100" aria-label="Dr. Gardner's philosophy">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8 text-center fade-in">
+      <svg class="w-10 h-10 text-teal-400/40 mx-auto mb-6" fill="currentColor"
+           viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151
+                 c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391
+                 c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996
+                 5.849h3.983v10h-9.983z"/>
+      </svg>
+      <blockquote class="font-heading text-2xl lg:text-3xl text-navy-800 font-medium
+                         italic leading-relaxed mb-6">
+        "Working together, we listen, understand,<br class="hidden sm:block">
+        and create better solutions."
+      </blockquote>
+      <cite class="not-italic">
+        <p class="text-gray-500 text-sm font-semibold tracking-wide">— Dan Gardner, MD</p>
+        <p class="text-gray-400 text-sm mt-1">
+          Board-Certified Psychiatrist &nbsp;·&nbsp; Del Mar, California
+        </p>
+      </cite>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       CONTACT
+  ================================================================ -->
+  <section id="contact" class="py-20 lg:py-28 bg-white"
+           aria-labelledby="contact-heading">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+
+      <div class="text-center mb-14 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">
+          Reach Out
+        </p>
+        <h2 id="contact-heading"
+            class="font-heading text-3xl lg:text-[2.4rem] font-bold text-navy-800 mb-4">
+          Contact Dr. Gardner
+        </h2>
+        <p class="text-gray-400 text-base max-w-xl mx-auto leading-relaxed">
+          For routine inquiries, expect a response within one business day.
+          For urgent matters, please call directly.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto w-full">
+
+        <!-- ── Contact details ───────────────────────────────────── -->
+        <div class="fade-in space-y-5">
+
+          <div class="p-6 rounded-2xl bg-cream-50 border border-cream-200">
+            <h3 class="font-heading text-xl font-bold text-navy-800 mb-6">
+              Contact Information
+            </h3>
+
+            <div class="space-y-5">
+
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-navy-800 flex items-center
+                            justify-center flex-shrink-0">
+                  <svg class="w-4.5 h-4.5 w-5 h-5 text-teal-300" fill="none"
+                       viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1
+                             0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13
+                             -2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2
+                             0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                    Phone
+                  </p>
+                  <p class="text-navy-800 font-semibold text-base">
+                    858-560-5609
+                  </p>
+                  <p class="text-gray-400 text-xs mt-0.5">
+                    For urgent matters and appointment cancellations
+                  </p>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-navy-800 flex items-center
+                            justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24"
+                       stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0
+                             002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                    Email
+                  </p>
+                  <a href="mailto:dgardner01@protonmail.com"
+                     class="text-navy-800 font-semibold text-base hover:text-teal-500
+                            transition-colors">
+                    dgardner01@protonmail.com
+                  </a>
+                  <p class="text-gray-400 text-xs mt-0.5">
+                    Routine requests responded to within one business day
+                  </p>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-navy-800 flex items-center
+                            justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24"
+                       stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244
+                             -4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                    Mailing Address
+                  </p>
+                  <p class="text-navy-800 font-semibold text-base">PO Box 2275</p>
+                  <p class="text-gray-500 text-sm">Del Mar, CA 92014</p>
+                </div>
+              </div>
+
+              <!-- Fax -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-navy-800 flex items-center
+                            justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-teal-300" fill="none" viewBox="0 0 24 24"
+                       stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1
+                             0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                    Fax
+                  </p>
+                  <p class="text-navy-800 font-semibold text-base">844-837-1205</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Telehealth note -->
+          <div class="p-5 rounded-2xl bg-teal-400/[0.06] border border-teal-400/20
+                      flex gap-3 items-start">
+            <svg class="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.894L15 14
+                       M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+            <div>
+              <p class="font-semibold text-teal-800 text-sm">Telehealth Only</p>
+              <p class="text-teal-700 text-sm mt-0.5 leading-relaxed">
+                All appointments are conducted by video conference or phone call.
+                No in-person visits.
+              </p>
+            </div>
+          </div>
+
+          <!-- Availability note -->
+          <div class="p-5 rounded-2xl bg-amber-50 border border-amber-100
+                      flex gap-3 items-start">
+            <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4
+                       c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+            <div>
+              <p class="font-semibold text-amber-800 text-sm">New Patient Availability</p>
+              <p class="text-amber-700 text-sm mt-0.5 leading-relaxed">
+                Dr. Gardner is currently not accepting new patients. Existing patients
+                may reach out via the contact details above.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
        FOOTER
-  ============================================================ -->
-  <footer role="contentinfo">
-    <p>
-      &copy; <span id="year"></span> Robert Conn, PhD &mdash; Independent Consultant.
-      All rights reserved.
-    </p>
-    <p style="margin-top: 6px; font-size: 0.75rem;">
-      &#9888; <em>Note to client: "Kavli Foundation" spelling confirmed — please verify prior role title and confirm specific awards before publishing.</em>
-    </p>
+  ================================================================ -->
+  <footer class="bg-navy-900 text-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 pb-8">
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10
+                  pb-10 border-b border-white/10">
+
+        <!-- Brand col -->
+        <div class="lg:col-span-2">
+          <a href="#home" class="inline-flex flex-col mb-5" aria-label="Dan Gardner MD — Home">
+            <span class="font-heading text-white text-xl font-semibold">
+              Dan Gardner, MD
+            </span>
+            <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase mt-1">
+              Psychotherapy &nbsp;·&nbsp; Psychoanalysis &nbsp;·&nbsp; San Diego
+            </span>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed max-w-xs mb-5">
+            A compassionate, collaborative approach to mental health — helping individuals
+            build insight, confidence, and fulfillment.
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="text-blue-300 text-sm">Not currently accepting new patients</span>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">
+            Navigation
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="#about"
+                 class="text-blue-300 hover:text-white text-sm transition-colors duration-200">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#services"
+                 class="text-blue-300 hover:text-white text-sm transition-colors duration-200">
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="#credentials"
+                 class="text-blue-300 hover:text-white text-sm transition-colors duration-200">
+                Credentials
+              </a>
+            </li>
+            <li>
+              <a href="#contact"
+                 class="text-blue-300 hover:text-white text-sm transition-colors duration-200">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact col -->
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">
+            Contact
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="tel:8585605609"
+                 class="text-blue-300 hover:text-white text-sm transition-colors
+                        flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0
+                           01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13
+                           -2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2
+                           0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                858-560-5609
+              </a>
+            </li>
+            <li>
+              <a href="mailto:dgardner01@protonmail.com"
+                 class="text-blue-300 hover:text-white text-sm transition-colors
+                        flex items-center gap-2 break-all">
+                <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0
+                           002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                dgardner01@protonmail.com
+              </a>
+            </li>
+            <li class="text-blue-300 text-sm flex items-start gap-2">
+              <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244
+                         -4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>PO Box 2275<br>Del Mar, CA 92014</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-7 flex flex-col sm:flex-row items-center
+                  justify-between gap-4">
+        <p class="text-blue-300/70 text-xs text-center sm:text-left">
+          &copy; 2026 Dan Gardner, MD. All Rights Reserved.
+        </p>
+        <div class="flex items-center gap-5">
+          <a href="disclaimer.html"
+             class="text-blue-300/70 hover:text-white text-xs transition-colors">
+            Disclaimer
+          </a>
+          <a href="https://openpaymentsdata.cms.gov" target="_blank"
+             rel="noopener noreferrer"
+             class="text-blue-300/70 hover:text-white text-xs transition-colors">
+            Open Payments
+          </a>
+        </div>
+      </div>
+
+    </div>
   </footer>
 
 
-  <!-- ============================================================
-       SECTION 7 — ELEVENLABS CONVAI VOICE WIDGET
-  ============================================================ -->
-  <elevenlabs-convai agent-id="agent_6101kj8zgwdmfegaxeb1g9vezkv9"></elevenlabs-convai>
-  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-
-
-  <!-- ============================================================
+  <!-- ================================================================
        JAVASCRIPT
-  ============================================================ -->
+  ================================================================ -->
   <script>
-    // ── Year in footer ─────────────────────────────────────────
-    document.getElementById('year').textContent = new Date().getFullYear();
+    /* ── Navbar scroll effect ──────────────────────────────────── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
 
-    // ── Mobile nav toggle ──────────────────────────────────────
-    const navToggle = document.getElementById('navToggle');
-    const navMobile = document.getElementById('navMobile');
+    /* ── Mobile menu toggle ────────────────────────────────────── */
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
 
-    navToggle.addEventListener('click', () => {
-      const isOpen = navMobile.classList.toggle('show');
-      navToggle.classList.toggle('open', isOpen);
-      navToggle.setAttribute('aria-expanded', isOpen);
-      navMobile.setAttribute('aria-hidden', !isOpen);
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      iconBars.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
     });
 
-    function closeMobileNav() {
-      navMobile.classList.remove('show');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navMobile.setAttribute('aria-hidden', 'true');
-    }
-
-    // ── Active nav highlight on scroll ────────────────────────
-    const sections = document.querySelectorAll('section[id]');
-    const navAnchors = document.querySelectorAll('.nav-links a');
-
-    const highlightNav = () => {
-      let current = '';
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconBars.classList.remove('hidden');
+        iconClose.classList.add('hidden');
       });
-      navAnchors.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-      });
-    };
+    });
 
-    window.addEventListener('scroll', highlightNav, { passive: true });
-
-    // ── Intersection Observer — fade-in animations ─────────────
-    const fadeEls = document.querySelectorAll('.fade-in');
-
-    const observer = new IntersectionObserver((entries) => {
+    /* ── Intersection Observer fade-ins ────────────────────────── */
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
-    fadeEls.forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // ── Contact form — micro-animation feedback ─────────────────
-    const contactForm = document.getElementById('contactForm');
-    const submitBtn   = document.getElementById('submitBtn');
-
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Basic validation
-      const name    = document.getElementById('cf-name').value.trim();
-      const email   = document.getElementById('cf-email').value.trim();
-      const inquiry = document.getElementById('cf-inquiry').value;
-      const message = document.getElementById('cf-message').value.trim();
-
-      if (!name || !email || !inquiry || !message) {
-        submitBtn.textContent = '⚠ Please fill all required fields';
-        submitBtn.style.background = '#c0392b';
-        setTimeout(() => {
-          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Inquiry';
-          submitBtn.style.background = '';
-        }, 2500);
-        return;
-      }
-
-      // Success state
-      submitBtn.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> Message Sent!';
-      submitBtn.style.background = '#27ae60';
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Inquiry';
-        submitBtn.style.background = '';
-        submitBtn.disabled = false;
-        contactForm.reset();
-      }, 3500);
-
-      // FORM BACKEND: Uncomment and configure for actual submission
-      // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ name, email, inquiry, message })
-      // });
-    });
   </script>
 
 </body>

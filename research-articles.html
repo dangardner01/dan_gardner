@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peer-reviewed articles and the CORE research bibliography on the effectiveness of psychoanalytic psychotherapy — curated by Dan Gardner, MD.">
+  <title>Research &amp; Articles | Dan Gardner, MD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0f2544', 800: '#1e3a5f', 700: '#2d5080', 600: '#3d6699' },
+            cream: { 50: '#faf9f7', 100: '#f5f3ef', 200: '#ede9e1' },
+            teal: { 300: '#7db8be', 400: '#5b9fa6', 500: '#4a8b92' },
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf9f7; }
+    h1, h2, h3, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    #navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background-color: rgba(15,37,68,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .hero-bg { background: linear-gradient(135deg, #0a1e3d 0%, #1e3a5f 35%, #2d5080 65%, #3a6b8a 100%); }
+    .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
+    .card-hover { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
+    .study-card { border-left: 3px solid #5b9fa6; }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
+        <a href="index.html" class="flex flex-col group" aria-label="Dan Gardner MD — Home">
+          <span class="font-heading text-white text-lg lg:text-xl font-semibold leading-tight group-hover:text-teal-300 transition-colors duration-200">Dan Gardner, MD</span>
+          <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-5">
+          <a href="index.html#about"                    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy.html"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html"         class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html"                      class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="faq.html"                            class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="index.html#contact"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="index.html#about"            class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy.html"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy</a>
+        <a href="psychoanalysis.html"         class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html"              class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="faq.html"                    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-white/30">›</span>
+        <a href="resources.html" class="hover:text-white transition-colors">Resources</a>
+        <span class="mx-2 text-white/30">›</span>
+        Research &amp; Articles
+      </p>
+      <h1 id="page-heading" class="font-heading text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+        Research &amp; Articles
+      </h1>
+      <div class="accent-bar"></div>
+      <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">
+        Peer-reviewed articles and the CORE research bibliography on the effectiveness of psychoanalytic psychotherapy — the scientific foundation for a deeply evidence-based treatment.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
+      <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">The Evidence Base</p>
+      <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Psychoanalysis Is Evidence-Based</h2>
+      <div class="accent-bar"></div>
+      <p class="text-gray-600 leading-relaxed mb-5">
+        Contrary to a common misconception, psychoanalytic psychotherapy is supported by a substantial and growing body of scientific research. Decades of randomized controlled trials, meta-analyses, and long-term outcome studies consistently demonstrate its effectiveness across a wide range of mental health conditions.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        The research shows not only that psychoanalytic treatments work, but that their benefits are often more durable than shorter-term approaches — with patients continuing to improve after treatment ends, suggesting that the therapy fosters lasting psychological growth rather than only symptom relief.
+      </p>
+      <div class="p-5 bg-teal-50 border border-teal-100 rounded-2xl">
+        <p class="text-teal-800 text-sm leading-relaxed font-medium">
+          "Effect sizes for psychodynamic psychotherapies are as large as those reported for other treatments, including treatments that have been actively promoted as evidence-based." — Jonathan Shedler, PhD (2010)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FINDINGS -->
+  <section class="py-16 lg:py-20 bg-cream-50">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="mb-12 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">What the Research Shows</p>
+        <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Key Research Findings</h2>
+        <div class="accent-bar"></div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="grid sm:grid-cols-3 gap-5 mb-12">
+        <div class="fade-in bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center">
+          <p class="font-heading text-4xl font-bold text-navy-800 mb-1">1.8×</p>
+          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-2">Effect Size</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Long-term psychodynamic therapy produced substantially larger effect sizes than shorter interventions for complex disorders (Leichsenring &amp; Rabung, JAMA).</p>
+        </div>
+        <div class="fade-in bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center" style="transition-delay:0.08s">
+          <p class="font-heading text-4xl font-bold text-navy-800 mb-1">96%</p>
+          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-2">Better Outcomes</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Patients receiving long-term psychodynamic therapy fared better than 96% of comparison groups for complex mental disorders.</p>
+        </div>
+        <div class="fade-in bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center" style="transition-delay:0.16s">
+          <p class="font-heading text-4xl font-bold text-navy-800 mb-1">78%</p>
+          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-2">Utilization Reduction</p>
+          <p class="text-gray-500 text-sm leading-relaxed">77.8% of studies reported healthcare utilization reductions after short-term psychodynamic psychotherapy for somatic conditions (Abbass et al., 2020).</p>
+        </div>
+      </div>
+
+      <!-- Study cards -->
+      <div class="space-y-5">
+
+        <div class="study-card fade-in bg-white rounded-xl p-7">
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-navy-800">Leichsenring et al. (2023)</h3>
+              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">World Psychiatry</p>
+            </div>
+            <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Meta-analysis of meta-analyses</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            High-quality evidence that psychodynamic therapy outperforms inactive controls for depression and somatic disorders, with outcomes equivalent to CBT. One of the most comprehensive assessments of the psychodynamic evidence base to date.
+          </p>
+        </div>
+
+        <div class="study-card fade-in bg-white rounded-xl p-7" style="transition-delay:0.06s">
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-navy-800">Caselli et al. (2023)</h3>
+              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">Journal of Affective Disorders</p>
+            </div>
+            <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Depression</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Short-term psychodynamic psychotherapy (STPP) demonstrated significant superiority over no interventions for depressive symptoms, with an effect size of -0.91 — in the large range by conventional standards.
+          </p>
+        </div>
+
+        <div class="study-card fade-in bg-white rounded-xl p-7" style="transition-delay:0.12s">
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-navy-800">Crugnola et al. (2024)</h3>
+              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">Frontiers in Psychology</p>
+            </div>
+            <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Personality Disorders</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Analysis of 22 studies found STPP significantly effective when compared to controls (Hedges' g = -1.24), with sustained benefits at follow-up (g = -0.75). Particularly effective for borderline personality disorder, with meaningful reductions in suicidal episodes.
+          </p>
+        </div>
+
+        <div class="study-card fade-in bg-white rounded-xl p-7" style="transition-delay:0.18s">
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-navy-800">Leichsenring &amp; Rabung (2008, updated 2015)</h3>
+              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">JAMA</p>
+            </div>
+            <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Long-term outcomes</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Meta-analysis of 23 studies revealed long-term psychodynamic therapy produced substantially larger effect sizes (1.8) than shorter interventions for complex disorders. Patients fared better than 96% of comparison groups — a landmark finding for longer-term treatment.
+          </p>
+        </div>
+
+        <div class="study-card fade-in bg-white rounded-xl p-7" style="transition-delay:0.24s">
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="font-heading text-lg font-bold text-navy-800">Abbass et al. (2020)</h3>
+              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">Psychotherapy and Psychosomatics</p>
+            </div>
+            <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Somatic symptoms</span>
+          </div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Analysis of 17 randomized controlled trials showed STPP significantly outperformed minimal treatment controls for somatic symptoms, with 77.8% of studies reporting reductions in overall healthcare utilization — a particularly meaningful finding for cost-effectiveness.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT CONDITIONS -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="mb-10 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Clinical Applications</p>
+        <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">What Conditions Does the Research Support?</h2>
+        <div class="accent-bar"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4 fade-in">
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">Depression — including treatment-resistant and chronic forms</p>
+        </div>
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">Anxiety disorders</p>
+        </div>
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">Borderline and other personality disorders</p>
+        </div>
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">PTSD and trauma-related conditions</p>
+        </div>
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">Eating disorders</p>
+        </div>
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">Somatic symptom disorders</p>
+        </div>
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">Suicidality and chronic self-harm</p>
+        </div>
+        <div class="flex gap-3 items-start p-4 bg-cream-50 rounded-xl border border-cream-200">
+          <span class="w-2 h-2 rounded-full bg-teal-400 flex-shrink-0 mt-2"></span>
+          <p class="text-gray-700 text-sm">Complex and comorbid mental disorders</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APSA PUBLICATIONS CTA -->
+  <section class="py-16 lg:py-20 bg-navy-800 text-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="fade-in max-w-2xl">
+        <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-3">American Psychoanalytic Association</p>
+        <h2 class="font-heading text-3xl font-bold mb-4">American Psychoanalytic Association Publications and Podcasts</h2>
+        <div class="accent-bar"></div>
+        <p class="text-blue-200 leading-relaxed mb-8">
+          The American Psychoanalytic Association offers a broad range of publications, journals, and podcasts exploring psychoanalytic theory, research, and clinical practice — a valuable resource for patients, practitioners, and the curious alike.
+        </p>
+        <a href="https://apsa.org/media-and-publications/" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-teal-400 hover:bg-teal-300 text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow hover:shadow-lg">
+          Publications and Podcasts
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="py-10 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
+      <div class="p-5 bg-amber-50 border border-amber-100 rounded-2xl flex gap-3 items-start">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="text-amber-800 text-sm leading-relaxed">
+          Research summaries are provided for informational and educational purposes only and do not constitute medical advice. Individual outcomes vary. Always consult a qualified healthcare provider regarding your specific situation. See the <a href="disclaimer.html" class="underline hover:text-amber-900">Disclaimer</a> for full details.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="py-16 lg:py-20 bg-cream-50">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="mb-10 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Related</p>
+        <h2 class="font-heading text-2xl font-bold text-navy-800 mb-3">Explore Further</h2>
+        <div class="accent-bar"></div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <a href="psychotherapy-effectiveness.html" class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Is Psychoanalytic Psychotherapy Effective?</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">7 landmark peer-reviewed studies and commentaries on the evidence base for psychodynamic therapy.</p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View evidence <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="psychoanalysis.html" class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.08s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">About Psychoanalysis</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Dr. Gardner's overview of psychoanalytic therapy — what it is, who it helps, and what to expect.</p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+        <a href="psychotherapy-ai-copilot.html" class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.16s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Psychotherapy AI Copilot</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">An AI-assisted tool to support exploration of psychotherapy concepts and research.</p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Explore tool <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="inline-flex flex-col mb-5">
+            <span class="font-heading text-white text-xl font-semibold">Dan Gardner, MD</span>
+            <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase mt-1">Psychotherapy &nbsp;·&nbsp; Psychoanalysis &nbsp;·&nbsp; San Diego</span>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed max-w-xs mb-5">
+            A compassionate, collaborative approach to mental health — helping individuals build insight, confidence, and fulfillment.
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="text-blue-300 text-sm">Not currently accepting new patients</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html#about"            class="text-blue-300 hover:text-white text-sm transition-colors">About</a></li>
+            <li><a href="psychotherapy.html"          class="text-blue-300 hover:text-white text-sm transition-colors">Psychotherapy</a></li>
+            <li><a href="psychoanalysis.html"         class="text-blue-300 hover:text-white text-sm transition-colors">Psychoanalysis</a></li>
+            <li><a href="traumatic-brain-injury.html" class="text-blue-300 hover:text-white text-sm transition-colors">Brain Injury</a></li>
+            <li><a href="resources.html"              class="text-blue-300 hover:text-white text-sm transition-colors">Resources</a></li>
+            <li><a href="faq.html"                    class="text-blue-300 hover:text-white text-sm transition-colors">FAQ</a></li>
+            <li><a href="disclaimer.html"             class="text-blue-300 hover:text-white text-sm transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-3">
+            <li class="text-blue-300 text-sm">858-560-5609</li>
+            <li><a href="mailto:dgardner01@protonmail.com" class="text-blue-300 hover:text-white text-sm transition-colors break-all">dgardner01@protonmail.com</a></li>
+            <li class="text-blue-300 text-sm">PO Box 2275<br>Del Mar, CA 92014</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-blue-300/70 text-xs">&copy; 2026 Dan Gardner, MD. All Rights Reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="disclaimer.html" class="text-blue-300/70 hover:text-white text-xs transition-colors">Disclaimer</a>
+          <a href="https://openpaymentsdata.cms.gov" target="_blank" rel="noopener noreferrer" class="text-blue-300/70 hover:text-white text-xs transition-colors">Open Payments</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 24); }, { passive: true });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      iconBars.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconBars.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
