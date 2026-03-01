@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curated YouTube video playlists on traumatic brain injury recovery — covering TBI basics, recovery advice, survivor interviews, assistive technology, and neuropsychology.">
+  <title>TBI Recovery Videos | Dan Gardner, MD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0f2544', 800: '#1e3a5f', 700: '#2d5080', 600: '#3d6699' },
+            cream: { 50: '#faf9f7', 100: '#f5f3ef', 200: '#ede9e1' },
+            teal: { 300: '#7db8be', 400: '#5b9fa6', 500: '#4a8b92' },
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf9f7; }
+    h1, h2, h3, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    #navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background-color: rgba(15,37,68,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .hero-bg { background: linear-gradient(135deg, #0a1e3d 0%, #1e3a5f 35%, #2d5080 65%, #3a6b8a 100%); }
+    .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
+    .card-hover { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
+        <a href="index.html" class="flex flex-col group" aria-label="Dan Gardner MD — Home">
+          <span class="font-heading text-white text-lg lg:text-xl font-semibold leading-tight group-hover:text-teal-300 transition-colors duration-200">Dan Gardner, MD</span>
+          <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-5">
+          <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html"    class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Brain Injury</a>
+          <a href="resources.html"                 class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
+          <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html"    class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html"                 class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html"                class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-white/30">›</span>
+        <a href="traumatic-brain-injury.html" class="hover:text-white transition-colors">Brain Injury</a>
+        <span class="mx-2 text-white/30">›</span>
+        TBI Recovery Videos
+      </p>
+      <h1 id="page-heading" class="font-heading text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+        TBI Recovery Videos
+      </h1>
+      <div class="accent-bar"></div>
+      <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">
+        Curated YouTube playlists covering every stage of traumatic brain injury recovery — from understanding your injury to rebuilding independence with assistive technology.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
+      <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Video Resources</p>
+      <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Learn at Your Own Pace</h2>
+      <div class="accent-bar"></div>
+      <p class="text-gray-600 leading-relaxed mb-5">
+        These curated video playlists were assembled to help TBI survivors, their families, and healthcare
+        providers understand the full landscape of traumatic brain injury — from its immediate effects to
+        the long road of recovery, rehabilitation, and adaptation.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        Each playlist focuses on a distinct aspect of TBI: foundational education, practical recovery
+        strategies, real survivor stories, assistive and peripheral technology, and the science of
+        neuropsychology. Together they offer a comprehensive, accessible resource that complements
+        professional care.
+      </p>
+    </div>
+  </section>
+
+  <!-- PLAYLIST CARDS -->
+  <section class="py-16 lg:py-20 bg-cream-50">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="mb-12 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Featured Playlists</p>
+        <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Five Essential Video Collections</h2>
+        <div class="accent-bar"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Playlist 1 -->
+        <a href="https://www.youtube.com/channel/UCe4p7y3z1ykL1mMPamZLqsA" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col group">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6 flex-shrink-0">
+            <!-- Brain icon -->
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3 group-hover:text-teal-500 transition-colors">
+            How to Understand Traumatic Brain Injury
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            Foundational videos explaining what TBI is, how it affects the brain, and what survivors and
+            families can expect in the acute and long-term recovery phases.
+          </p>
+          <div class="inline-flex items-center gap-1 text-teal-500 text-xs font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
+            Watch playlist
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Playlist 2 -->
+        <a href="https://www.youtube.com/channel/UCe4p7y3z1ykL1mMPamZLqsA" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col group" style="transition-delay:0.06s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6 flex-shrink-0">
+            <!-- Heart / recovery icon -->
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3 group-hover:text-teal-500 transition-colors">
+            Advice for Brain Injury Recovery
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            Practical guidance and evidence-based strategies for navigating daily life after TBI —
+            including cognitive rehabilitation, fatigue management, emotional wellbeing, and goal-setting.
+          </p>
+          <div class="inline-flex items-center gap-1 text-teal-500 text-xs font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
+            Watch playlist
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Playlist 3 -->
+        <a href="https://www.youtube.com/channel/UCe4p7y3z1ykL1mMPamZLqsA" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col group" style="transition-delay:0.12s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6 flex-shrink-0">
+            <!-- Microphone / interview icon -->
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3 group-hover:text-teal-500 transition-colors">
+            TBI Recovery Interviews
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            In-depth interviews with TBI survivors, family members, and rehabilitation professionals sharing
+            personal stories, lessons learned, and what recovery truly looks like from the inside.
+          </p>
+          <div class="inline-flex items-center gap-1 text-teal-500 text-xs font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
+            Watch playlist
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Playlist 4 -->
+        <a href="https://www.youtube.com/channel/UCe4p7y3z1ykL1mMPamZLqsA" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col group" style="transition-delay:0.18s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6 flex-shrink-0">
+            <!-- Chip / device icon -->
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3 group-hover:text-teal-500 transition-colors">
+            Peripheral Brain (Assistive Technology)
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            Videos on using technology as a "peripheral brain" — apps, devices, and strategies that
+            compensate for memory, organization, and cognitive challenges following brain injury.
+          </p>
+          <div class="inline-flex items-center gap-1 text-teal-500 text-xs font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
+            Watch playlist
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Playlist 5 -->
+        <a href="https://www.youtube.com/channel/UCe4p7y3z1ykL1mMPamZLqsA" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col group" style="transition-delay:0.24s">
+          <div class="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center mb-6 flex-shrink-0">
+            <!-- Chart / neuro icon -->
+            <svg class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-navy-800 mb-3 group-hover:text-teal-500 transition-colors">
+            Neuropsychology
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+            Educational content on neuropsychological assessment, cognitive functioning, and the science
+            behind how brain injuries affect attention, memory, executive function, and behavior.
+          </p>
+          <div class="inline-flex items-center gap-1 text-teal-500 text-xs font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
+            Watch playlist
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- YouTube Channel CTA card -->
+        <a href="https://www.youtube.com/channel/UCe4p7y3z1ykL1mMPamZLqsA" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-navy-800 rounded-2xl p-8 border border-navy-700 shadow-sm flex flex-col group" style="transition-delay:0.30s">
+          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6 flex-shrink-0">
+            <!-- YouTube play icon -->
+            <svg class="w-6 h-6 text-teal-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">
+            More TBI Recovery Videos
+          </h3>
+          <p class="text-blue-200 text-sm leading-relaxed mb-5 flex-1">
+            Visit the full YouTube channel for the complete library of TBI education and recovery content.
+          </p>
+          <div class="inline-flex items-center gap-1 text-teal-300 text-xs font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
+            Visit YouTube channel
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN CTA STRIP -->
+  <section class="py-14 bg-navy-800 text-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8 text-center fade-in">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-3">Also Available</p>
+      <h2 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-4">
+        Prefer Listening? Try the TBI Recovery Podcast
+      </h2>
+      <p class="text-blue-200 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+        Interviews with TBI survivors, family members, and healthcare providers — available wherever you listen to podcasts.
+      </p>
+      <a href="tbi-recovery-podcasts.html"
+         class="inline-flex items-center gap-2 bg-white text-navy-800 font-semibold px-8 py-3.5 rounded-full
+                hover:bg-cream-100 transition-all duration-200 shadow-lg hover:shadow-xl text-sm">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+        </svg>
+        TBI Recovery Podcast
+      </a>
+    </div>
+  </section>
+
+  <!-- RELATED RESOURCES -->
+  <section class="py-16 lg:py-20 bg-cream-50">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="mb-10 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Go Deeper</p>
+        <h2 class="font-heading text-2xl font-bold text-navy-800 mb-3">Related Resources</h2>
+        <div class="accent-bar"></div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <a href="traumatic-brain-injury.html"
+           class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Traumatic Brain Injury</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Dr. Gardner's TBI psychiatry services — evaluation, consultation, and medical-legal expertise.</p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
+            Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="tbi-recovery-podcasts.html"
+           class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.08s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">TBI Recovery Podcasts</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Audio interviews with TBI survivors, family members, and healthcare providers on recovery and resilience.</p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
+            Listen now <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a href="resources.html"
+           class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.16s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">All Resources</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Browse the full library of videos, articles, and tools across psychotherapy and brain injury topics.</p>
+          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
+            View all <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="inline-flex flex-col mb-5">
+            <span class="font-heading text-white text-xl font-semibold">Dan Gardner, MD</span>
+            <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase mt-1">Psychotherapy &nbsp;·&nbsp; Psychoanalysis &nbsp;·&nbsp; San Diego</span>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed max-w-xs mb-5">
+            A compassionate, collaborative approach to mental health — helping individuals build insight, confidence, and fulfillment.
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="text-blue-300 text-sm">Not currently accepting new patients</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html#about"               class="text-blue-300 hover:text-white text-sm transition-colors">About</a></li>
+            <li><a href="psychotherapy-psychoanalysis.html" class="text-blue-300 hover:text-white text-sm transition-colors">Psychotherapy</a></li>
+            <li><a href="traumatic-brain-injury.html"    class="text-blue-300 hover:text-white text-sm transition-colors">Brain Injury</a></li>
+            <li><a href="resources.html"                 class="text-blue-300 hover:text-white text-sm transition-colors">Resources</a></li>
+            <li><a href="faq.html"                       class="text-blue-300 hover:text-white text-sm transition-colors">FAQ</a></li>
+            <li><a href="disclaimer.html"                class="text-blue-300 hover:text-white text-sm transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-3">
+            <li class="text-blue-300 text-sm">858-560-5609</li>
+            <li><a href="mailto:dgardner01@protonmail.com" class="text-blue-300 hover:text-white text-sm transition-colors break-all">dgardner01@protonmail.com</a></li>
+            <li class="text-blue-300 text-sm">PO Box 2275<br>Del Mar, CA 92014</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-blue-300/70 text-xs">&copy; 2026 Dan Gardner, MD. All Rights Reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="disclaimer.html" class="text-blue-300/70 hover:text-white text-xs transition-colors">Disclaimer</a>
+          <a href="https://openpaymentsdata.cms.gov" target="_blank" rel="noopener noreferrer" class="text-blue-300/70 hover:text-white text-xs transition-colors">Open Payments</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 24); }, { passive: true });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      iconBars.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconBars.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
