@@ -2,22 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "Static Server (npx serve)",
+      "name": "Dan Gardner Website",
       "runtimeExecutable": "cmd",
-      "runtimeArgs": ["/c", "npx", "serve", ".", "--listen", "3000", "--no-clipboard"],
+      "runtimeArgs": ["/c", "npx.cmd", "serve", ".", "--listen", "3000", "--no-clipboard"],
       "port": 3000
-    },
-    {
-      "name": "Static Server (http-server)",
-      "runtimeExecutable": "cmd",
-      "runtimeArgs": ["/c", "npx", "http-server", ".", "-p", "8080", "--cors"],
-      "port": 8080
-    },
-    {
-      "name": "Static Server (Python)",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8000"],
-      "port": 8000
     }
   ]
 }
