@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Filtered searches of peer-reviewed TBI medical literature — curated PubMed and MedlinePlus searches organized by diagnosis, treatment, symptoms, and specialty.">
+  <title>TBI Literature Searches | Dan Gardner, MD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0f2544', 800: '#1e3a5f', 700: '#2d5080', 600: '#3d6699' },
+            cream: { 50: '#faf9f7', 100: '#f5f3ef', 200: '#ede9e1' },
+            teal: { 300: '#7db8be', 400: '#5b9fa6', 500: '#4a8b92' },
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf9f7; }
+    h1, h2, h3, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    #navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background-color: rgba(15,37,68,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .hero-bg { background: linear-gradient(135deg, #0a1e3d 0%, #1e3a5f 35%, #2d5080 65%, #3a6b8a 100%); }
+    .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
+    .search-link { display: inline-flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 600; color: #4a8b92; text-decoration: none; padding: 2px 8px; border-radius: 999px; background: #e8f4f5; transition: background 0.18s, color 0.18s; white-space: nowrap; }
+    .search-link:hover { background: #4a8b92; color: #fff; }
+    .search-link.consumer { background: #eef2ff; color: #4f46e5; }
+    .search-link.consumer:hover { background: #4f46e5; color: #fff; }
+    .topic-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 8px 0; border-bottom: 1px solid #f0ece4; }
+    .topic-row:last-child { border-bottom: none; }
+    .topic-name { font-size: 0.8rem; font-weight: 500; color: #1e3a5f; min-width: 180px; text-transform: capitalize; }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
+        <a href="index.html" class="flex flex-col group" aria-label="Dan Gardner MD — Home">
+          <span class="font-heading text-white text-lg lg:text-xl font-semibold leading-tight group-hover:text-teal-300 transition-colors duration-200">Dan Gardner, MD</span>
+          <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-5">
+          <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html"    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html"                 class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html"    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html"                 class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html"                class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-white/30">›</span>
+        <a href="resources.html" class="hover:text-white transition-colors">Resources</a>
+        <span class="mx-2 text-white/30">›</span>
+        TBI Literature Searches
+      </p>
+      <h1 id="page-heading" class="font-heading text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+        TBI Literature Searches
+      </h1>
+      <div class="accent-bar"></div>
+      <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">
+        Filtered searches of up-to-date, peer-reviewed TBI medical literature — organized by diagnosis, treatment, symptoms, and specialty. Compiled by Dan Gardner, MD.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-14 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
+      <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">How to Use This Page</p>
+      <h2 class="font-heading text-2xl font-bold text-navy-800 mb-3">Quick-Access TBI Medical Literature</h2>
+      <div class="accent-bar"></div>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Each link below opens a pre-filtered search of peer-reviewed TBI medical literature. Results are drawn from
+        <strong>PubMed</strong> (the U.S. National Library of Medicine's primary biomedical database) and
+        <strong>MedlinePlus</strong> (consumer-friendly health information).
+      </p>
+      <div class="flex flex-wrap gap-3 mb-4">
+        <span class="inline-flex items-center gap-1.5 text-xs bg-teal-50 text-teal-700 px-3 py-1.5 rounded-full border border-teal-100 font-medium">
+          <span class="w-2 h-2 rounded-full bg-teal-400"></span> Review = PubMed systematic/narrative reviews
+        </span>
+        <span class="inline-flex items-center gap-1.5 text-xs bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full border border-indigo-100 font-medium">
+          <span class="w-2 h-2 rounded-full bg-indigo-400"></span> Consumer = MedlinePlus plain-language info
+        </span>
+      </div>
+      <p class="text-gray-500 text-sm leading-relaxed">
+        Tip: You can sort PubMed results by publication date or relevance using the "Sort by" menu at the top of the results page.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIAGNOSIS & TREATMENT -->
+  <section class="py-14 lg:py-16 bg-cream-50" id="diagnosis">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+
+      <div class="fade-in mb-10">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Section 1</p>
+        <h2 class="font-heading text-2xl font-bold text-navy-800 mb-1">Diagnosis &amp; Treatment</h2>
+        <div class="accent-bar"></div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8 fade-in">
+
+        <h3 class="font-heading text-base font-bold text-navy-800 mb-4 pb-2 border-b border-gray-100">Diagnosis</h3>
+        <div class="topic-row">
+          <span class="topic-name">TBI diagnosis</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+diagnosis&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=traumatic+brain+injury+diagnosis" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">TBI imaging</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+imaging&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=brain+injury+imaging" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+
+        <h3 class="font-heading text-base font-bold text-navy-800 mt-7 mb-4 pb-2 border-b border-gray-100">Treatment</h3>
+        <div class="topic-row">
+          <span class="topic-name">TBI treatment</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+treatment&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=traumatic+brain+injury+treatment" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">TBI outcomes</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+outcomes&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=traumatic+brain+injury+outcomes" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+
+        <h3 class="font-heading text-base font-bold text-navy-800 mt-7 mb-4 pb-2 border-b border-gray-100">Prognosis &amp; Recovery</h3>
+        <div class="topic-row">
+          <span class="topic-name">TBI prognosis</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+prognosis&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=traumatic+brain+injury+prognosis" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">TBI recovery</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+recovery&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=traumatic+brain+injury+recovery" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+
+        <h3 class="font-heading text-base font-bold text-navy-800 mt-7 mb-4 pb-2 border-b border-gray-100">Mild TBI</h3>
+        <div class="topic-row">
+          <span class="topic-name">Mild TBI</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=mild+traumatic+brain+injury&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=mild+traumatic+brain+injury" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">Mild TBI imaging</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=mild+traumatic+brain+injury+imaging&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=mild+TBI+imaging" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">Mild TBI outcome</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=mild+traumatic+brain+injury+outcome&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=mild+TBI+outcome" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">Mild TBI prognosis</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=mild+traumatic+brain+injury+prognosis&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=mild+TBI+prognosis" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+
+        <h3 class="font-heading text-base font-bold text-navy-800 mt-7 mb-4 pb-2 border-b border-gray-100">Blast TBI</h3>
+        <div class="topic-row">
+          <span class="topic-name">Blast TBI</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=blast+traumatic+brain+injury&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+          <a href="https://medlineplus.gov/search/?query=blast+brain+injury" target="_blank" rel="noopener" class="search-link consumer">consumer</a>
+        </div>
+
+        <h3 class="font-heading text-base font-bold text-navy-800 mt-7 mb-4 pb-2 border-b border-gray-100">Economics &amp; Epidemiology</h3>
+        <div class="topic-row">
+          <span class="topic-name">TBI economic evaluation</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+economic+evaluation&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">TBI cost</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+cost&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">TBI epidemiology</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+epidemiology&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+        </div>
+        <div class="topic-row">
+          <span class="topic-name">TBI legal</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+legal&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BY SYMPTOMS -->
+  <section class="py-14 lg:py-16 bg-white" id="symptoms">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="fade-in mb-10">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Section 2</p>
+        <h2 class="font-heading text-2xl font-bold text-navy-800 mb-1">By Symptom / Problem</h2>
+        <div class="accent-bar"></div>
+        <p class="text-gray-500 text-sm">Click any link to open a filtered PubMed or MedlinePlus search for that symptom in the context of TBI.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8 fade-in">
+        <div class="topic-row"><span class="topic-name">Abulia</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+abulia&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a></div>
+        <div class="topic-row"><span class="topic-name">Aggression / Anger</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+aggression&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+aggression" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Anxiety</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+anxiety&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+anxiety" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Apathy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+apathy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+apathy" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Arousal</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+arousal&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a></div>
+        <div class="topic-row"><span class="topic-name">Attention</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+attention&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+attention" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Autonomic dysregulation</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+autonomic+dysregulation&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+autonomic" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Balance</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+balance&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+balance" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Bowel / Bladder</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+bladder+bowel&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+bladder" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Cognition</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+cognition&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+cognitive" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Concussion</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=concussion&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=concussion" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Coma</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+coma&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+coma" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Chronic traumatic encephalopathy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=chronic+traumatic+encephalopathy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=chronic+traumatic+encephalopathy" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Dementia</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+dementia&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+dementia" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Depression</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+depression&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+depression" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Dizziness</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+dizziness&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+dizziness" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Fatigue</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+fatigue&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+fatigue" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Headache</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+headache&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+headache" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Hearing</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+hearing&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+hearing" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Impulsivity</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+impulsivity&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a></div>
+        <div class="topic-row"><span class="topic-name">Lability</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+emotional+lability&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+emotional+lability" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Learning</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+learning&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+learning" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Malingering</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+malingering&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a></div>
+        <div class="topic-row"><span class="topic-name">Mania</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+mania&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+mania" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Memory</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+memory&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+memory" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Mobility</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+mobility&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+mobility" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Motivation</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+motivation&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+motivation" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Movement disorder</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+movement+disorder&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+movement+disorder" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Neurocognitive</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+neurocognitive&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+neurocognitive" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Nutrition</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+nutrition&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+nutrition" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">OCD</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+obsessive+compulsive&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+OCD" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Pain</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+pain&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+pain" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Pathological laughing / crying</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+pathological+crying+laughing&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=pseudobulbar+affect+brain+injury" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Personality</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+personality&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+personality+change" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Processing speed</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+processing+speed&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+processing+speed" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Psychosis</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+psychosis&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+psychosis" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">PTSD</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+PTSD&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+PTSD" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Seizures</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+seizures&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+seizures" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Sexual</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+sexual+dysfunction&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+sexual" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Sleep</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+sleep&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+sleep" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Smell</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+anosmia&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+smell" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Social cognition</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+social+cognition&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+social+cognition" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Spasticity</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+spasticity&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+spasticity" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Speech</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+speech&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+speech" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Suicide</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+suicide&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+suicide" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Swallowing</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+dysphagia&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+swallowing" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Tinnitus</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+tinnitus&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+tinnitus" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Vision</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+vision&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+vision" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BY SPECIALTY -->
+  <section class="py-14 lg:py-16 bg-cream-50" id="specialty">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="fade-in mb-10">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Section 3</p>
+        <h2 class="font-heading text-2xl font-bold text-navy-800 mb-1">By Specialty &amp; Treatment</h2>
+        <div class="accent-bar"></div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8 fade-in">
+        <div class="topic-row"><span class="topic-name">Acupuncture</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+acupuncture&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+acupuncture" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Assistive technologies</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+assistive+technology&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+assistive+technology" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Caregiver</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+caregiver&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+caregiver" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Case management</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+case+management&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+case+management" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Cognitive rehabilitation</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+cognitive+rehabilitation&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+cognitive+rehabilitation" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Complementary &amp; alternative medicine</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+complementary+alternative+medicine&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+complementary+medicine" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Family</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+family&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+family" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Life care planning</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+life+care+planning&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+life+care+plan" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Music therapy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+music+therapy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+music+therapy" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Neurobehavioral</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+neurobehavioral&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+neurobehavioral" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Neurology</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+neurology&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+neurology" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Neuropsychiatry</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+neuropsychiatry&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+neuropsychiatry" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Neuropsychology</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+neuropsychology&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+neuropsychology" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Neurostimulation</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+neurostimulation&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+neurostimulation" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Occupational therapy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+occupational+therapy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+occupational+therapy" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Pharmacotherapy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+pharmacotherapy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+medication" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Physical medicine &amp; rehabilitation</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+physical+medicine+rehabilitation&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+rehabilitation" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Physical therapy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+physical+therapy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+physical+therapy" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Psychiatry</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+psychiatry&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+psychiatry" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Psychology</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+psychology&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+psychology" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Psychotropic medication</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+psychotropic&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+psychotropic" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Rehabilitation</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+rehabilitation&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+rehabilitation" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Speech therapy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+speech+therapy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+speech+therapy" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Support group</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+support+group&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+support+group" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Vestibular therapy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+vestibular+therapy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+vestibular" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+        <div class="topic-row"><span class="topic-name">Vision therapy</span><a href="https://pubmed.ncbi.nlm.nih.gov/?term=traumatic+brain+injury+vision+therapy&filter=pubt.review" target="_blank" rel="noopener" class="search-link">review</a><a href="https://medlineplus.gov/search/?query=brain+injury+vision+therapy" target="_blank" rel="noopener" class="search-link consumer">consumer</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="py-10 bg-white">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
+      <div class="p-5 bg-amber-50 border border-amber-100 rounded-2xl flex gap-3 items-start">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="text-amber-800 text-sm leading-relaxed">
+          These resources are provided for informational purposes only. Dan Gardner, MD does not guarantee the accuracy, completeness, or adequacy of any resources linked from this page. Always consult a qualified healthcare provider. See the <a href="disclaimer.html" class="underline hover:text-amber-900">Disclaimer</a> for full details.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="inline-flex flex-col mb-5">
+            <span class="font-heading text-white text-xl font-semibold">Dan Gardner, MD</span>
+            <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase mt-1">Psychotherapy &nbsp;·&nbsp; Psychoanalysis &nbsp;·&nbsp; San Diego</span>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed max-w-xs mb-5">A compassionate, collaborative approach to mental health — helping individuals build insight, confidence, and fulfillment.</p>
+          <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400"></span><span class="text-blue-300 text-sm">Not currently accepting new patients</span></div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html#about" class="text-blue-300 hover:text-white text-sm transition-colors">About</a></li>
+            <li><a href="psychotherapy-psychoanalysis.html" class="text-blue-300 hover:text-white text-sm transition-colors">Psychotherapy</a></li>
+            <li><a href="traumatic-brain-injury.html" class="text-blue-300 hover:text-white text-sm transition-colors">Brain Injury</a></li>
+            <li><a href="resources.html" class="text-blue-300 hover:text-white text-sm transition-colors">Resources</a></li>
+            <li><a href="faq.html" class="text-blue-300 hover:text-white text-sm transition-colors">FAQ</a></li>
+            <li><a href="disclaimer.html" class="text-blue-300 hover:text-white text-sm transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-3">
+            <li class="text-blue-300 text-sm">858-560-5609</li>
+            <li><a href="mailto:dgardner01@protonmail.com" class="text-blue-300 hover:text-white text-sm transition-colors break-all">dgardner01@protonmail.com</a></li>
+            <li class="text-blue-300 text-sm">PO Box 2275<br>Del Mar, CA 92014</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-blue-300/70 text-xs">&copy; 2026 Dan Gardner, MD. All Rights Reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="disclaimer.html" class="text-blue-300/70 hover:text-white text-xs transition-colors">Disclaimer</a>
+          <a href="https://openpaymentsdata.cms.gov" target="_blank" rel="noopener noreferrer" class="text-blue-300/70 hover:text-white text-xs transition-colors">Open Payments</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 24); }, { passive: true });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      iconBars.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconBars.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online health support communities for mental health, brain injury, and chronic condition patients — curated by Dan Gardner, MD.">
+  <title>Patient Communities | Dan Gardner, MD</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0f2544', 800: '#1e3a5f', 700: '#2d5080', 600: '#3d6699' },
+            cream: { 50: '#faf9f7', 100: '#f5f3ef', 200: '#ede9e1' },
+            teal: { 300: '#7db8be', 400: '#5b9fa6', 500: '#4a8b92' },
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #faf9f7; }
+    h1, h2, h3, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    #navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background-color: rgba(15,37,68,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .hero-bg { background: linear-gradient(135deg, #0a1e3d 0%, #1e3a5f 35%, #2d5080 65%, #3a6b8a 100%); }
+    .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
+    .card-hover { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-[72px]">
+        <a href="index.html" class="flex flex-col group" aria-label="Dan Gardner MD — Home">
+          <span class="font-heading text-white text-lg lg:text-xl font-semibold leading-tight group-hover:text-teal-300 transition-colors duration-200">Dan Gardner, MD</span>
+          <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-5">
+          <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html"    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html"                 class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+        </div>
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
+      <div class="px-5 py-4 flex flex-col gap-1">
+        <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html"    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html"                 class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html"                class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-white/30">›</span>
+        <a href="resources.html" class="hover:text-white transition-colors">Resources</a>
+        <span class="mx-2 text-white/30">›</span>
+        Patient Communities
+      </p>
+      <h1 id="page-heading" class="font-heading text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+        Patient Communities
+      </h1>
+      <div class="accent-bar"></div>
+      <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">
+        Online health support communities for mental health, brain injury, cancer, diabetes, and other chronic conditions — connecting patients, families, and caregivers.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMMUNITIES GRID -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="mb-12 fade-in">
+        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Online Communities</p>
+        <h2 class="font-heading text-2xl font-bold text-navy-800 mb-3">Health Support Communities</h2>
+        <div class="accent-bar"></div>
+        <p class="text-gray-500 text-sm">Connect with others who understand what you're going through — curated by Dan Gardner, MD.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <a href="https://csn.cancer.org" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">American Cancer Society — Cancer Survivors Network</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">A community for cancer patients, survivors, and caregivers to connect and share experiences.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">csn.cancer.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://community.diabetes.org" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.05s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">American Diabetes Association Community</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Connect with others managing diabetes — share tips, ask questions, and find support.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">community.diabetes.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.acor.org" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.10s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Association of Cancer Online Resources</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">A large collection of online support communities focused on cancer and related conditions.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">acor.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.careflash.com" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.15s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">CareFlash</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Free service that facilitates communication between friends and loved ones during a healthcare event.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">careflash.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.dailystrength.org" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.20s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">DailyStrength</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Social network of support communities serving hundreds of thousands of registered users across many conditions.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">dailystrength.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.everydayhealth.com" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.25s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Everyday Health</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">A place to join discussions, share stories, and find people who understand your health journey.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">everydayhealth.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.inspire.com" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.30s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Inspire</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">A patient collaboration site connecting people with similar health conditions to share and support one another.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">inspire.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://lotsahelpinghands.com" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.35s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Lotsa Helping Hands</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Create support communities and coordinate volunteers to help a friend or family member in need.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">lotsahelpinghands.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.mdjunction.com" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.40s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">MDJunction</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">A health-related social network with support groups for hundreds of medical conditions.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">mdjunction.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.medhelp.org" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.45s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">MedHelp</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Patient and expert-generated content on specific conditions, with tools to track health and connect with others.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">medhelp.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.patientslikeme.com" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.50s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Patients Like Me</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Tools for patients to track their treatments, status, and outcomes — and connect with similar patients.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">patientslikeme.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://forums.psychcentral.com" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.55s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">PsychCentral</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">Mental health social network and forums — peer support for depression, anxiety, bipolar disorder, and more.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">forums.psychcentral.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.sophiasgarden.org" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.60s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Sophia's Garden</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">A healing community for parents and children facing serious illness, offering compassionate support and resources.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">sophiasgarden.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="https://www.tudiabetes.org" target="_blank" rel="noopener noreferrer"
+           class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.65s">
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">TuDiabetes</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-3">An active community for people touched by diabetes — sharing experiences, tips, and mutual support.</p>
+          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">tudiabetes.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="py-10 bg-cream-50">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
+      <div class="p-5 bg-amber-50 border border-amber-100 rounded-2xl flex gap-3 items-start">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="text-amber-800 text-sm leading-relaxed">
+          These resources are provided for informational purposes only. Dan Gardner, MD does not guarantee the accuracy or availability of these external sites. Online communities are not a substitute for professional medical care. See the <a href="disclaimer.html" class="underline hover:text-amber-900">Disclaimer</a> for full details.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-14 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="lg:col-span-2">
+          <a href="index.html" class="inline-flex flex-col mb-5">
+            <span class="font-heading text-white text-xl font-semibold">Dan Gardner, MD</span>
+            <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase mt-1">Psychotherapy &nbsp;·&nbsp; Psychoanalysis &nbsp;·&nbsp; San Diego</span>
+          </a>
+          <p class="text-blue-200 text-sm leading-relaxed max-w-xs mb-5">A compassionate, collaborative approach to mental health — helping individuals build insight, confidence, and fulfillment.</p>
+          <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400"></span><span class="text-blue-300 text-sm">Not currently accepting new patients</span></div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html#about" class="text-blue-300 hover:text-white text-sm transition-colors">About</a></li>
+            <li><a href="psychotherapy-psychoanalysis.html" class="text-blue-300 hover:text-white text-sm transition-colors">Psychotherapy</a></li>
+            <li><a href="traumatic-brain-injury.html" class="text-blue-300 hover:text-white text-sm transition-colors">Brain Injury</a></li>
+            <li><a href="resources.html" class="text-blue-300 hover:text-white text-sm transition-colors">Resources</a></li>
+            <li><a href="faq.html" class="text-blue-300 hover:text-white text-sm transition-colors">FAQ</a></li>
+            <li><a href="disclaimer.html" class="text-blue-300 hover:text-white text-sm transition-colors">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-3">
+            <li class="text-blue-300 text-sm">858-560-5609</li>
+            <li><a href="mailto:dgardner01@protonmail.com" class="text-blue-300 hover:text-white text-sm transition-colors break-all">dgardner01@protonmail.com</a></li>
+            <li class="text-blue-300 text-sm">PO Box 2275<br>Del Mar, CA 92014</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-blue-300/70 text-xs">&copy; 2026 Dan Gardner, MD. All Rights Reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="disclaimer.html" class="text-blue-300/70 hover:text-white text-xs transition-colors">Disclaimer</a>
+          <a href="https://openpaymentsdata.cms.gov" target="_blank" rel="noopener noreferrer" class="text-blue-300/70 hover:text-white text-xs transition-colors">Open Payments</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 24); }, { passive: true });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      iconBars.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconBars.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
