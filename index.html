@@ -344,8 +344,12 @@
         <div class="lg:col-span-2 fade-in">
           <div class="relative">
             <!-- Dr. Gardner photo -->
-            <div class="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-black">
-              <img src="Dan headshot dark background.png" alt="Dan Gardner, MD — Psychiatrist and Psychoanalyst"
+            <div class="w-full aspect-[3/4]"
+                 style="mask-image: linear-gradient(to bottom, black 50%, transparent 95%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+                        mask-composite: intersect;
+                        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+                        -webkit-mask-composite: source-in;">
+              <img src="Dan headshot dark background.jpg" alt="Dan Gardner, MD — Psychiatrist and Psychoanalyst"
                    class="w-full h-full object-cover object-top">
             </div>
           </div>
