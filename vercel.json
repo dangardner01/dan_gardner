@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/tools",
-      "destination": "https://www.expertfocus.online/",
-      "permanent": false
+      "destination": "/tools.html"
     }
   ]
 }
