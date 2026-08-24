@@ -1,0 +1,24 @@
+{
+  "name": "dan-gardner-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangardner01/dan_gardner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dangardner01/dan_gardner/issues"
+  },
+  "homepage": "https://github.com/dangardner01/dan_gardner#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

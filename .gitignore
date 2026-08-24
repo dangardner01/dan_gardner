@@ -8,3 +8,6 @@ Thumbs.db
 
 # Logs / temp
 *.log
+
+# Node / build tooling (Tailwind CLI)
+node_modules/
