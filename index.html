@@ -1301,31 +1301,5 @@
 
   </script>
 
-  <!-- ── ElevenLabs ConvAI voice widget ──────────────────────────────────
-       The widget renders its own floating UI in the lower-right corner.
-       On load, we call /.netlify/functions/convai-session which:
-         1. Syncs SYSTEM_PROMPT from netlify/functions/convai-session.js
-            to the ElevenLabs agent (single source of truth).
-         2. Returns a signed WebSocket URL for this session.
-       Falls back to agent-id if the function is unavailable (local dev).
-  ─────────────────────────────────────────────────────────────────────── -->
-  <elevenlabs-convai id="convai-widget"></elevenlabs-convai>
-  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-  <script>
-    (async () => {
-      const widget = document.getElementById('convai-widget');
-      try {
-        const res = await fetch('/.netlify/functions/convai-session');
-        if (!res.ok) throw new Error('Session function returned ' + res.status);
-        const { signedUrl } = await res.json();
-        widget.setAttribute('signed-url', signedUrl);
-      } catch (err) {
-        // Fallback for local development (no Netlify functions available)
-        console.warn('convai-session unavailable, using agent-id directly:', err.message);
-        widget.setAttribute('agent-id', 'agent_8701kjk3t91nfgttm9vajk5arvn8');
-      }
-    })();
-  </script>
-
 </body>
 </html>
