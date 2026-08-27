@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Peer-reviewed articles on the effectiveness of psychoanalytic psychotherapy — curated by Dan Gardner, MD.">
+  <link rel="canonical" href="https://dangardnermd.com/research-articles.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dan Gardner, MD">
+  <meta property="og:title" content="Research &amp; Articles | Dan Gardner, MD">
+  <meta property="og:description" content="Peer-reviewed articles on the effectiveness of psychoanalytic psychotherapy — curated by Dan Gardner, MD.">
+  <meta property="og:url" content="https://dangardnermd.com/research-articles.html">
+  <meta property="og:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Research &amp; Articles | Dan Gardner, MD">
+  <meta name="twitter:description" content="Peer-reviewed articles on the effectiveness of psychoanalytic psychotherapy — curated by Dan Gardner, MD.">
+  <meta name="twitter:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
   <title>Research &amp; Articles | Dan Gardner, MD</title>
 
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/dist/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +40,28 @@
     .card-hover { transition: transform 0.22s ease, box-shadow 0.22s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
     .study-card { border-left: 3px solid #5b9fa6; }
+    /* ── Skip link ──────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -3rem; left: 0.75rem; z-index: 100;
+      background: #ffffff; color: #0f2544; padding: 0.6rem 1.1rem;
+      border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0.75rem; }
+
+    /* ── Reduced motion ────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .fade-in { opacity: 1; transform: none; }
+    }
   </style>
+  <noscript><style>.fade-in{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 
 <body class="text-gray-800 antialiased">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
@@ -39,15 +72,16 @@
           <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
         </a>
         <div class="hidden lg:flex items-center gap-5">
-          <a href="index.html#about"                    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
-          <a href="psychotherapy.html"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
-          <a href="traumatic-brain-injury.html"         class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
-          <a href="resources.html"                      class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
           <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Digital Tools</a>
-          <a href="faq.html"                            class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
-          <a href="index.html#contact"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+          <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Disclaimer</a>
+          <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
         </div>
-        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
@@ -57,21 +91,20 @@
     </div>
     <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
       <div class="px-5 py-4 flex flex-col gap-1">
-        <a href="index.html#about"            class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
-        <a href="psychotherapy.html"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy</a>
-        <a href="psychoanalysis.html"         class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychoanalysis</a>
+        <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
         <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
-        <a href="resources.html"              class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
         <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Digital Tools</a>
-        <a href="faq.html"                    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
-        <a href="disclaimer.html"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
-        <a href="index.html#contact"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+        <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+  <section id="main-content" class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
@@ -93,7 +126,7 @@
   <!-- INTRO -->
   <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
-      <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">The Evidence Base</p>
+      <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">The Evidence Base</p>
       <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Psychoanalysis Is Evidence-Based</h2>
       <div class="accent-bar"></div>
       <p class="text-gray-600 leading-relaxed mb-5">
@@ -114,7 +147,7 @@
   <section class="py-16 lg:py-20 bg-cream-50">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-12 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">What the Research Shows</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">What the Research Shows</p>
         <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Key Research Findings</h2>
         <div class="accent-bar"></div>
       </div>
@@ -123,17 +156,17 @@
       <div class="grid sm:grid-cols-3 gap-5 mb-12">
         <div class="fade-in bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center">
           <p class="font-heading text-4xl font-bold text-navy-800 mb-1">1.8×</p>
-          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-2">Effect Size</p>
+          <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide mb-2">Effect Size</p>
           <p class="text-gray-500 text-sm leading-relaxed">Long-term psychodynamic therapy produced substantially larger effect sizes than shorter interventions for complex disorders (Leichsenring &amp; Rabung, JAMA).</p>
         </div>
         <div class="fade-in bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center" style="transition-delay:0.08s">
           <p class="font-heading text-4xl font-bold text-navy-800 mb-1">96%</p>
-          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-2">Better Outcomes</p>
+          <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide mb-2">Better Outcomes</p>
           <p class="text-gray-500 text-sm leading-relaxed">Patients receiving long-term psychodynamic therapy fared better than 96% of comparison groups for complex mental disorders.</p>
         </div>
         <div class="fade-in bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center" style="transition-delay:0.16s">
           <p class="font-heading text-4xl font-bold text-navy-800 mb-1">78%</p>
-          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-2">Utilization Reduction</p>
+          <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide mb-2">Utilization Reduction</p>
           <p class="text-gray-500 text-sm leading-relaxed">77.8% of studies reported healthcare utilization reductions after short-term psychodynamic psychotherapy for somatic conditions (Abbass et al., 2020).</p>
         </div>
       </div>
@@ -145,7 +178,7 @@
           <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800">Leichsenring et al. (2023)</h3>
-              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">World Psychiatry</p>
+              <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide">World Psychiatry</p>
             </div>
             <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Meta-analysis of meta-analyses</span>
           </div>
@@ -158,7 +191,7 @@
           <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800">Caselli et al. (2023)</h3>
-              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">Journal of Affective Disorders</p>
+              <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide">Journal of Affective Disorders</p>
             </div>
             <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Depression</span>
           </div>
@@ -171,7 +204,7 @@
           <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800">Crugnola et al. (2024)</h3>
-              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">Frontiers in Psychology</p>
+              <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide">Frontiers in Psychology</p>
             </div>
             <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Personality Disorders</span>
           </div>
@@ -184,7 +217,7 @@
           <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800">Leichsenring &amp; Rabung (2008, updated 2015)</h3>
-              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">JAMA</p>
+              <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide">JAMA</p>
             </div>
             <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Long-term outcomes</span>
           </div>
@@ -197,7 +230,7 @@
           <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800">Abbass et al. (2020)</h3>
-              <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide">Psychotherapy and Psychosomatics</p>
+              <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide">Psychotherapy and Psychosomatics</p>
             </div>
             <span class="text-xs bg-navy-800 text-teal-300 px-3 py-1 rounded-full font-medium">Somatic symptoms</span>
           </div>
@@ -214,7 +247,7 @@
   <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Clinical Applications</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Clinical Applications</p>
         <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">What Conditions Does the Research Support?</h2>
         <div class="accent-bar"></div>
       </div>
@@ -294,25 +327,25 @@
   <section class="py-16 lg:py-20 bg-cream-50">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Related</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Related</p>
         <h2 class="font-heading text-2xl font-bold text-navy-800 mb-3">Explore Further</h2>
         <div class="accent-bar"></div>
       </div>
       <div class="grid sm:grid-cols-3 gap-5">
         <a href="psychotherapy-effectiveness.html" class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Is Psychoanalytic Psychotherapy Effective?</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Is Psychoanalytic Psychotherapy Effective?</h3>
           <p class="text-gray-500 text-sm leading-relaxed">7 landmark peer-reviewed studies and commentaries on the evidence base for psychodynamic therapy.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View evidence <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View evidence <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
         <a href="psychoanalysis.html" class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.08s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">About Psychoanalysis</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">About Psychoanalysis</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Dr. Gardner's overview of psychoanalytic therapy — what it is, who it helps, and what to expect.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
         <a href="psychotherapy-ai-copilot.html" class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.16s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Psychotherapy AI Copilot</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Psychotherapy AI Copilot</h3>
           <p class="text-gray-500 text-sm leading-relaxed">An AI-assisted tool to support exploration of psychotherapy concepts and research.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Explore tool <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Explore tool <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
       </div>
     </div>

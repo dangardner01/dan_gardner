@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TBI Recovery Podcast — interviews with traumatic brain injury survivors, family members, and healthcare providers hosted by Dan Gardner, MD.">
+  <link rel="canonical" href="https://dangardnermd.com/tbi-recovery-podcasts.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dan Gardner, MD">
+  <meta property="og:title" content="TBI Recovery Podcasts | Dan Gardner, MD">
+  <meta property="og:description" content="TBI Recovery Podcast — interviews with traumatic brain injury survivors, family members, and healthcare providers hosted by Dan Gardner, MD.">
+  <meta property="og:url" content="https://dangardnermd.com/tbi-recovery-podcasts.html">
+  <meta property="og:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="TBI Recovery Podcasts | Dan Gardner, MD">
+  <meta name="twitter:description" content="TBI Recovery Podcast — interviews with traumatic brain injury survivors, family members, and healthcare providers hosted by Dan Gardner, MD.">
+  <meta name="twitter:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
   <title>TBI Recovery Podcasts | Dan Gardner, MD</title>
 
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/dist/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,10 +41,28 @@
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
     .listen-btn { transition: transform 0.18s ease, box-shadow 0.18s ease; }
     .listen-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,58,95,0.18); }
+    /* ── Skip link ──────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -3rem; left: 0.75rem; z-index: 100;
+      background: #ffffff; color: #0f2544; padding: 0.6rem 1.1rem;
+      border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0.75rem; }
+
+    /* ── Reduced motion ────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .fade-in { opacity: 1; transform: none; }
+    }
   </style>
+  <noscript><style>.fade-in{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 
 <body class="text-gray-800 antialiased">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
@@ -40,15 +73,16 @@
           <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
         </a>
         <div class="hidden lg:flex items-center gap-5">
-          <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
           <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
-          <a href="traumatic-brain-injury.html"    class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Brain Injury</a>
-          <a href="resources.html"                 class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
+          <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
           <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Digital Tools</a>
-          <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
-          <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+          <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Disclaimer</a>
+          <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
         </div>
-        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
@@ -58,20 +92,20 @@
     </div>
     <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
       <div class="px-5 py-4 flex flex-col gap-1">
-        <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
         <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
-        <a href="traumatic-brain-injury.html"    class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
-        <a href="resources.html"                 class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
         <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Digital Tools</a>
-        <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
-        <a href="disclaimer.html"                class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
-        <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+        <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+  <section id="main-content" class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
@@ -93,7 +127,7 @@
   <!-- INTRO -->
   <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-5 lg:px-8 fade-in">
-      <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">About the Podcast</p>
+      <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">About the Podcast</p>
       <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Voices from the TBI Community</h2>
       <div class="accent-bar"></div>
       <p class="text-gray-600 leading-relaxed mb-5">
@@ -113,7 +147,7 @@
   <section class="py-16 lg:py-20 bg-cream-50">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Listen Now</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Listen Now</p>
         <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Episodes</h2>
         <div class="accent-bar"></div>
         <p class="text-gray-500 text-sm leading-relaxed">Stream episodes directly or subscribe on your preferred podcast platform.</p>
@@ -153,7 +187,7 @@
   <section class="py-14 bg-white">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <div class="mb-8 fade-in text-center">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Subscribe</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Subscribe</p>
         <h2 class="font-heading text-2xl font-bold text-navy-800 mb-1">Listen on Your Favorite Platform</h2>
         <div class="accent-bar mx-auto"></div>
       </div>
@@ -168,8 +202,8 @@
             </svg>
           </div>
           <div>
-            <p class="text-navy-800 font-semibold text-sm group-hover:text-teal-500 transition-colors">Podbean</p>
-            <p class="text-gray-400 text-xs">dangardner.podbean.com</p>
+            <p class="text-navy-800 font-semibold text-sm group-hover:text-teal-700 transition-colors">Podbean</p>
+            <p class="text-gray-600 text-xs">dangardner.podbean.com</p>
           </div>
         </a>
 
@@ -181,8 +215,8 @@
             </svg>
           </div>
           <div>
-            <p class="text-navy-800 font-semibold text-sm group-hover:text-teal-500 transition-colors">Apple Podcasts</p>
-            <p class="text-gray-400 text-xs">Search "TBI Recovery"</p>
+            <p class="text-navy-800 font-semibold text-sm group-hover:text-teal-700 transition-colors">Apple Podcasts</p>
+            <p class="text-gray-600 text-xs">Search "TBI Recovery"</p>
           </div>
         </a>
 
@@ -194,8 +228,8 @@
             </svg>
           </div>
           <div>
-            <p class="text-navy-800 font-semibold text-sm group-hover:text-teal-500 transition-colors">Spotify</p>
-            <p class="text-gray-400 text-xs">Search "TBI Recovery"</p>
+            <p class="text-navy-800 font-semibold text-sm group-hover:text-teal-700 transition-colors">Spotify</p>
+            <p class="text-gray-600 text-xs">Search "TBI Recovery"</p>
           </div>
         </a>
 
@@ -263,32 +297,32 @@
   <section class="py-16 lg:py-20 bg-cream-50">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Go Deeper</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Go Deeper</p>
         <h2 class="font-heading text-2xl font-bold text-navy-800 mb-3">Related Resources</h2>
         <div class="accent-bar"></div>
       </div>
       <div class="grid sm:grid-cols-3 gap-5">
         <a href="traumatic-brain-injury.html"
            class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Traumatic Brain Injury</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Traumatic Brain Injury</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Dr. Gardner's TBI psychiatry services — evaluation, consultation, and medical-legal expertise.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
             Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
           </span>
         </a>
         <a href="tbi-recovery-videos.html"
            class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.08s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">TBI Recovery Videos</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">TBI Recovery Videos</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Curated YouTube playlists covering TBI basics, recovery strategies, assistive technology, and neuropsychology.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
             Watch now <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
           </span>
         </a>
         <a href="resources.html"
            class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.16s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">All Resources</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">All Resources</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Browse the full library of videos, articles, and tools across psychotherapy and brain injury topics.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">
             View all <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
           </span>
         </a>

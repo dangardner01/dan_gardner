@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Warm lines and crisis lines — free emotional support lines, online chat resources, and 24/7 crisis and suicide prevention hotlines for California and nationwide.">
+  <link rel="canonical" href="https://dangardnermd.com/warm-lines-crisis-lines.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dan Gardner, MD">
+  <meta property="og:title" content="Warm Lines &amp; Crisis Lines | Dan Gardner, MD">
+  <meta property="og:description" content="Warm lines and crisis lines — free emotional support lines, online chat resources, and 24/7 crisis and suicide prevention hotlines for California and nationwide.">
+  <meta property="og:url" content="https://dangardnermd.com/warm-lines-crisis-lines.html">
+  <meta property="og:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Warm Lines &amp; Crisis Lines | Dan Gardner, MD">
+  <meta name="twitter:description" content="Warm lines and crisis lines — free emotional support lines, online chat resources, and 24/7 crisis and suicide prevention hotlines for California and nationwide.">
+  <meta name="twitter:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
   <title>Warm Lines &amp; Crisis Lines | Dan Gardner, MD</title>
 
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/dist/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +39,28 @@
     .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
     .card-hover { transition: transform 0.22s ease, box-shadow 0.22s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
+    /* ── Skip link ──────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -3rem; left: 0.75rem; z-index: 100;
+      background: #ffffff; color: #0f2544; padding: 0.6rem 1.1rem;
+      border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0.75rem; }
+
+    /* ── Reduced motion ────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .fade-in { opacity: 1; transform: none; }
+    }
   </style>
+  <noscript><style>.fade-in{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 
 <body class="text-gray-800 antialiased">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
@@ -38,15 +71,16 @@
           <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
         </a>
         <div class="hidden lg:flex items-center gap-5">
-          <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
           <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
-          <a href="traumatic-brain-injury.html"    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
-          <a href="resources.html"                 class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
           <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Digital Tools</a>
-          <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
-          <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+          <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Disclaimer</a>
+          <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
         </div>
-        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
@@ -56,14 +90,14 @@
     </div>
     <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
       <div class="px-5 py-4 flex flex-col gap-1">
-        <a href="index.html#about"               class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
         <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
-        <a href="traumatic-brain-injury.html"    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
-        <a href="resources.html"                 class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
         <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Digital Tools</a>
-        <a href="faq.html"                       class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
-        <a href="disclaimer.html"                class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
-        <a href="index.html#contact"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+        <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
       </div>
     </div>
   </nav>
@@ -74,7 +108,7 @@
   </div>
 
   <!-- HERO -->
-  <section class="hero-bg pt-44 pb-20 text-white" aria-labelledby="page-heading">
+  <section id="main-content" class="hero-bg pt-44 pb-20 text-white" aria-labelledby="page-heading">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
@@ -97,7 +131,7 @@
   <section class="py-16 lg:py-20 bg-white" aria-labelledby="online-heading">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Online Resources</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Online Resources</p>
         <h2 id="online-heading" class="font-heading text-2xl font-bold text-navy-800 mb-1">Free Online Chat Support</h2>
         <div class="accent-bar"></div>
         <p class="text-gray-500 text-sm">Anonymous, free, and available from any device.</p>
@@ -113,9 +147,9 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-heading text-base font-bold text-navy-800 mb-1 group-hover:text-teal-500 transition-colors">IMAlive</h3>
+              <h3 class="font-heading text-base font-bold text-navy-800 mb-1 group-hover:text-teal-700 transition-colors">IMAlive</h3>
               <p class="text-gray-500 text-sm leading-relaxed mb-3">A live online network using instant messaging to respond to people in crisis. The first online network with 100% of volunteers trained and certified in crisis intervention.</p>
-              <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">imalive.org/online <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+              <span class="inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">imalive.org/online <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
             </div>
           </div>
         </a>
@@ -129,9 +163,9 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-heading text-base font-bold text-navy-800 mb-1 group-hover:text-teal-500 transition-colors">7 Cups</h3>
+              <h3 class="font-heading text-base font-bold text-navy-800 mb-1 group-hover:text-teal-700 transition-colors">7 Cups</h3>
               <p class="text-gray-500 text-sm leading-relaxed mb-3">Connects you to caring listeners for free emotional support. 180 professional therapists and over 300,000 trained listeners have helped more than 25 million people.</p>
-              <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">7cups.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+              <span class="inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">7cups.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
             </div>
           </div>
         </a>
@@ -144,7 +178,7 @@
   <section class="py-16 lg:py-20 bg-cream-50" aria-labelledby="warm-heading">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Non-Crisis Support</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Non-Crisis Support</p>
         <h2 id="warm-heading" class="font-heading text-2xl font-bold text-navy-800 mb-1">Warm Lines</h2>
         <div class="accent-bar"></div>
         <p class="text-gray-500 text-sm max-w-2xl">Warm lines are non-emergency emotional support lines — for when you need someone to talk to but are not in immediate crisis.</p>
@@ -154,32 +188,32 @@
         <div class="fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
           <h3 class="font-heading text-base font-bold text-navy-800 mb-3">San Diego Warm Lines</h3>
           <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://namisandiego.org/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors underline">NAMI San Diego</a></li>
-            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://postpartumhealthalliance.org/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors underline">Post-Partum Health Alliance</a></li>
-            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://www.alz.org/sandiego" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors underline">Alzheimer's Association</a></li>
-            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://www.themeetingplaceinc.org/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors underline">Meeting Place Clubhouse, Inc.</a></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://namisandiego.org/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors underline">NAMI San Diego</a></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://postpartumhealthalliance.org/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors underline">Post-Partum Health Alliance</a></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://www.alz.org/sandiego" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors underline">Alzheimer's Association</a></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span><a href="https://www.themeetingplaceinc.org/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors underline">Meeting Place Clubhouse, Inc.</a></li>
           </ul>
         </div>
 
         <a href="http://www.ochealthinfo.com/bhs/about/pi/crisis/warmline" target="_blank" rel="noopener noreferrer"
            class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.07s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">OC Warmline</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">OC Warmline</h3>
           <p class="text-gray-500 text-sm leading-relaxed mb-3">NAMI Orange County warmline for non-emergency emotional support.</p>
-          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">ochealthinfo.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">ochealthinfo.com <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="http://prpsn.org/services/warm-line/" target="_blank" rel="noopener noreferrer"
            class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.14s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">LA Warmline</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">LA Warmline</h3>
           <p class="text-gray-500 text-sm leading-relaxed mb-3">Project Return Peer Support Network — Los Angeles peer-run warmline.</p>
-          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">prpsn.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">prpsn.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="http://www.mentalhealthsf.org/peer-run-warmline/" target="_blank" rel="noopener noreferrer"
            class="card-hover fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.21s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">SF Peer-Run Warmline</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">SF Peer-Run Warmline</h3>
           <p class="text-gray-500 text-sm leading-relaxed mb-3">San Francisco peer-run warmline offering compassionate, non-judgmental support.</p>
-          <span class="inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">mentalhealthsf.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">mentalhealthsf.org <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
       </div>

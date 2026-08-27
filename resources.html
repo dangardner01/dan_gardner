@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mental health, TBI, and healthcare resources curated by Dan Gardner, MD — San Diego community resources, crisis lines, medication information, and more.">
+  <link rel="canonical" href="https://dangardnermd.com/resources.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dan Gardner, MD">
+  <meta property="og:title" content="Resources | Dan Gardner, MD">
+  <meta property="og:description" content="Mental health, TBI, and healthcare resources curated by Dan Gardner, MD — San Diego community resources, crisis lines, medication information, and more.">
+  <meta property="og:url" content="https://dangardnermd.com/resources.html">
+  <meta property="og:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Resources | Dan Gardner, MD">
+  <meta name="twitter:description" content="Mental health, TBI, and healthcare resources curated by Dan Gardner, MD — San Diego community resources, crisis lines, medication information, and more.">
+  <meta name="twitter:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
   <title>Resources | Dan Gardner, MD</title>
 
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/dist/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +39,28 @@
     .accent-bar { width: 52px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #5b9fa6, #7db8be); margin: 0.85rem 0 1.5rem; }
     .resource-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
     .resource-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(30,58,95,0.10); }
+    /* ── Skip link ──────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -3rem; left: 0.75rem; z-index: 100;
+      background: #ffffff; color: #0f2544; padding: 0.6rem 1.1rem;
+      border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0.75rem; }
+
+    /* ── Reduced motion ────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .fade-in { opacity: 1; transform: none; }
+    }
   </style>
+  <noscript><style>.fade-in{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 
 <body class="text-gray-800 antialiased">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
@@ -38,15 +71,16 @@
           <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
         </a>
         <div class="hidden lg:flex items-center gap-5">
-          <a href="index.html#about"     class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
-          <a href="psychotherapy-psychoanalysis.html"        class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
-          <a href="traumatic-brain-injury.html"              class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
-          <a href="resources.html"                           class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html" class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
           <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Digital Tools</a>
-          <a href="faq.html"                                 class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
-          <a href="index.html#contact"   class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+          <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Disclaimer</a>
+          <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
         </div>
-        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
@@ -56,20 +90,20 @@
     </div>
     <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
       <div class="px-5 py-4 flex flex-col gap-1">
-        <a href="index.html#about"   class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
-        <a href="psychotherapy-psychoanalysis.html"      class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
-        <a href="traumatic-brain-injury.html"            class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
-        <a href="resources.html"                         class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
+        <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
+        <a href="resources.html" class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
         <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Digital Tools</a>
-        <a href="faq.html"                               class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
-        <a href="disclaimer.html"                        class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
         <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+  <section id="main-content" class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
@@ -91,7 +125,7 @@
   <section class="py-16 lg:py-20 bg-white" aria-labelledby="psych-resources-heading">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Psychotherapy &amp; Psychoanalysis</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Psychotherapy &amp; Psychoanalysis</p>
         <h2 id="psych-resources-heading" class="font-heading text-2xl font-bold text-navy-800 mb-1">Psychotherapy Resources</h2>
         <div class="accent-bar"></div>
       </div>
@@ -103,9 +137,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Psychotherapy AI Copilot</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Psychotherapy AI Copilot</h3>
           <p class="text-gray-500 text-sm leading-relaxed">An AI-assisted tool to support exploration of psychotherapy concepts and research.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="psychotherapy-effectiveness.html" class="resource-card fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.05s">
@@ -114,9 +148,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Is Psychoanalytic Psychotherapy Effective?</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Is Psychoanalytic Psychotherapy Effective?</h3>
           <p class="text-gray-500 text-sm leading-relaxed">High-quality peer-reviewed evidence — 7 landmark studies demonstrating the efficacy of psychodynamic psychotherapy.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View evidence <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View evidence <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="research-articles.html" class="resource-card fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.1s">
@@ -125,9 +159,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Research &amp; Articles</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Research &amp; Articles</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Peer-reviewed articles on the effectiveness of psychoanalytic psychotherapy.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
 
@@ -139,7 +173,7 @@
   <section class="py-16 lg:py-20 bg-cream-50" aria-labelledby="tbi-resources-heading">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Brain Injury</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Brain Injury</p>
         <h2 id="tbi-resources-heading" class="font-heading text-2xl font-bold text-navy-800 mb-1">Traumatic Brain Injury Resources</h2>
         <div class="accent-bar"></div>
       </div>
@@ -152,9 +186,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.069A1 1 0 0121 8.867v6.266a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">TBI Recovery Videos</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">TBI Recovery Videos</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Interviews with TBI survivors, family members, and healthcare professionals about recovery challenges and strategies.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Watch on YouTube <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Watch on YouTube <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="https://dangardner.podbean.com" target="_blank" rel="noopener noreferrer"
@@ -164,9 +198,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">TBI Recovery Podcasts</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">TBI Recovery Podcasts</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Audio interviews covering advances in TBI diagnosis, treatment, and community support for survivors and families.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Listen on Podbean <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Listen on Podbean <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="tbi-literature-searches.html" class="resource-card fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.1s">
@@ -175,9 +209,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">TBI Literature Searches</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">TBI Literature Searches</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Filtered summaries of peer-reviewed TBI medical literature and current research findings.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Search literature <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Search literature <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="carecompanion.html" class="resource-card fade-in bg-white rounded-2xl p-6 border border-gray-100 shadow-sm block group" style="transition-delay:0.05s">
@@ -186,9 +220,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">CareCompanion Coach</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">CareCompanion Coach</h3>
           <p class="text-gray-500 text-sm leading-relaxed">A digital tool to help TBI patients and caregivers organize care, track symptoms, and communicate with providers.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
       </div>
@@ -199,7 +233,7 @@
   <section class="py-16 lg:py-20 bg-white" aria-labelledby="community-heading">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Community</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Community</p>
         <h2 id="community-heading" class="font-heading text-2xl font-bold text-navy-800 mb-1">Community &amp; Crisis Resources</h2>
         <div class="accent-bar"></div>
       </div>
@@ -212,9 +246,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">San Diego Resources</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">San Diego Resources</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Local mental health services, support groups, and community programs in the San Diego region.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View resources <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View resources <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="warm-lines-crisis-lines.html" class="resource-card fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.05s">
@@ -223,12 +257,12 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Warm Lines &amp; Crisis Lines</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Warm Lines &amp; Crisis Lines</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Non-emergency emotional support warm lines and 24/7 crisis hotlines.</p>
           <div class="mt-3 p-3 bg-red-50 border border-red-100 rounded-xl">
             <p class="text-red-700 text-xs font-semibold">For emergencies, call 911 or go to the nearest hospital ER.</p>
           </div>
-          <span class="mt-3 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View lines <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-3 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View lines <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
         <a href="patient-communities.html" class="resource-card fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.1s">
@@ -237,9 +271,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
           </div>
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Patient Communities</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Patient Communities</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Online and in-person support communities for mental health and brain injury patients and families.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View communities <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View communities <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
 
       </div>

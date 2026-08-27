@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A curated review of high-quality peer-reviewed research demonstrating the efficacy of psychodynamic psychotherapy — compiled by Dan Gardner, MD.">
+  <link rel="canonical" href="https://dangardnermd.com/psychotherapy-effectiveness.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dan Gardner, MD">
+  <meta property="og:title" content="Is Psychoanalytic Psychotherapy Effective? | Dan Gardner, MD">
+  <meta property="og:description" content="A curated review of high-quality peer-reviewed research demonstrating the efficacy of psychodynamic psychotherapy — compiled by Dan Gardner, MD.">
+  <meta property="og:url" content="https://dangardnermd.com/psychotherapy-effectiveness.html">
+  <meta property="og:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Is Psychoanalytic Psychotherapy Effective? | Dan Gardner, MD">
+  <meta name="twitter:description" content="A curated review of high-quality peer-reviewed research demonstrating the efficacy of psychodynamic psychotherapy — compiled by Dan Gardner, MD.">
+  <meta name="twitter:image" content="https://dangardnermd.com/Headshot%20BEST%201.jpg">
   <title>Is Psychoanalytic Psychotherapy Effective? | Dan Gardner, MD</title>
 
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/dist/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +44,28 @@
     details > summary::-webkit-details-marker { display: none; }
     details[open] .chevron { transform: rotate(180deg); }
     .chevron { transition: transform 0.2s ease; }
+    /* ── Skip link ──────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -3rem; left: 0.75rem; z-index: 100;
+      background: #ffffff; color: #0f2544; padding: 0.6rem 1.1rem;
+      border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0.75rem; }
+
+    /* ── Reduced motion ────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .fade-in { opacity: 1; transform: none; }
+    }
   </style>
+  <noscript><style>.fade-in{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 
 <body class="text-gray-800 antialiased">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
@@ -43,15 +76,16 @@
           <span class="text-blue-300 text-[11px] font-light tracking-widest uppercase">Psychotherapy &nbsp;·&nbsp; Psychoanalysis</span>
         </a>
         <div class="hidden lg:flex items-center gap-5">
-          <a href="index.html#about"                    class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
-          <a href="psychotherapy.html"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
-          <a href="traumatic-brain-injury.html"         class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
-          <a href="resources.html"                      class="text-white text-sm font-semibold border-b border-teal-400 pb-0.5">Resources</a>
+          <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">About</a>
+          <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Psychotherapy</a>
+          <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Brain Injury</a>
+          <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Resources</a>
           <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Digital Tools</a>
-          <a href="faq.html"                            class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
-          <a href="index.html#contact"                  class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
+          <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">FAQ</a>
+          <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Disclaimer</a>
+          <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium transition-colors duration-200">Contact</a>
         </div>
-        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <button id="menu-toggle" class="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path id="icon-bars"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             <path id="icon-close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="hidden"/>
@@ -61,21 +95,20 @@
     </div>
     <div id="mobile-menu" class="lg:hidden bg-navy-900 border-t border-white/10" role="menu">
       <div class="px-5 py-4 flex flex-col gap-1">
-        <a href="index.html#about"            class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
-        <a href="psychotherapy.html"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy</a>
-        <a href="psychoanalysis.html"         class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychoanalysis</a>
+        <a href="index.html#about" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">About</a>
+        <a href="psychotherapy-psychoanalysis.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Psychotherapy / Psychoanalysis</a>
         <a href="traumatic-brain-injury.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Traumatic Brain Injury</a>
-        <a href="resources.html"              class="text-teal-300 text-sm font-semibold py-3 border-b border-white/10" role="menuitem">Resources</a>
+        <a href="resources.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Resources</a>
         <a href="/tools" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Digital Tools</a>
-        <a href="faq.html"                    class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
-        <a href="disclaimer.html"             class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
-        <a href="index.html#contact"          class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
+        <a href="faq.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">FAQ</a>
+        <a href="disclaimer.html" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Disclaimer</a>
+        <a href="index.html#contact" class="text-blue-100 hover:text-white text-sm font-medium py-3 border-b border-white/10" role="menuitem">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
+  <section id="main-content" class="hero-bg pt-32 pb-20 text-white" aria-labelledby="page-heading">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <p class="text-teal-300 text-xs font-semibold tracking-widest uppercase mb-4">
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
@@ -98,7 +131,7 @@
   <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <div class="fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Overview</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Overview</p>
         <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">The Evidence Is Clear</h2>
         <div class="accent-bar"></div>
         <p class="text-gray-600 leading-relaxed mb-4">
@@ -107,23 +140,23 @@
         <p class="text-gray-600 leading-relaxed mb-8">
           The evidence consistently shows that psychodynamic therapy is not only effective, but often equivalent to or superior to other established treatments — with the additional benefit of sustained and sometimes <em>increasing</em> effects over time.
         </p>
-        <p class="text-xs text-gray-400 italic mb-10">Source: Perplexity Pro AI literature review. Studies selected for methodological quality and relevance to clinical efficacy.</p>
+        <p class="text-xs text-gray-600 italic mb-10">Source: Perplexity Pro AI literature review. Studies selected for methodological quality and relevance to clinical efficacy.</p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 fade-in" style="transition-delay:0.1s">
         <div class="bg-cream-50 rounded-2xl p-6 border border-cream-200 text-center">
           <p class="font-heading text-3xl font-bold text-navy-800 mb-1">7</p>
-          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-1">Studies Reviewed</p>
-          <p class="text-gray-400 text-xs leading-relaxed">RCTs, meta-analyses &amp; umbrella reviews</p>
+          <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide mb-1">Studies Reviewed</p>
+          <p class="text-gray-600 text-xs leading-relaxed">RCTs, meta-analyses &amp; umbrella reviews</p>
         </div>
         <div class="bg-cream-50 rounded-2xl p-6 border border-cream-200 text-center">
           <p class="font-heading text-3xl font-bold text-navy-800 mb-1">= CBT</p>
-          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-1">Comparable Outcomes</p>
-          <p class="text-gray-400 text-xs leading-relaxed">No significant differences vs. established therapies</p>
+          <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide mb-1">Comparable Outcomes</p>
+          <p class="text-gray-600 text-xs leading-relaxed">No significant differences vs. established therapies</p>
         </div>
         <div class="bg-cream-50 rounded-2xl p-6 border border-cream-200 text-center">
           <p class="font-heading text-3xl font-bold text-navy-800 mb-1">Lasting</p>
-          <p class="text-teal-500 text-xs font-semibold uppercase tracking-wide mb-1">Sustained Benefits</p>
-          <p class="text-gray-400 text-xs leading-relaxed">Effects persist and grow after treatment ends</p>
+          <p class="text-teal-700 text-xs font-semibold uppercase tracking-wide mb-1">Sustained Benefits</p>
+          <p class="text-gray-600 text-xs leading-relaxed">Effects persist and grow after treatment ends</p>
         </div>
       </div>
     </div>
@@ -134,7 +167,7 @@
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
 
       <div class="mb-12 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Peer-Reviewed Evidence · 2008–2024</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Peer-Reviewed Evidence · 2008–2024</p>
         <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">High-Quality Academic Publications</h2>
         <div class="accent-bar"></div>
       </div>
@@ -147,7 +180,7 @@
             <span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 text-teal-300 text-sm font-bold flex items-center justify-center mt-0.5">1</span>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800 leading-snug">The status of psychodynamic psychotherapy as an empirically supported treatment for common mental disorders — an umbrella review based on updated criteria</h3>
-              <p class="text-gray-400 text-xs mt-1.5">Leichsenring F, Abbass A, Heim N, Keefe JR, Kisely S, Luyten P, Rabung S, Steinert C.</p>
+              <p class="text-gray-600 text-xs mt-1.5">Leichsenring F, Abbass A, Heim N, Keefe JR, Kisely S, Luyten P, Rabung S, Steinert C.</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 mb-5">
@@ -173,7 +206,7 @@
             </li>
           </ul>
           <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9520618/" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+             class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
             View publication
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -185,7 +218,7 @@
             <span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 text-teal-300 text-sm font-bold flex items-center justify-center mt-0.5">2</span>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800 leading-snug">Efficacy of short-term psychodynamic psychotherapy (STPP) in depressive disorders: A systematic review and meta-analysis</h3>
-              <p class="text-gray-400 text-xs mt-1.5">Caselli I, Ielmini M, Bellini A, Zizolfi D, Callegari C.</p>
+              <p class="text-gray-600 text-xs mt-1.5">Caselli I, Ielmini M, Bellini A, Zizolfi D, Callegari C.</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 mb-5">
@@ -211,7 +244,7 @@
             </li>
           </ul>
           <a href="https://pubmed.ncbi.nlm.nih.gov/36623570/" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+             class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
             View publication
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -223,7 +256,7 @@
             <span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 text-teal-300 text-sm font-bold flex items-center justify-center mt-0.5">3</span>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800 leading-snug">The efficacy of psychodynamic psychotherapy for young adults: A systematic review and meta-analysis</h3>
-              <p class="text-gray-400 text-xs mt-1.5">Riva Crugnola C, Bottini M, Madeddu F, Preti E, Ierardi E.</p>
+              <p class="text-gray-600 text-xs mt-1.5">Riva Crugnola C, Bottini M, Madeddu F, Preti E, Ierardi E.</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 mb-5">
@@ -249,7 +282,7 @@
             </li>
           </ul>
           <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1366032/full" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+             class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
             View publication
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -261,7 +294,7 @@
             <span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 text-teal-300 text-sm font-bold flex items-center justify-center mt-0.5">4</span>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800 leading-snug">Effectiveness of Long-term Psychodynamic Psychotherapy: A Meta-analysis</h3>
-              <p class="text-gray-400 text-xs mt-1.5">Leichsenring F, Rabung S.</p>
+              <p class="text-gray-600 text-xs mt-1.5">Leichsenring F, Rabung S.</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 mb-5">
@@ -288,12 +321,12 @@
           </ul>
           <div class="flex flex-wrap gap-4">
             <a href="https://pubmed.ncbi.nlm.nih.gov/18827212/" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+               class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
               PubMed
               <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
             <a href="https://jamanetwork.com/journals/jama/fullarticle/1028649" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+               class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
               JAMA
               <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
@@ -306,7 +339,7 @@
             <span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 text-teal-300 text-sm font-bold flex items-center justify-center mt-0.5">5</span>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800 leading-snug">A systematic review and meta-analysis of individual participant data on short-term psychodynamic psychotherapy for depression</h3>
-              <p class="text-gray-400 text-xs mt-1.5">Steinert C, Munder T, Rabung S, Hoyer J, Leichsenring F.</p>
+              <p class="text-gray-600 text-xs mt-1.5">Steinert C, Munder T, Rabung S, Hoyer J, Leichsenring F.</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 mb-5">
@@ -332,7 +365,7 @@
             </li>
           </ul>
           <a href="https://pubmed.ncbi.nlm.nih.gov/36958077/" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+             class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
             View publication
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -344,7 +377,7 @@
             <span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 text-teal-300 text-sm font-bold flex items-center justify-center mt-0.5">6</span>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800 leading-snug">Short-term psychodynamic psychotherapy and cognitive-behavioral therapy in generalized anxiety disorder: A randomized, controlled trial</h3>
-              <p class="text-gray-400 text-xs mt-1.5">Leichsenring F, Salzer S, Jaeger U, Kächele H, Kreische R, Leweke F, Rüger U, Winkelbach C, Leibing E.</p>
+              <p class="text-gray-600 text-xs mt-1.5">Leichsenring F, Salzer S, Jaeger U, Kächele H, Kreische R, Leweke F, Rüger U, Winkelbach C, Leibing E.</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 mb-5">
@@ -370,7 +403,7 @@
             </li>
           </ul>
           <a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2009.09030441" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+             class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
             View publication
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -382,7 +415,7 @@
             <span class="flex-shrink-0 w-8 h-8 rounded-full bg-navy-800 text-teal-300 text-sm font-bold flex items-center justify-center mt-0.5">7</span>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800 leading-snug">Short-Term Psychodynamic Psychotherapy for Functional Somatic Disorders: A Meta-analysis of Randomized Controlled Trials</h3>
-              <p class="text-gray-400 text-xs mt-1.5 leading-relaxed">Abbass A, Lumley MA, Town J, Holmes H, Luyten P, Cooper A, Russell L, Schubiner H, Kisely S, Rask M, Kleinstäuber M, Malik A, Drysdale E, Lilliengren P, Keefe JR.</p>
+              <p class="text-gray-600 text-xs mt-1.5 leading-relaxed">Abbass A, Lumley MA, Town J, Holmes H, Luyten P, Cooper A, Russell L, Schubiner H, Kisely S, Rask M, Kleinstäuber M, Malik A, Drysdale E, Lilliengren P, Keefe JR.</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-2 mb-5">
@@ -408,7 +441,7 @@
             </li>
           </ul>
           <a href="https://karger.com/pps/article/89/6/363/283235/Short-Term-Psychodynamic-Psychotherapy-for" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 text-teal-500 hover:text-teal-400 text-xs font-semibold transition-colors">
+             class="inline-flex items-center gap-1.5 text-teal-700 hover:text-teal-400 text-xs font-semibold transition-colors">
             View publication
             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -448,7 +481,7 @@
   <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Research in Context</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Research in Context</p>
         <h2 class="font-heading text-3xl font-bold text-navy-800 mb-3">Broader Perspectives</h2>
         <div class="accent-bar"></div>
       </div>
@@ -458,12 +491,12 @@
         <div class="fade-in bg-cream-50 rounded-2xl p-7 border border-cream-200">
           <div class="flex items-start gap-3 mb-4">
             <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center">
-              <svg class="w-5 h-5 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <svg class="w-5 h-5 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             </div>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800">Psychotherapy Is Effective but Underutilized, Review Shows</h3>
-              <p class="text-teal-500 text-xs font-semibold mt-0.5">Science Daily · August 9, 2012</p>
-              <p class="text-gray-400 text-xs">Source: American Psychological Association — Review of 50+ peer-reviewed studies</p>
+              <p class="text-teal-700 text-xs font-semibold mt-0.5">Science Daily · August 9, 2012</p>
+              <p class="text-gray-600 text-xs">Source: American Psychological Association — Review of 50+ peer-reviewed studies</p>
             </div>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -500,12 +533,12 @@
         <div class="fade-in bg-cream-50 rounded-2xl p-7 border border-cream-200" style="transition-delay:0.08s">
           <div class="flex items-start gap-3 mb-4">
             <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center">
-              <svg class="w-5 h-5 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <svg class="w-5 h-5 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             </div>
             <div>
               <h3 class="font-heading text-lg font-bold text-navy-800">Longer-Duration Psychotherapy Appears More Beneficial for Treatment of Complex Mental Disorders</h3>
-              <p class="text-teal-500 text-xs font-semibold mt-0.5">Science Daily · October 6, 2008</p>
-              <p class="text-gray-400 text-xs">Based on: Leichsenring &amp; Rabung meta-analysis, JAMA, October 1, 2008</p>
+              <p class="text-teal-700 text-xs font-semibold mt-0.5">Science Daily · October 6, 2008</p>
+              <p class="text-gray-600 text-xs">Based on: Leichsenring &amp; Rabung meta-analysis, JAMA, October 1, 2008</p>
             </div>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -542,104 +575,104 @@
       <details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
         <summary class="flex items-center justify-between px-7 py-5">
           <div>
-            <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-0.5">Full Source List</p>
+            <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-0.5">Full Source List</p>
             <h2 class="font-heading text-xl font-bold text-navy-800">References</h2>
           </div>
-          <span class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 chevron">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 chevron">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </span>
         </summary>
         <div class="px-7 pb-7 pt-2 border-t border-gray-100">
           <ol class="space-y-1.5 text-xs text-gray-500 mt-4">
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">1.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9520618/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC9520618/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">2.</span><a href="https://pubmed.ncbi.nlm.nih.gov/36623570/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/36623570/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">3.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1366032/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1366032/full</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">4.</span><a href="https://pubmed.ncbi.nlm.nih.gov/18827212/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/18827212/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">5.</span><a href="https://jamanetwork.com/journals/jama/fullarticle/1028649" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://jamanetwork.com/journals/jama/fullarticle/1028649</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">6.</span><a href="https://pubmed.ncbi.nlm.nih.gov/36958077/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/36958077/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">7.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2009.09030441" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2009.09030441</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">8.</span><a href="https://pubmed.ncbi.nlm.nih.gov/19570931/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/19570931/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">9.</span><a href="https://scholarworks.indianapolis.iu.edu/bitstream/handle/1805/26652/Abbass_2020_short.pdf?sequence=1" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://scholarworks.indianapolis.iu.edu/bitstream/handle/1805/26652/Abbass_2020_short.pdf</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">10.</span><a href="https://karger.com/pps/article/89/6/363/283235/Short-Term-Psychodynamic-Psychotherapy-for" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://karger.com/pps/article/89/6/363/283235/Short-Term-Psychodynamic-Psychotherapy-for</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">11.</span><a href="https://www.apa.org/pubs/journals/releases/amp-65-2-98.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.apa.org/pubs/journals/releases/amp-65-2-98.pdf</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">12.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.focus.12.3.336" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.focus.12.3.336</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">13.</span><a href="https://pubmed.ncbi.nlm.nih.gov/32928529/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/32928529/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">14.</span><a href="https://mghpsychodynamics.org/module/short-and-long-term-psychodynamic-psychotherapy/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://mghpsychodynamics.org/module/short-and-long-term-psychodynamic-psychotherapy/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">15.</span><a href="https://www.bgsp.edu/app/uploads/2014/08/Leichsenring-Rabung-JAMA-2008-Effectiveness-of-LT-Psychodynamic-TX.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.bgsp.edu/app/uploads/2014/08/Leichsenring-Rabung-JAMA-2008-Effectiveness-of-LT-Psychodynamic-TX.pdf</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">16.</span><a href="https://www.ncbi.nlm.nih.gov/books/NBK525874/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.ncbi.nlm.nih.gov/books/NBK525874/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">17.</span><a href="https://www.ncbi.nlm.nih.gov/books/NBK75933/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.ncbi.nlm.nih.gov/books/NBK75933/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">18.</span><a href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/482102" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://jamanetwork.com/journals/jamapsychiatry/fullarticle/482102</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">19.</span><a href="https://www.sciencedirect.com/science/article/pii/S1566277205000071" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S1566277205000071</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">20.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S016503272201521X" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S016503272201521X</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">21.</span><a href="https://www.appi.org/Products/Psychotherapy/Long-Term-Psychodynamic-Psychotherapy-Third-Editio" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.appi.org/Products/Psychotherapy/Long-Term-Psychodynamic-Psychotherapy-Third-Editio</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">22.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2017.17010057" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2017.17010057</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">23.</span><a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.2014.13111514" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/full/10.1176/appi.ajp.2014.13111514</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">24.</span><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/wps.21104" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://onlinelibrary.wiley.com/doi/full/10.1002/wps.21104</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">25.</span><a href="https://pubmed.ncbi.nlm.nih.gov/20843868/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/20843868/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">26.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10168167/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC10168167/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">27.</span><a href="https://pubmed.ncbi.nlm.nih.gov/33779225/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/33779225/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">28.</span><a href="https://www.sciencedirect.com/science/article/pii/S2215036615001558" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S2215036615001558</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">29.</span><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23649" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23649</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">30.</span><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/wps.21104" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://onlinelibrary.wiley.com/doi/abs/10.1002/wps.21104</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">31.</span><a href="https://www.tandfonline.com/doi/full/10.1080/14753634.2022.2046140" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.tandfonline.com/doi/full/10.1080/14753634.2022.2046140</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">32.</span><a href="https://www.tandfonline.com/doi/abs/10.1080/02668734.2023.2197617" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.tandfonline.com/doi/abs/10.1080/02668734.2023.2197617</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">33.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165178122000178" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0165178122000178</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">34.</span><a href="https://www.tandfonline.com/doi/full/10.1080/02668734.2023.2197617" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.tandfonline.com/doi/full/10.1080/02668734.2023.2197617</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">35.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2010.08060843" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2010.08060843</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">36.</span><a href="https://www.apa.org/news/press/releases/2010/01/psychodynamic-therapy" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.apa.org/news/press/releases/2010/01/psychodynamic-therapy</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">37.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7982198/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC7982198/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">38.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6899418/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC6899418/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">39.</span><a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.160.7.1223" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/full/10.1176/appi.ajp.160.7.1223</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">40.</span><a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1481405/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1481405/full</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">41.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6020925/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC6020925/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">42.</span><a href="https://pubmed.ncbi.nlm.nih.gov/19602915/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/19602915/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">43.</span><a href="https://www.webmd.com/depression/psychodynamic-therapy-for-depression" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.webmd.com/depression/psychodynamic-therapy-for-depression</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">44.</span><a href="https://clinicaltrials.gov/study/NCT00145678" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://clinicaltrials.gov/study/NCT00145678</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">45.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4471961/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC4471961/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">46.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0022399921001185" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0022399921001185</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">47.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0272735814000531" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0272735814000531</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">48.</span><a href="https://www.psychologytoday.com/us/blog/from-freud-to-fluoxetine/202308/psychodynamic-approaches-to-borderline-personality-disorder" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.psychologytoday.com/us/blog/from-freud-to-fluoxetine/202308/psychodynamic-approaches-to-borderline-personality-disorder</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">49.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.20200010" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.20200010</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">50.</span><a href="https://www.sciencedirect.com/science/article/pii/S0272735823000272" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S0272735823000272</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">51.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.2016.70.2.167" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.2016.70.2.167</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">52.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8062854/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC8062854/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">53.</span><a href="https://www.madinamerica.com/2023/10/accumulating-evidence-for-the-effectiveness-of-psychodynamic-therapy/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.madinamerica.com/2023/10/accumulating-evidence-for-the-effectiveness-of-psychodynamic-therapy/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">54.</span><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23551" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23551</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">55.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11408295" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC11408295</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">56.</span><a href="https://pubmed.ncbi.nlm.nih.gov/39836679/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/39836679/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">57.</span><a href="https://www.thecarlatreport.com/articles/4672-copy-of-2024-diagnosis-and-treatment-of-personality-disorders" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.thecarlatreport.com/articles/4672-copy-of-2024-diagnosis-and-treatment-of-personality-disorders</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">58.</span><a href="https://copecentre.org/research-behind-psychodynamic-therapy/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://copecentre.org/research-behind-psychodynamic-therapy/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">59.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0272735815001038" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0272735815001038</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">60.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165032724018275" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0165032724018275</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">61.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/full</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">62.</span><a href="https://www.ncbi.nlm.nih.gov/books/NBK606117/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.ncbi.nlm.nih.gov/books/NBK606117/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">63.</span><a href="https://www.tandfonline.com/doi/full/10.1080/15289168.2024.2364136" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.tandfonline.com/doi/full/10.1080/15289168.2024.2364136</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">64.</span><a href="https://www.austenriggs.org/news/bias-against-psychodynamic-therapy" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.austenriggs.org/news/bias-against-psychodynamic-therapy</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">65.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/epub" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/epub</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">66.</span><a href="https://digitalcommons.liu.edu/cgi/viewcontent.cgi?article=1076&context=post_fultext_dis" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://digitalcommons.liu.edu/cgi/viewcontent.cgi?article=1076&amp;context=post_fultext_dis</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">67.</span><a href="https://onlinelibrary.wiley.com/doi/10.1111/bjp.12913" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://onlinelibrary.wiley.com/doi/10.1111/bjp.12913</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">68.</span><a href="https://www.madinamerica.com/2023/07/beyond-symptom-reduction-psychodynamic-psychotherapy-gets-empirical-backing/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.madinamerica.com/2023/07/beyond-symptom-reduction-psychodynamic-psychotherapy-gets-empirical-backing/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">69.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.01969/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.01969/full</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">70.</span><a href="https://www.reddit.com/r/therapists/comments/1jljxmg/psychodynamic_psychotherapy_is_100_evidence_based/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.reddit.com/r/therapists/comments/1jljxmg/psychodynamic_psychotherapy_is_100_evidence_based/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">71.</span><a href="https://pubmed.ncbi.nlm.nih.gov/37159376/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/37159376/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">72.</span><a href="https://osf.io/txkw5/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://osf.io/txkw5/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">73.</span><a href="https://www.scienceopen.com/document?vid=352c223e-0201-43e5-8e4d-61d4154b8c2f" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.scienceopen.com/document?vid=352c223e-0201-43e5-8e4d-61d4154b8c2f</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">74.</span><a href="https://www.div12.org/wp-content/uploads/2018/09/Chambless-Hollon-1998-Defining-Empirically-Supported-Therapies.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.div12.org/wp-content/uploads/2018/09/Chambless-Hollon-1998-Defining-Empirically-Supported-Therapies.pdf</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">75.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/B9780128133736000040" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/B9780128133736000040</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">76.</span><a href="https://www.austenriggs.org/news/psychodynamic-psychotherapies-work-the-compelling-evidence-base" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.austenriggs.org/news/psychodynamic-psychotherapies-work-the-compelling-evidence-base</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">77.</span><a href="https://www.bohrium.com/paper-details/the-status-of-psychodynamic-psychotherapy-as-an-empirically-supported-treatment-for-common-mental-disorders-an-umbrella-review-based-on-updated-criteria/863394416360947712-10129" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.bohrium.com/paper-details/the-status-of-psychodynamic-psychotherapy…</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">78.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10251463/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC10251463/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">79.</span><a href="https://www.therapyroute.com/article/psychodynamic-therapy-for-personality-disorders-by-therapyroute" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.therapyroute.com/article/psychodynamic-therapy-for-personality-disorders-by-therapyroute</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">80.</span><a href="https://pubmed.ncbi.nlm.nih.gov/23680854/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/23680854/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">81.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8647477/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC8647477/</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">82.</span><a href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2810866" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2810866</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">83.</span><a href="https://journals.sagepub.com/doi/abs/10.1177/10398562231159329" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://journals.sagepub.com/doi/abs/10.1177/10398562231159329</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">84.</span><a href="https://www.nature.com/articles/s44184-024-00063-0" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.nature.com/articles/s44184-024-00063-0</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">85.</span><a href="https://www.appi.org/Products/Psychotherapy/Psychodynamic-Psychotherapy-for-Personality-Disord" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.appi.org/Products/Psychotherapy/Psychodynamic-Psychotherapy-for-Personality-Disord</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">86.</span><a href="https://psychiatryonline.org/doi/book/10.1176/appi.books.9781615376643" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/book/10.1176/appi.books.9781615376643</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">87.</span><a href="https://www.sciencedirect.com/science/article/pii/S0165032723006389" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S0165032723006389</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">88.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2013.12081125" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2013.12081125</a></li>
-            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">89.</span><a href="https://www.thecarlatreport.com/articles/4494-understanding-borderline-personality-disorder-a-closer-look-at-psychodynamic-approaches" target="_blank" rel="noopener noreferrer" class="hover:text-teal-500 transition-colors break-all">https://www.thecarlatreport.com/articles/4494-understanding-borderline-personality-disorder-a-closer-look-at-psychodynamic-approaches</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">1.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9520618/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC9520618/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">2.</span><a href="https://pubmed.ncbi.nlm.nih.gov/36623570/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/36623570/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">3.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1366032/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1366032/full</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">4.</span><a href="https://pubmed.ncbi.nlm.nih.gov/18827212/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/18827212/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">5.</span><a href="https://jamanetwork.com/journals/jama/fullarticle/1028649" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://jamanetwork.com/journals/jama/fullarticle/1028649</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">6.</span><a href="https://pubmed.ncbi.nlm.nih.gov/36958077/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/36958077/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">7.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2009.09030441" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2009.09030441</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">8.</span><a href="https://pubmed.ncbi.nlm.nih.gov/19570931/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/19570931/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">9.</span><a href="https://scholarworks.indianapolis.iu.edu/bitstream/handle/1805/26652/Abbass_2020_short.pdf?sequence=1" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://scholarworks.indianapolis.iu.edu/bitstream/handle/1805/26652/Abbass_2020_short.pdf</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">10.</span><a href="https://karger.com/pps/article/89/6/363/283235/Short-Term-Psychodynamic-Psychotherapy-for" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://karger.com/pps/article/89/6/363/283235/Short-Term-Psychodynamic-Psychotherapy-for</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">11.</span><a href="https://www.apa.org/pubs/journals/releases/amp-65-2-98.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.apa.org/pubs/journals/releases/amp-65-2-98.pdf</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">12.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.focus.12.3.336" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.focus.12.3.336</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">13.</span><a href="https://pubmed.ncbi.nlm.nih.gov/32928529/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/32928529/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">14.</span><a href="https://mghpsychodynamics.org/module/short-and-long-term-psychodynamic-psychotherapy/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://mghpsychodynamics.org/module/short-and-long-term-psychodynamic-psychotherapy/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">15.</span><a href="https://www.bgsp.edu/app/uploads/2014/08/Leichsenring-Rabung-JAMA-2008-Effectiveness-of-LT-Psychodynamic-TX.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.bgsp.edu/app/uploads/2014/08/Leichsenring-Rabung-JAMA-2008-Effectiveness-of-LT-Psychodynamic-TX.pdf</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">16.</span><a href="https://www.ncbi.nlm.nih.gov/books/NBK525874/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.ncbi.nlm.nih.gov/books/NBK525874/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">17.</span><a href="https://www.ncbi.nlm.nih.gov/books/NBK75933/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.ncbi.nlm.nih.gov/books/NBK75933/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">18.</span><a href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/482102" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://jamanetwork.com/journals/jamapsychiatry/fullarticle/482102</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">19.</span><a href="https://www.sciencedirect.com/science/article/pii/S1566277205000071" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S1566277205000071</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">20.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S016503272201521X" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S016503272201521X</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">21.</span><a href="https://www.appi.org/Products/Psychotherapy/Long-Term-Psychodynamic-Psychotherapy-Third-Editio" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.appi.org/Products/Psychotherapy/Long-Term-Psychodynamic-Psychotherapy-Third-Editio</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">22.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2017.17010057" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2017.17010057</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">23.</span><a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.2014.13111514" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/full/10.1176/appi.ajp.2014.13111514</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">24.</span><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/wps.21104" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://onlinelibrary.wiley.com/doi/full/10.1002/wps.21104</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">25.</span><a href="https://pubmed.ncbi.nlm.nih.gov/20843868/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/20843868/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">26.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10168167/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC10168167/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">27.</span><a href="https://pubmed.ncbi.nlm.nih.gov/33779225/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/33779225/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">28.</span><a href="https://www.sciencedirect.com/science/article/pii/S2215036615001558" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S2215036615001558</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">29.</span><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23649" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23649</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">30.</span><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/wps.21104" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://onlinelibrary.wiley.com/doi/abs/10.1002/wps.21104</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">31.</span><a href="https://www.tandfonline.com/doi/full/10.1080/14753634.2022.2046140" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.tandfonline.com/doi/full/10.1080/14753634.2022.2046140</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">32.</span><a href="https://www.tandfonline.com/doi/abs/10.1080/02668734.2023.2197617" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.tandfonline.com/doi/abs/10.1080/02668734.2023.2197617</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">33.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165178122000178" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0165178122000178</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">34.</span><a href="https://www.tandfonline.com/doi/full/10.1080/02668734.2023.2197617" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.tandfonline.com/doi/full/10.1080/02668734.2023.2197617</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">35.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2010.08060843" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2010.08060843</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">36.</span><a href="https://www.apa.org/news/press/releases/2010/01/psychodynamic-therapy" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.apa.org/news/press/releases/2010/01/psychodynamic-therapy</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">37.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7982198/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC7982198/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">38.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6899418/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC6899418/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">39.</span><a href="https://psychiatryonline.org/doi/full/10.1176/appi.ajp.160.7.1223" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/full/10.1176/appi.ajp.160.7.1223</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">40.</span><a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1481405/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1481405/full</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">41.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6020925/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC6020925/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">42.</span><a href="https://pubmed.ncbi.nlm.nih.gov/19602915/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/19602915/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">43.</span><a href="https://www.webmd.com/depression/psychodynamic-therapy-for-depression" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.webmd.com/depression/psychodynamic-therapy-for-depression</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">44.</span><a href="https://clinicaltrials.gov/study/NCT00145678" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://clinicaltrials.gov/study/NCT00145678</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">45.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4471961/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC4471961/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">46.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0022399921001185" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0022399921001185</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">47.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0272735814000531" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0272735814000531</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">48.</span><a href="https://www.psychologytoday.com/us/blog/from-freud-to-fluoxetine/202308/psychodynamic-approaches-to-borderline-personality-disorder" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.psychologytoday.com/us/blog/from-freud-to-fluoxetine/202308/psychodynamic-approaches-to-borderline-personality-disorder</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">49.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.20200010" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.20200010</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">50.</span><a href="https://www.sciencedirect.com/science/article/pii/S0272735823000272" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S0272735823000272</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">51.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.2016.70.2.167" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.psychotherapy.2016.70.2.167</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">52.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8062854/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC8062854/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">53.</span><a href="https://www.madinamerica.com/2023/10/accumulating-evidence-for-the-effectiveness-of-psychodynamic-therapy/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.madinamerica.com/2023/10/accumulating-evidence-for-the-effectiveness-of-psychodynamic-therapy/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">54.</span><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23551" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://onlinelibrary.wiley.com/doi/full/10.1002/jclp.23551</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">55.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11408295" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC11408295</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">56.</span><a href="https://pubmed.ncbi.nlm.nih.gov/39836679/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/39836679/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">57.</span><a href="https://www.thecarlatreport.com/articles/4672-copy-of-2024-diagnosis-and-treatment-of-personality-disorders" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.thecarlatreport.com/articles/4672-copy-of-2024-diagnosis-and-treatment-of-personality-disorders</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">58.</span><a href="https://copecentre.org/research-behind-psychodynamic-therapy/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://copecentre.org/research-behind-psychodynamic-therapy/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">59.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0272735815001038" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0272735815001038</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">60.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165032724018275" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/S0165032724018275</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">61.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/full</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">62.</span><a href="https://www.ncbi.nlm.nih.gov/books/NBK606117/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.ncbi.nlm.nih.gov/books/NBK606117/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">63.</span><a href="https://www.tandfonline.com/doi/full/10.1080/15289168.2024.2364136" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.tandfonline.com/doi/full/10.1080/15289168.2024.2364136</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">64.</span><a href="https://www.austenriggs.org/news/bias-against-psychodynamic-therapy" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.austenriggs.org/news/bias-against-psychodynamic-therapy</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">65.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/epub" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.670196/epub</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">66.</span><a href="https://digitalcommons.liu.edu/cgi/viewcontent.cgi?article=1076&context=post_fultext_dis" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://digitalcommons.liu.edu/cgi/viewcontent.cgi?article=1076&amp;context=post_fultext_dis</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">67.</span><a href="https://onlinelibrary.wiley.com/doi/10.1111/bjp.12913" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://onlinelibrary.wiley.com/doi/10.1111/bjp.12913</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">68.</span><a href="https://www.madinamerica.com/2023/07/beyond-symptom-reduction-psychodynamic-psychotherapy-gets-empirical-backing/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.madinamerica.com/2023/07/beyond-symptom-reduction-psychodynamic-psychotherapy-gets-empirical-backing/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">69.</span><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.01969/full" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.01969/full</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">70.</span><a href="https://www.reddit.com/r/therapists/comments/1jljxmg/psychodynamic_psychotherapy_is_100_evidence_based/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.reddit.com/r/therapists/comments/1jljxmg/psychodynamic_psychotherapy_is_100_evidence_based/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">71.</span><a href="https://pubmed.ncbi.nlm.nih.gov/37159376/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/37159376/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">72.</span><a href="https://osf.io/txkw5/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://osf.io/txkw5/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">73.</span><a href="https://www.scienceopen.com/document?vid=352c223e-0201-43e5-8e4d-61d4154b8c2f" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.scienceopen.com/document?vid=352c223e-0201-43e5-8e4d-61d4154b8c2f</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">74.</span><a href="https://www.div12.org/wp-content/uploads/2018/09/Chambless-Hollon-1998-Defining-Empirically-Supported-Therapies.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.div12.org/wp-content/uploads/2018/09/Chambless-Hollon-1998-Defining-Empirically-Supported-Therapies.pdf</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">75.</span><a href="https://www.sciencedirect.com/science/article/abs/pii/B9780128133736000040" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/abs/pii/B9780128133736000040</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">76.</span><a href="https://www.austenriggs.org/news/psychodynamic-psychotherapies-work-the-compelling-evidence-base" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.austenriggs.org/news/psychodynamic-psychotherapies-work-the-compelling-evidence-base</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">77.</span><a href="https://www.bohrium.com/paper-details/the-status-of-psychodynamic-psychotherapy-as-an-empirically-supported-treatment-for-common-mental-disorders-an-umbrella-review-based-on-updated-criteria/863394416360947712-10129" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.bohrium.com/paper-details/the-status-of-psychodynamic-psychotherapy…</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">78.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10251463/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC10251463/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">79.</span><a href="https://www.therapyroute.com/article/psychodynamic-therapy-for-personality-disorders-by-therapyroute" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.therapyroute.com/article/psychodynamic-therapy-for-personality-disorders-by-therapyroute</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">80.</span><a href="https://pubmed.ncbi.nlm.nih.gov/23680854/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pubmed.ncbi.nlm.nih.gov/23680854/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">81.</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8647477/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://pmc.ncbi.nlm.nih.gov/articles/PMC8647477/</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">82.</span><a href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2810866" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2810866</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">83.</span><a href="https://journals.sagepub.com/doi/abs/10.1177/10398562231159329" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://journals.sagepub.com/doi/abs/10.1177/10398562231159329</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">84.</span><a href="https://www.nature.com/articles/s44184-024-00063-0" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.nature.com/articles/s44184-024-00063-0</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">85.</span><a href="https://www.appi.org/Products/Psychotherapy/Psychodynamic-Psychotherapy-for-Personality-Disord" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.appi.org/Products/Psychotherapy/Psychodynamic-Psychotherapy-for-Personality-Disord</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">86.</span><a href="https://psychiatryonline.org/doi/book/10.1176/appi.books.9781615376643" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/book/10.1176/appi.books.9781615376643</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">87.</span><a href="https://www.sciencedirect.com/science/article/pii/S0165032723006389" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.sciencedirect.com/science/article/pii/S0165032723006389</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">88.</span><a href="https://psychiatryonline.org/doi/10.1176/appi.ajp.2013.12081125" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://psychiatryonline.org/doi/10.1176/appi.ajp.2013.12081125</a></li>
+            <li class="flex gap-2"><span class="flex-shrink-0 font-semibold text-navy-700 w-6">89.</span><a href="https://www.thecarlatreport.com/articles/4494-understanding-borderline-personality-disorder-a-closer-look-at-psychodynamic-approaches" target="_blank" rel="noopener noreferrer" class="hover:text-teal-700 transition-colors break-all">https://www.thecarlatreport.com/articles/4494-understanding-borderline-personality-disorder-a-closer-look-at-psychodynamic-approaches</a></li>
           </ol>
         </div>
       </details>
@@ -650,25 +683,25 @@
   <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="mb-10 fade-in">
-        <p class="text-teal-500 text-xs font-semibold tracking-widest uppercase mb-2">Related</p>
+        <p class="text-teal-700 text-xs font-semibold tracking-widest uppercase mb-2">Related</p>
         <h2 class="font-heading text-2xl font-bold text-navy-800 mb-3">Explore Further</h2>
         <div class="accent-bar"></div>
       </div>
       <div class="grid sm:grid-cols-3 gap-5">
         <a href="research-articles.html" class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Research &amp; Articles</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Research &amp; Articles</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Key findings and landmark studies on the effectiveness of psychoanalytic psychotherapy.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View research <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">View research <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
         <a href="psychoanalysis.html" class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.08s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">About Psychoanalysis</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">About Psychoanalysis</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Dr. Gardner's overview of psychoanalytic therapy — what it is, who it helps, and what to expect.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Learn more <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
         <a href="psychotherapy-ai-copilot.html" class="card-hover fade-in bg-cream-50 rounded-2xl p-6 border border-cream-200 block group" style="transition-delay:0.16s">
-          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-500 transition-colors">Psychotherapy AI Copilot</h3>
+          <h3 class="font-heading text-base font-bold text-navy-800 mb-2 group-hover:text-teal-700 transition-colors">Psychotherapy AI Copilot</h3>
           <p class="text-gray-500 text-sm leading-relaxed">An AI-assisted tool to support exploration of psychotherapy concepts and research.</p>
-          <span class="mt-4 inline-flex items-center text-teal-500 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Explore tool <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
+          <span class="mt-4 inline-flex items-center text-teal-700 text-xs font-semibold gap-1 group-hover:gap-2 transition-all">Explore tool <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
         </a>
       </div>
     </div>
