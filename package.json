@@ -20,5 +20,8 @@
   "homepage": "https://github.com/dangardner01/dan_gardner#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
